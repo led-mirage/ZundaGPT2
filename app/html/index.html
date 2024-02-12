@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ZundaGPT2</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="chat-container">
+  <div id="chat-messages" class="chat-messages">
+    <div class="app-title">ZundaGPT</div>
+    <!-- ここにメッセージが動的に追加される
+    <div class="chat-message">
+      <div class="speaker-name">発言者A</div>
+      <div class="message-text">こんにちは、今日は良い天気ですね。</div>
+    </div>
+    -->
+  </div>
+  <div class="chat-input">
+    <textarea id="message" placeholder="メッセージを入力..."></textarea>
+    <button type="button" onclick="submit()">送信</button>
+  </div>
+</div>
+<footer>Copyright 2024 led-mirage</footer>
+
+<script>
+let g_username = "あなた";
+let g_usercolor = "#007bff";
+
+// 初期化
+document.addEventListener("DOMContentLoaded", function() {
+  const textarea = document.getElementById("message");
+  textarea.addEventListener("input", autoResize, false);
+  autoResize.call(textarea);
+
+  function autoResize() {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight - rem2px(2) + "px";
+  }
+
+  document.getElementById('message').addEventListener('keydown', function(event) {
+    // Enterが押されたが、Shiftが押されていない場合
+    if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault(); // デフォルトのEnterによる改行を防ぐ
+        submit(); // 送信処理を実行
+    }
+  });
+});
+
+// pywebviewの初期化完了
+window.addEventListener("pywebviewready", function() {
+  pywebview.api.page_loaded();
+})
+
+// remをpxに変換
+function rem2px(rem) {
+  var rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  return rem * rootFontSize;
+}
+
+// 送信ボタン押下時イベントハンドラ
+async function submit() {
+  const text = document.getElementById("message").value;
+  if (text === "") return;
+
+  // HTMLにメッセージを追加
+  addChatMessage(g_username, g_usercolor, escapeHtml(text))
+  scrollToBottom();
+  document.getElementById("message").value = "";
+
+  // Python側に通知
+  try {
+    await pywebview.api.send_message_to_chatgpt(text);
+  }
+  catch (error) {
+    console.error("Error: " + error)
+  }
+}
+
+// チャットメッセージを下端までスクロールする
+function scrollToBottom() {
+  const messageContainer = document.querySelector(".chat-messages");
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+}
+
+// 文字列をHTML用にエスケープする
+function escapeHtml(text) {
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#x27;")
+        .replace(/\n/g, "<br>")
+        .replace(/ /g, "&nbsp;")
+        .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;");
+}
+
+// チャットメッセージブロックを追加する
+function addChatMessage(speakerName, color, messageText) {
+  // チャットメッセージコンテナを取得
+  const chatMessagesContainer = document.getElementById('chat-messages');
+
+  // 新しいチャットメッセージ要素を作成
+  const chatMessageElement = document.createElement('div');
+  chatMessageElement.classList.add('chat-message');
+
+  // 発言者名を表示する要素を作成
+  const speakerElement = document.createElement('div');
+  speakerElement.classList.add('speaker-name');
+  speakerElement.style.color = color;
+  speakerElement.textContent = speakerName;
+
+  // メッセージテキストを表示する要素を作成
+  const messageElement = document.createElement('div');
+  messageElement.classList.add('message-text');
+  messageElement.innerHTML = messageText;
+
+  // チャットメッセージ要素に発言者名とメッセージテキストの要素を追加
+  chatMessageElement.appendChild(speakerElement);
+  chatMessageElement.appendChild(messageElement);
+
+  // 作成したチャットメッセージをコンテナに追加
+  chatMessagesContainer.appendChild(chatMessageElement);
+}
+
+// Pythonから呼び出される関数
+// ユーザー名をセットする
+function setUsername(username, color) {
+  g_username = username;
+  g_usercolor = color;
+}
+
+// Pythonから呼び出される関数
+// AIからのチャット応答を開始する
+function startResponse(assistantName, color) {
+  addChatMessage(assistantName, color, "");
+}
+
+// Pythonから呼び出される関数
+// AIからの応答（チャンク）を表示する
+function addChunk(text) {
+  const messageTextElements = document.querySelectorAll('#chat-messages .message-text');
+  const lastMessageTextElement = messageTextElements[messageTextElements.length - 1];
+  if(lastMessageTextElement) {
+    lastMessageTextElement.innerHTML += escapeHtml(text) ;
+    scrollToBottom();
+  }
+}
+</script>
+
+</body>
+</html>

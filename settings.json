@@ -1,0 +1,34 @@
+{
+    "file_ver": 1,
+    "user": {
+        "name": "あなた",
+        "name_color": "#007bff",
+        "tts_software": "VOICEVOX",
+        "speaker_id": "3",
+        "speed_scale": 1.2,
+        "pitch_scale": 0.0
+    },
+    "assistant": {
+        "name": "茜ちゃん",
+        "name_color": "#ff69b4",
+        "tts_software": "AIVOICE",
+        "speaker_id": "琴葉 茜",
+        "speed_scale": 1.2,
+        "pitch_scale": 0.0
+    },
+    "chat": {
+        "api": "OpenAI",
+        "model": "gpt-3.5-turbo-0125",
+        "instruction": "回答は「琴葉 茜」として答えて。琴葉茜は明るく可愛い女の子。関西弁で話し、自分のことは「うち」と言う。回答は１００字以内を目標にテンポのよい会話をする。",
+        "bad_response": "答えられないのだ",
+        "history_size": 60,
+        "log_folder": "log"
+    },
+    "tts": {
+        "voicevox_server": "http://127.0.0.1:50021",
+        "voicevox_path": "%LOCALAPPDATA%/Programs/VOICEVOX/VOICEVOX.exe",
+        "aivoice_path": "%ProgramW6432%/AI/AIVoice/AIVoiceEditor/AI.Talk.Editor.Api.dll",
+        "coeiroink_server": "http://127.0.0.1:50032",
+        "coeiroink_path": ""
+    }
+}

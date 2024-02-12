@@ -1,0 +1,5 @@
+pywebview==4.4.1
+requests==2.31.0
+pyaudio==0.2.14
+openai==1.12.0
+pythonnet==3.0.3
