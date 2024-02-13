@@ -62,7 +62,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.1.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.1.1
 
 #### 3. 実行
 
@@ -174,3 +174,7 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 ### 0.1.0 (2024/2/12)
  
 - ファーストリリース
+
+### 0.1.1 (2024/2/13)
+ 
+- ソース添付のsettings.jsonを変更。プログラムに変更なし。
