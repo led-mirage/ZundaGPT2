@@ -10,7 +10,13 @@ ChatGPTのAPIを使用してAIとチャットするアプリなのだ。質問�
 
 ## スクリーンショット
 
-https://github.com/led-mirage/ZundaGPT2/assets/139528700/2512b5f8-f563-45fa-886e-57ddab841bf8
+v0.2.0 更新内容 その１
+
+https://github.com/led-mirage/ZundaGPT2/assets/139528700/bdd8ffd2-f207-4e16-ae64-b1490147f9f8
+
+v0.2.0 更新内容 その２
+
+https://github.com/led-mirage/ZundaGPT2/assets/139528700/52fed6c4-a350-438e-951f-a6eb5b61d67e
 
 ## 動作確認環境
 
