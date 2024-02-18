@@ -62,7 +62,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.1.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.2.0
 
 #### 3. 実行
 
@@ -163,6 +163,11 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 ホームページ：https://github.com/pythonnet/pythonnet  
 ライセンス：MIT License
 
+### 🔖 MathJax 3.2.2
+
+ホームページ： https://github.com/mathjax/MathJax
+ライセンス：Apache License 2.0
+
 ## ライセンス
 
 © 2024 led-mirage
@@ -178,3 +183,13 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 ### 0.1.1 (2024/2/13)
  
 - ソース添付のsettings.jsonを変更。プログラムに変更なし。
+
+### 0.2.0 (2024/2/18)
+
+- ログに記録した以前のチャットに移動する機能を追加（prev、next）
+- 新しいチャットを開始している機能を追加（new）
+- チャットを削除する機能を追加
+- TeX形式の数式を表示する機能を追加
+- ログファイルの形式を変更
+- チャットリクエスト時のタイムアウト処理の追加
+- その他バグ修正など

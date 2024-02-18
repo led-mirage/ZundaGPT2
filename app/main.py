@@ -9,6 +9,7 @@
 import copy
 
 import webview
+from openai import APITimeoutError
 
 from settings import Settings
 from chat import ChatFactory
@@ -19,18 +20,19 @@ from character import CharacterAIVoice
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.1.0"
+APP_VERSION = "0.2.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
 class Application:
     # コンストラクタ
-    def __init__(self, chat: Chat, settings: Settings):
-        self.chat = chat
-        self.settings = settings
-        self.user_character = self.create_user_character()
-        self.assistant_character = self.create_assistant_character()
-        self.chat_log = ChatLog(settings)
+    def __init__(self):
+        self.settings = None
+        self.chat = None
+        self.settings = None
+        self.user_character = None
+        self.assistant_character = None
+        self.window = None
     
     # 開始する
     def start(self):
@@ -40,31 +42,128 @@ class Application:
 
     # ページロードイベントハンドラ（UI）
     def page_loaded(self):
-        self.window.evaluate_js(f"setUsername('{self.settings.user["name"]}', '{self.settings.user["name_color"]}')")
+        self.new_chat()
+
+    # 新しいチャットを開始する
+    def new_chat(self):
+        self.settings = Settings()
+        self.settings.load()
+        
+        ChatLog.LOG_FOLDER = self.settings.system["log_folder"]
+
+        self.chat = ChatFactory.create(
+            self.settings.chat["api"],
+            self.settings.chat["model"],
+            self.settings.chat["instruction"],
+            self.settings.chat["bad_response"],
+            self.settings.chat["history_size"]
+        )
+
+        self.user_character = self.create_user_character()
+        self.assistant_character = self.create_assistant_character()
+        self.set_chatinfo_to_ui()
+
+    # チャットの情報をUIに通知する
+    def set_chatinfo_to_ui(self):
+        user_name = self.settings.user["name"]
+        user_color = self.settings.user["name_color"]
+        assistant_name = self.settings.assistant["name"]
+        assistant_color = self.settings.assistant["name_color"]
+        self.window.evaluate_js(f"setChatInfo('{user_name}', '{user_color}', '{assistant_name}', '{assistant_color}')")
+
+    # ひとつ前のチャットを表示して続ける
+    def prev_chat(self):
+        logfile = ChatLog.get_prev_logfile(self.chat)
+        if logfile is None:
+            return
+
+        loaded_settings, loaded_chat = ChatLog.load(logfile)
+        if loaded_settings is None:
+            return
+        
+        self.change_current_chat(loaded_settings, loaded_chat)
+
+    # ひとつ後のチャットを表示して続ける
+    def next_chat(self):
+        logfile = ChatLog.get_next_logfile(self.chat)
+        if logfile is None:
+            return
+
+        loaded_settings, loaded_chat = ChatLog.load(logfile)
+        if loaded_settings is None:
+            return
+        
+        self.change_current_chat(loaded_settings, loaded_chat)
+
+    # カレントチャットを変更する
+    def change_current_chat(self, loaded_settings: Settings, loaded_chat: Chat):
+        self.settings = loaded_settings
+        self.chat = loaded_chat
+        self.user_character = self.create_user_character()
+        self.assistant_character = self.create_assistant_character()
+        self.set_chatinfo_to_ui()
+        self.set_chatmessages_to_ui(loaded_chat.messages)
+
+    # カレントチャットを削除する
+    def delete_current_chat(self):
+        if not ChatLog.exists_log_file(self.chat):
+            return
+          
+        next_logfile = ChatLog.get_prev_logfile(self.chat)
+        if next_logfile is None:
+            next_logfile = ChatLog.get_next_logfile(self.chat)
+        if next_logfile is None:
+            return
+        
+        ChatLog.delete_log_file(self.chat)
+        
+        loaded_settings, loaded_chat = ChatLog.load(next_logfile)
+        if loaded_settings is None:
+            return
+
+        self.change_current_chat(loaded_settings, loaded_chat)
+
+    # チャットの内容をUIに送信する
+    def set_chatmessages_to_ui(self, messages: list[dict]):
+        self.window.evaluate_js(f"setChatMessages({messages})")
 
     # メッセージ送信イベントハンドラ（UI）
     def send_message_to_chatgpt(self, text):
-        self.user_character.talk(text)
-        self.window.evaluate_js(f"startResponse('{self.settings.assistant["name"]}', '{self.settings.assistant["name_color"]}')")
-        self.chat.send_message(text, self.recieve_chunk, self.recieve_sentence, self.end_response)
+        if self.user_character is not None:
+            self.user_character.talk(text)
+        self.window.evaluate_js(f"startResponse()")
+        self.chat.send_message(
+            text,
+            self.on_recieve_chunk,
+            self.on_recieve_sentence,
+            self.on_end_response,
+            self.on_chat_timeout,
+            self.on_chat_error)
 
     # チャンク受信イベントハンドラ（Chat）
-    def recieve_chunk(self, chunk):
+    def on_recieve_chunk(self, chunk):
         self.window.evaluate_js(f"addChunk('{self.escape_js_string(chunk)}')")
-        #print(chunk, end="", flush=True)
 
     # センテンス読み上げイベントハンドラ（Chat）
-    def recieve_sentence(self, sentence):
-        self.assistant_character.talk(sentence)
-        # センテンスごとに改行したい場合
-        #if not sentence.endswith("\n"):
-        #    self.window.evaluate_js(f"addChunk('{self.escape_js_string("\n")}')")
-        #    print()
+    def on_recieve_sentence(self, sentence):
+        if self.assistant_character is not None:
+            self.assistant_character.talk(sentence)
+        self.window.evaluate_js(f"parsedSentence('{self.escape_js_string(sentence)}')")
     
     # レスポンス受信完了イベントハンドラ（Chat）
-    def end_response(self, response):
-        self.chat_log.save(chat)
-        #print()
+    def on_end_response(self, response):
+        ChatLog.save(self.settings, self.chat)
+        self.window.evaluate_js(f"endResponse()")
+
+    # タイムアウトイベントハンドラ（Chat）
+    def on_chat_timeout(self, e: APITimeoutError):
+        print(e)
+        self.window.evaluate_js(f"handleChatTimeout()")
+
+    # 例外イベントハンドラ（Chat）
+    def on_chat_error(self, e: Exception):
+        print(e)
+        self.window.evaluate_js(f"handleChatException()")
 
     # 文字をエスケープする
     def escape_js_string(self, s):
@@ -107,16 +206,5 @@ class Application:
             return None
 
 if __name__ == '__main__':
-    settings = Settings("settings.json")
-    settings.load()
-
-    chat = ChatFactory.create(
-        settings.chat["api"],
-        settings.chat["model"],
-        settings.chat["instruction"],
-        settings.chat["bad_response"],
-        settings.chat["history_size"]
-    )
-
-    app = Application(chat, settings)
+    app = Application()
     app.start()

@@ -26,7 +26,8 @@ class CharacterVoicevox:
         self.speaker_id = speaker_id
         self.speed_scale = speed_scale
         self.pitch_scale = pitch_scale
-        CharacterVoicevox.run_voicevox(self.voicevox_path)
+        if self.voicevox_path != "":
+            CharacterVoicevox.run_voicevox(self.voicevox_path)
 
     # 話す
     def talk(self, text):
@@ -67,7 +68,8 @@ class CharacterCoeiroink:
         self.speed_scale = speed_scale
         self.pitch_scale = pitch_scale
         self.speaker_id = speaker_id
-        CharacterCoeiroink.run_coeiroink(self.coeiroink_path)
+        if self.coeiroink_path != "":
+            CharacterCoeiroink.run_coeiroink(self.coeiroink_path)
 
     # 話す
     def talk(self, text):

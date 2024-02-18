@@ -6,6 +6,7 @@
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
+import copy
 import json
 import os
 import threading
@@ -16,9 +17,10 @@ from character import CharacterVoicevox
 from character import CharacterAIVoice
 
 class Settings:
-    FILE_VER = 1
+    FILE_VER = 2
+    FILE_SETTINGS = "settings.json"
 
-    def __init__(self, setting_file_path):
+    def __init__(self, setting_file_path=FILE_SETTINGS):
         self._setting_file_path = setting_file_path
         self._lock = threading.Lock()
         self._init_member()
@@ -46,7 +48,6 @@ class Settings:
             "instruction": "君は優秀なアシスタント。ずんだもんの話し方で話す。具体的には語尾に「のだ」または「なのだ」をつけて自然に話す。回答は１００文字以内で簡潔に行う。",
             "bad_response": "答えられないのだ",
             "history_size": 6,
-            "log_folder": "log",
         }
         self.tts = {
             "voicevox_server": VoicevoxAPI.DEFAULT_SERVER,
@@ -55,6 +56,21 @@ class Settings:
             "coeiroink_path": "",
             "aivoice_path": CharacterAIVoice.DEFAULT_INSTALL_PATH,
         }
+        self.system = {
+            "log_folder": "log",
+        }
+
+    # deepcopy
+    def __deepcopy__(self, memo):
+        new_copy = self.__class__(None)
+        memo[id(self)] = new_copy
+        new_copy._setting_file_path = self._setting_file_path
+        new_copy.user = copy.deepcopy(self.user, memo)
+        new_copy.assistant = copy.deepcopy(self.assistant, memo)
+        new_copy.chat = copy.deepcopy(self.chat, memo)
+        new_copy.tts = copy.deepcopy(self.tts, memo)
+        new_copy.system = copy.deepcopy(self.system, memo)
+        return new_copy
 
     # TTSソフトウェアのインストールパスを取得する（ユーティリティ関数）
     def get_user_tts_software_path(self):
@@ -88,6 +104,7 @@ class Settings:
             setting["assistant"] = self.assistant
             setting["chat"] = self.chat
             setting["tts"] = self.tts
+            setting["system"] = self.system
 
             json.dump(setting, file, ensure_ascii=False, indent=4)
 
@@ -100,14 +117,21 @@ class Settings:
 
         with self._lock:
             with open(self._setting_file_path, "r", encoding="utf-8") as file:
-                setting = json.load(file)
-                file_ver = setting.get("file_ver", 1)
-                self.user = setting.get("user", self.user)
-                self.assistant = setting.get("assistant", self.assistant)
-                self.chat = setting.get("chat", self.chat)
-                self.tts = setting.get("tts", self.tts)
+                data = json.load(file)
+                file_ver = data.get("file_ver", 1)
+                self.update_dict(self.user, data.get("user", self.user))
+                self.update_dict(self.assistant, data.get("assistant", self.assistant))
+                self.update_dict(self.chat, data.get("chat", self.chat))
+                self.update_dict(self.tts, data.get("tts", self.tts))
+                self.update_dict(self.system, data.get("system", self.system))
 
         if file_ver < Settings.FILE_VER:
             self._save_nolock()
 
-        return setting
+        return data
+
+    # targetにあるキーのみをsrcからコピーする
+    def update_dict(self, target: dict, src: dict):
+        for key in target.keys():
+            if key in src:
+                target[key] = src[key]

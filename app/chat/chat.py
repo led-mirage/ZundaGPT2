@@ -6,13 +6,13 @@
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
-import json
 import os
 from datetime import datetime
 from typing import Callable
 
 from openai import OpenAI
 from openai import AzureOpenAI
+from openai import APITimeoutError
 
 # チャット基底クラス
 class Chat:
@@ -25,41 +25,56 @@ class Chat:
         self.bad_response = bad_response
         self.history_size = history_size
         self.chat_start_time = datetime.now()
+        self.chat_update_time = datetime.now()
 
     # メッセージを送信して回答を得る
-    def send_message(self, text: str, recieve_chunk: Callable[[str], None], recieve_sentence: Callable[[str], None], end_response: Callable[[str], None]) -> str:
-        self.messages.append({"role": "user", "content": text})
-        messages = self.messages[-self.history_size:]
-        messages.insert(0, {"role": "system", "content": self.instruction})
-        stream = self.client.chat.completions.create(model=self.model, messages=messages, stream=True)
+    def send_message(
+        self,
+        text: str,
+        recieve_chunk: Callable[[str], None],
+        recieve_sentence: Callable[[str], None],
+        end_response: Callable[[str], None],
+        on_timeout: Callable[[APITimeoutError], None],
+        on_error: Callable[[Exception], None]) -> str:
 
-        content = ""
-        sentence = ""
-        role = ""
-        for chunk in stream:
-            if chunk.choices[0].delta.role is not None:
-                role = chunk.choices[0].delta.role
+        try:
+            self.messages.append({"role": "user", "content": text})
+            messages = self.messages[-self.history_size:]
+            messages.insert(0, {"role": "system", "content": self.instruction})
+            stream = self.client.chat.completions.create(model=self.model, messages=messages, stream=True)
 
-            if chunk.choices[0].delta.content is not None:
-                chunk_content = chunk.choices[0].delta.content
+            content = ""
+            sentence = ""
+            role = ""
+            for chunk in stream:
+                if chunk.choices[0].delta.role is not None:
+                    role = chunk.choices[0].delta.role
 
-                content += chunk_content
-                sentence += chunk_content
-                recieve_chunk(chunk_content)
+                if chunk.choices[0].delta.content is not None:
+                    chunk_content = chunk.choices[0].delta.content
 
-                if sentence.endswith(("。", "\n", "？", "！")):
-                    recieve_sentence(sentence)
-                    sentence = ""
+                    content += chunk_content
+                    sentence += chunk_content
+                    recieve_chunk(chunk_content)
 
-        if sentence != "":
-            recieve_sentence(sentence)
+                    if sentence.endswith(("。", "\n", "？", "！")):
+                        recieve_sentence(sentence)
+                        sentence = ""
 
-        if content:
-            self.messages.append({"role": role, "content": content})
-            end_response(content)
-            return content
-        else:
-            return self.bad_response
+            if sentence != "":
+                recieve_sentence(sentence)
+
+            if content:
+                self.messages.append({"role": role, "content": content})
+                self.chat_update_time = datetime.now()
+                end_response(content)
+                return content
+            else:
+                return self.bad_response
+        except APITimeoutError as e:
+            on_timeout(e)
+        except Exception as e:
+            on_error(e)
         
 # OpenAI チャットクラス
 class ChatOpenAI(Chat):
@@ -68,7 +83,7 @@ class ChatOpenAI(Chat):
         if api_key is None:
             raise ValueError("環境変数 OPENAI_API_KEY が設定されていません。")
 
-        client = OpenAI()
+        client = OpenAI(timeout=10)
         super().__init__(
             client = client,
             model = model,
@@ -88,7 +103,7 @@ class ChatAzureOpenAI(Chat):
         if api_key is None:
             raise ValueError("環境変数 AZURE_OPENAI_API_KEY が設定されていません。")
 
-        client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15")
+        client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15", timeout=10)
         super().__init__(
             client = client,
             model = model,
