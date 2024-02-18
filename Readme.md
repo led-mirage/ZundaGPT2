@@ -171,7 +171,7 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 
 ### 🔖 MathJax 3.2.2
 
-ホームページ： https://github.com/mathjax/MathJax
+ホームページ： https://github.com/mathjax/MathJax  
 ライセンス：Apache License 2.0
 
 ## ライセンス
