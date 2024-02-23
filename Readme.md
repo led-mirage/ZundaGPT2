@@ -24,7 +24,7 @@ https://github.com/led-mirage/ZundaGPT2/assets/139528700/52fed6c4-a350-438e-951f
 - Python 3.12.0
 - VOICEVOX 0.16.1
 - A.I.VOICE Editor 1.4.9.0
-- COEIROINK v.2.2.1
+- COEIROINK v.2.3.4
 
 ## 必要なもの
 
@@ -68,7 +68,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.2.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.3.0
 
 #### 3. 実行
 
@@ -199,3 +199,9 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 - ログファイルの形式を変更
 - チャットリクエスト時のタイムアウト処理の追加
 - その他バグ修正など
+
+### 0.3.0 (2024/2/23)
+
+- 表示しているチャットのログファイル名をタイトルバーに表示するようにした
+- 数式を左寄せ表示するように修正
+- 発声時のエラー処理を修正

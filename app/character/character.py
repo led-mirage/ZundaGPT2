@@ -33,7 +33,8 @@ class CharacterVoicevox:
     def talk(self, text):
         if CharacterVoicevox.run_voicevox(self.voicevox_path):
             wave_data = VoicevoxAPI.get_wave_data(self.speaker_id, text, self.speed_scale, self.pitch_scale)
-            play_sound(wave_data)
+            if wave_data is not None:
+                play_sound(wave_data)
 
     # VOICEVOXが起動しているかどうかを調べる
     @staticmethod
@@ -76,7 +77,8 @@ class CharacterCoeiroink:
         if CharacterCoeiroink.run_coeiroink(self.coeiroink_path):
             wave_data = CoeiroinkApi.get_wave_data(
                 self.speaker_id, text, speedScale=self.speed_scale, pitchScale=self.pitch_scale, volumeScale=0.8)
-            play_sound(wave_data)
+            if wave_data is not None:
+                play_sound(wave_data)
 
     # COEIROINKが起動しているかどうかを調べる
     @staticmethod

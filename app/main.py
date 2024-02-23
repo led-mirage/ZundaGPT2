@@ -20,7 +20,7 @@ from character import CharacterAIVoice
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.2.0"
+APP_VERSION = "0.3.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -62,6 +62,13 @@ class Application:
         self.user_character = self.create_user_character()
         self.assistant_character = self.create_assistant_character()
         self.set_chatinfo_to_ui()
+        self.set_window_title()
+
+    # ウィンドウのタイトルを設定する
+    def set_window_title(self):
+        logfile = ChatLog.get_logfile_name(self.chat)
+        window_title = f"{APP_NAME}  ver {APP_VERSION} - {logfile}"
+        self.window.set_title(window_title)
 
     # チャットの情報をUIに通知する
     def set_chatinfo_to_ui(self):
@@ -103,6 +110,7 @@ class Application:
         self.assistant_character = self.create_assistant_character()
         self.set_chatinfo_to_ui()
         self.set_chatmessages_to_ui(loaded_chat.messages)
+        self.set_window_title()
 
     # カレントチャットを削除する
     def delete_current_chat(self):

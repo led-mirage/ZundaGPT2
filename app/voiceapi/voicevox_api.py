@@ -29,7 +29,7 @@ class VoicevoxAPI:
 
     # 話者リストを取得する
     @staticmethod
-    def get_speakers(print_error=False) -> list:
+    def get_speakers(print_error=True) -> list:
         try:
             response = requests.get(f"{VoicevoxAPI.server}/speakers")
             response.raise_for_status()
@@ -47,7 +47,7 @@ class VoicevoxAPI:
         
     # テキストの読み上げ用データを取得する
     @staticmethod
-    def audio_query(text: str, speaker_id: int, print_error=False) -> dict:
+    def audio_query(text: str, speaker_id: int, print_error=True) -> dict:
         try:
             post_params = {"text": text, "speaker": speaker_id}
             response = requests.post(f"{VoicevoxAPI.server}/audio_query", params=post_params)
@@ -60,7 +60,7 @@ class VoicevoxAPI:
 
     # 音声データを生成する
     @staticmethod
-    def synthesis(query_json: dict, speaker_id: int, print_error=False) -> bytes:
+    def synthesis(query_json: dict, speaker_id: int, print_error=True) -> bytes:
         try:
             post_params = {"speaker": speaker_id}
             response = requests.post(f"{VoicevoxAPI.server}/synthesis", params=post_params, data=json.dumps(query_json))
@@ -73,11 +73,11 @@ class VoicevoxAPI:
 
     # 音声データを生成する
     @staticmethod
-    def get_wave_data(speaker_id: int, text: str, speed_scale: float=1, pitch_scale: float=0) -> bytes:
+    def get_wave_data(speaker_id: int, text: str, speed_scale: float=1, pitch_scale: float=0, print_error=True) -> bytes:
         query_json = VoicevoxAPI.audio_query(text, speaker_id)
         if query_json is None:
             return None
         query_json["speedScale"] = speed_scale
         query_json["pitchScale"] = pitch_scale
-        wave_data = VoicevoxAPI.synthesis(query_json, speaker_id)
+        wave_data = VoicevoxAPI.synthesis(query_json, speaker_id, print_error)
         return wave_data
