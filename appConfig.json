@@ -1,0 +1,17 @@
+{
+    "file_ver": 1,
+    "system": {
+        "log_folder": "log",
+        "settings_file": "settings.json",
+        "speaker_on": true,
+        "window_width": 600,
+        "window_height": 800
+    },
+    "tts": {
+        "voicevox_server": "http://127.0.0.1:50021",
+        "voicevox_path": "%LOCALAPPDATA%/Programs/VOICEVOX/VOICEVOX.exe",
+        "coeiroink_server": "http://127.0.0.1:50032",
+        "coeiroink_path": "",
+        "aivoice_path": "%ProgramW6432%/AI/AIVoice/AIVoiceEditor/AI.Talk.Editor.Api.dll"
+    }
+}

@@ -22,13 +22,15 @@ MathJax = {
 <body>
 <div class="chat-container">
   <div class="header">
-    <span>ZundaGPT</span>
+    <span id="settings-name">ZundaGPT</span>
     <nav>
       <ul>
         <li><button onclick="prevChat()">prev</button></li>
         <li><button onclick="nextChat()">next</button></li>
         <li><button onclick="newChat()">new</button></li>
-        <li><button onclick="deleteChat()" class="delete">🗑️</button></li>
+        <li><button onclick="deleteChat()" class="emoji">🗑️</button></li>
+        <li><button onclick="toggleSpeaker()" class="emoji" id="speaker-button">🔊</button></li>
+        <li><button onclick="settings()" class="emoji">⚙️</button></li>
       </ul>
     </nav>
   </div>
@@ -42,7 +44,7 @@ MathJax = {
   </div>
   <div class="chat-input">
     <textarea id="message" placeholder="メッセージを入力..."></textarea>
-    <button type="button" onclick="submit()">送信</button>
+    <button id="submit-button" type="button" onclick="submit()">送信</button>
   </div>
 </div>
 <footer>Copyright 2024 led-mirage</footer>
@@ -52,25 +54,33 @@ let g_userName = "あなた";
 let g_userColor = "#007bff";
 let g_assistantName = "ずんだ";
 let g_assistantColor = "#006400";
+let g_speakerOn = true;
 
 // 初期化
 document.addEventListener("DOMContentLoaded", function() {
     const textarea = document.getElementById("message");
     textarea.addEventListener("input", autoResize, false);
-    autoResize.call(textarea);
 
-    function autoResize() {
-        this.style.height = "auto";
-        this.style.height = this.scrollHeight - rem2px(2) + "px";
-    }
+    const button = document.getElementById("submit-button");
+    button.addEventListener("click", function(){
+        autoResize.call(textarea);
+    }, false);
 
     document.getElementById('message').addEventListener('keydown', function(event) {
         // Enterが押されたが、Shiftが押されていない場合
         if (event.key === 'Enter' && !event.shiftKey) {
             event.preventDefault(); // デフォルトのEnterによる改行を防ぐ
             submit(); // 送信処理を実行
+            autoResize.call(textarea);
         }
     });
+
+    autoResize.call(textarea);
+
+    function autoResize() {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight - rem2px(2) + "px";
+    }
 });
 
 // pywebviewの初期化完了
@@ -82,6 +92,14 @@ window.addEventListener("pywebviewready", function() {
 function rem2px(rem) {
     var rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
     return rem * rootFontSize;
+}
+
+// IME対策
+// IMEがONの状態かつフォーカスがテキストボックスにある状態で、
+// 別のアプリを見るなどしてウィンドウのフォーカスが失われ再度戻ってきたときに、
+// IMEの変換がテキストボックス内でできなくなる現象に対処
+window.onfocus = function() {
+    document.getElementById("message").blur();
 }
 
 // 送信ボタン押下時イベントハンドラ
@@ -120,6 +138,30 @@ function escapeHtml(text) {
         .replace(/\n/g, "<br>")
         .replace(/ /g, "&nbsp;")
         .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;");
+}
+
+// スピーカーのON/OFF
+async function toggleSpeaker() {
+    g_speakerOn = !g_speakerOn;
+    setSpeakerStateText();
+
+    // Python側に通知
+    try {
+        await pywebview.api.toggle_speaker();
+    }
+    catch (error) {
+        console.error("Error: " + error)
+    }
+}
+
+// スピーカーの状態表示
+function setSpeakerStateText() {
+    if (g_speakerOn) {
+        document.getElementById("speaker-button").textContent = "🔊";
+    }
+    else {
+        document.getElementById("speaker-button").textContent = "🔇";
+    }
 }
 
 // チャットメッセージブロックを追加する
@@ -199,19 +241,38 @@ async function deleteChat() {
     }
 }
 
+// 設定ボタンが押された
+async function settings() {
+    try {
+        await pywebview.api.move_to_settings();
+    }
+    catch (error) {
+        console.error("Error: " + error)
+    }
+}
+
 // Pythonから呼び出される関数
 // 情報をセットする
-function setChatInfo(userName, userColor, assistantName, assistantColor) {
+function setChatInfo(displayName, userName, userColor, assistantName, assistantColor, speakerOn) {
     g_userName = userName;
     g_userColor = userColor;
     g_assistantName = assistantName;
     g_assistantColor = assistantColor;
+    g_speakerOn = speakerOn;
+
+    if (displayName === "") {
+        displayName = assistantName;
+    }
+    document.getElementById("settings-name").textContent = displayName;
+
+    setSpeakerStateText();
 }
 
 // Pythonから呼び出される関数
 // AIからのチャット応答を開始する
 function startResponse() {
     addChatMessage(g_assistantName, g_assistantColor, "");
+    scrollToBottom();
 
     const nameTextElements = document.querySelectorAll('#chat-messages .speaker-name');
     const lastNameTextElements = nameTextElements[nameTextElements.length - 1];
@@ -249,16 +310,9 @@ function endResponse() {
 }
 
 // Pythonから呼び出される関数
-// チャット応答でタイムアウトが発生した
-function handleChatTimeout() {
-    alert("タイムアウトしたのだ")
-    endResponse()
-}
-
-// Pythonから呼び出される関数
 // チャット応答で例外が発生した
-function handleChatException() {
-    alert("なんかわからないエラーが発生したのだ")
+function handleChatException(message) {
+    alert(message)
     endResponse()
 }
 

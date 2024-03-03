@@ -1,5 +1,9 @@
 {
-    "file_ver": 2,
+    "file_ver": 3,
+    "settings": {
+        "display_name": "ZundaGPT",
+        "description": "既定値"
+    },
     "user": {
         "name": "あなた",
         "name_color": "#007bff",
@@ -18,19 +22,9 @@
     },
     "chat": {
         "api": "OpenAI",
-        "model": "gpt-3.5-turbo-1106",
+        "model": "gpt-3.5-turbo-0125",
         "instruction": "君は優秀なアシスタント。ずんだもんの話し方で話す。具体的には語尾に「のだ」または「なのだ」をつけて自然に話す。回答は１００文字以内で簡潔に行う。",
         "bad_response": "答えられないのだ",
         "history_size": 6
-    },
-    "tts": {
-        "voicevox_server": "http://127.0.0.1:50021",
-        "voicevox_path": "%LOCALAPPDATA%/Programs/VOICEVOX/VOICEVOX.exe",
-        "coeiroink_server": "http://127.0.0.1:50032",
-        "coeiroink_path": "",
-        "aivoice_path": "%ProgramW6432%/AI/AIVoice/AIVoiceEditor/AI.Talk.Editor.Api.dll"
-    },
-    "system": {
-        "log_folder": "log"
     }
 }

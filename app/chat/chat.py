@@ -7,12 +7,13 @@
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
 import os
+import httpx
 from datetime import datetime
 from typing import Callable
 
 from openai import OpenAI
 from openai import AzureOpenAI
-from openai import APITimeoutError
+from openai import APITimeoutError, AuthenticationError, NotFoundError
 
 # チャット基底クラス
 class Chat:
@@ -34,8 +35,7 @@ class Chat:
         recieve_chunk: Callable[[str], None],
         recieve_sentence: Callable[[str], None],
         end_response: Callable[[str], None],
-        on_timeout: Callable[[APITimeoutError], None],
-        on_error: Callable[[Exception], None]) -> str:
+        on_error: Callable[[Exception, str], None]) -> str:
 
         try:
             self.messages.append({"role": "user", "content": text})
@@ -70,11 +70,16 @@ class Chat:
                 end_response(content)
                 return content
             else:
+                end_response(self.bad_response)
                 return self.bad_response
-        except APITimeoutError as e:
-            on_timeout(e)
+        except AuthenticationError as e:
+            on_error(e, "Authentication")
+        except (APITimeoutError, TimeoutError) as e:
+            on_error(e, "Timeout")
+        except NotFoundError as e:
+            on_error(e, "EndPointNotFound")
         except Exception as e:
-            on_error(e)
+            on_error(e, "Exception")
         
 # OpenAI チャットクラス
 class ChatOpenAI(Chat):
@@ -83,7 +88,7 @@ class ChatOpenAI(Chat):
         if api_key is None:
             raise ValueError("環境変数 OPENAI_API_KEY が設定されていません。")
 
-        client = OpenAI(timeout=10)
+        client = OpenAI(timeout=httpx.Timeout(15.0, connect=5.0))
         super().__init__(
             client = client,
             model = model,
@@ -103,7 +108,7 @@ class ChatAzureOpenAI(Chat):
         if api_key is None:
             raise ValueError("環境変数 AZURE_OPENAI_API_KEY が設定されていません。")
 
-        client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15", timeout=10)
+        client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15", timeout=httpx.Timeout(15.0, connect=5.0))
         super().__init__(
             client = client,
             model = model,

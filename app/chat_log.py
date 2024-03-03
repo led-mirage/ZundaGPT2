@@ -10,13 +10,13 @@ import json
 import os
 from datetime import datetime
 
-from settings import Settings
+from app_settings import Settings
 from chat import Chat
 from chat import ChatFactory
 
 # チャットログクラス
 class ChatLog:
-    FILE_VER = 2
+    FILE_VER = 3
     LOG_FOLDER = "log"
 
     # ログをファイルに保存する
@@ -34,6 +34,7 @@ class ChatLog:
         data["logid"] = chat.chat_start_time.strftime("%Y%m%d%H%M%S")
         data["chat_start_time"] = chat.chat_start_time.isoformat()
         data["chat_update_time"] = chat.chat_update_time.isoformat()
+        data["settings"] = settings.settings
         data["user"] = settings.user
         data["assistant"] = settings.assistant
         data["chat"] = settings.chat
@@ -59,11 +60,18 @@ class ChatLog:
         with open(path, "r", encoding="utf-8") as file:
             data = json.load(file)
 
-            if data["file_ver"] < ChatLog.FILE_VER:
+            if data["file_ver"] == 1:
                 return (None, None)
+            
+            if data["file_ver"] == 2:
+                data["settings"] = {
+                    "display_name": "ZundaGPT",
+                    "description": ""
+                }
 
             settings = Settings()
             settings.load()
+            settings.settings = data["settings"]
             settings.user = data["user"]
             settings.assistant = data["assistant"]
             settings.chat = data["chat"]
@@ -121,12 +129,14 @@ class ChatLog:
         return files_sorted
     
     # ログファイルが存在するかどうかを調べる
+    @staticmethod
     def exists_log_file(chat: Chat) -> bool:
         logfile = ChatLog.get_logfile_name(chat)
         path = os.path.join(ChatLog.LOG_FOLDER, logfile)
         return os.path.exists(path)
     
     # ログファイルを削除する
+    @staticmethod
     def delete_log_file(chat: Chat):
         logfile = ChatLog.get_logfile_name(chat)
         path = os.path.join(ChatLog.LOG_FOLDER, logfile)
