@@ -11,6 +11,7 @@ import httpx
 from datetime import datetime
 from typing import Callable
 
+from httpx import ReadTimeout
 from openai import OpenAI
 from openai import AzureOpenAI
 from openai import APITimeoutError, AuthenticationError, NotFoundError
@@ -74,7 +75,7 @@ class Chat:
                 return self.bad_response
         except AuthenticationError as e:
             on_error(e, "Authentication")
-        except (APITimeoutError, TimeoutError) as e:
+        except (APITimeoutError, ReadTimeout, TimeoutError) as e:
             on_error(e, "Timeout")
         except NotFoundError as e:
             on_error(e, "EndPointNotFound")
@@ -88,7 +89,7 @@ class ChatOpenAI(Chat):
         if api_key is None:
             raise ValueError("環境変数 OPENAI_API_KEY が設定されていません。")
 
-        client = OpenAI(timeout=httpx.Timeout(15.0, connect=5.0))
+        client = OpenAI(timeout=httpx.Timeout(20.0, connect=5.0))
         super().__init__(
             client = client,
             model = model,
@@ -108,7 +109,7 @@ class ChatAzureOpenAI(Chat):
         if api_key is None:
             raise ValueError("環境変数 AZURE_OPENAI_API_KEY が設定されていません。")
 
-        client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15", timeout=httpx.Timeout(15.0, connect=5.0))
+        client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15", timeout=httpx.Timeout(20.0, connect=5.0))
         super().__init__(
             client = client,
             model = model,

@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>ZundaGPT2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/stackoverflow-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <script>
 MathJax = {
@@ -108,7 +111,7 @@ async function submit() {
     if (text === "") return;
 
     // HTMLにメッセージを追加
-    addChatMessage(g_userName, g_userColor, text)
+    addChatMessage("user", g_userName, g_userColor, text)
     scrollToBottom();
     document.getElementById("message").value = "";
 
@@ -140,6 +143,12 @@ function escapeHtml(text) {
         .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;");
 }
 
+function escapeHtml2(text) {
+    return text
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+}
+
 // スピーカーのON/OFF
 async function toggleSpeaker() {
     g_speakerOn = !g_speakerOn;
@@ -165,7 +174,7 @@ function setSpeakerStateText() {
 }
 
 // チャットメッセージブロックを追加する
-function addChatMessage(speakerName, color, messageText) {
+function addChatMessage(role, speakerName, color, messageText) {
     // チャットメッセージコンテナを取得
     const chatMessagesContainer = document.getElementById('chat-messages');
 
@@ -182,7 +191,16 @@ function addChatMessage(speakerName, color, messageText) {
     // メッセージテキストを表示する要素を作成
     const messageElement = document.createElement('div');
     messageElement.classList.add('message-text');
-    messageElement.innerHTML = escapeHtml(messageText);
+    if (role === "assistant") {
+        messageElement.innerHTML = marked.parse(messageText);
+        messageElement.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
+        addTargetBlank(messageElement);
+    }
+    else {
+        messageElement.innerHTML = escapeHtml(messageText);
+    }
 
     // チャットメッセージ要素に発言者名とメッセージテキストの要素を追加
     chatMessageElement.appendChild(speakerElement);
@@ -190,6 +208,17 @@ function addChatMessage(speakerName, color, messageText) {
 
     // 作成したチャットメッセージをコンテナに追加
     chatMessagesContainer.appendChild(chatMessageElement);
+}
+
+// 要素中の<a>タグにtarget="_blank"を設定する
+function addTargetBlank(targetElement) {
+    const links = targetElement.getElementsByTagName('a');
+    for (let i = 0; i < links.length; i++) {
+        if (!links[i].hasAttribute('target')) {
+            links[i].setAttribute('target', '_blank');
+            links[i].setAttribute('title', links[i].getAttribute('href'));
+        }
+    }
 }
 
 // 新規チャット開始
@@ -271,7 +300,7 @@ function setChatInfo(displayName, userName, userColor, assistantName, assistantC
 // Pythonから呼び出される関数
 // AIからのチャット応答を開始する
 function startResponse() {
-    addChatMessage(g_assistantName, g_assistantColor, "");
+    addChatMessage("assistant", g_assistantName, g_assistantColor, "");
     scrollToBottom();
 
     const nameTextElements = document.querySelectorAll('#chat-messages .speaker-name');
@@ -294,18 +323,29 @@ function addChunk(text) {
 
 // Pythonから呼び出される関数
 // センテンスの読み上げが終わったときに呼び出される
-function parsedSentence() {
+function parsedSentence(sentence) {
     MathJax.typesetPromise();
 }
 
 // Pythonから呼び出される関数
 // AIからのチャット応答が終了した
-function endResponse() {
+function endResponse(content) {
     const nameTextElements = document.querySelectorAll('#chat-messages .speaker-name');
     const lastNameTextElements = nameTextElements[nameTextElements.length - 1];
     if(lastNameTextElements) {
         lastNameTextElements.classList.remove('flowing-text');
     }
+
+    const messageTextElements = document.querySelectorAll('#chat-messages .message-text');
+    const lastMessageTextElement = messageTextElements[messageTextElements.length - 1];
+    if(lastMessageTextElement) {
+        lastMessageTextElement.innerHTML = marked.parse(content);
+        lastMessageTextElement.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightElement(block);
+        });
+        addTargetBlank(lastMessageTextElement);
+    }
+
     MathJax.typesetPromise();
 }
 
@@ -314,6 +354,23 @@ function endResponse() {
 function handleChatException(message) {
     alert(message)
     endResponse()
+}
+
+// Pythonから呼び出される関数
+// チャット応答で例外が発生した
+async function handleChatTimeoutException(message) {
+    if (confirm(`${message}\nリトライしますか？`)) {
+        // Python側に通知
+        try {
+            await pywebview.api.retry_send_message_to_chatgpt();
+        }
+        catch (error) {
+            console.error("Error: " + error)
+        }
+    }
+    else {
+        endResponse()
+    }
 }
 
 // Pythonから呼び出される関数
@@ -332,7 +389,7 @@ function setChatMessages(messages) {
             speakerName = g_userName;
             speakerColor = g_userColor;
         }
-        addChatMessage(speakerName, speakerColor, message.content);
+        addChatMessage(message.role, speakerName, speakerColor, message.content);
     }
     MathJax.typesetPromise();
     scrollToBottom();

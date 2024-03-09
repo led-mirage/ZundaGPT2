@@ -68,6 +68,18 @@ body, html {
     line-height: 1.75rem;
     font-size: 1rem;
 }
+.message-text p {
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+}
+.message-text pre code {
+    line-height: 125%;
+}
+.message-text code:not(pre > code) {
+    background-color: lightblue;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
 .chat-input {
     width: 100%;
     display: flex;

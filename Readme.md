@@ -178,6 +178,16 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 ホームページ： https://github.com/mathjax/MathJax  
 ライセンス：Apache License 2.0
 
+### 🔖 Highlight.js 11.9.0
+
+ホームページ：https://github.com/highlightjs/highlight.js
+ライセンス：BSD-3-Clause license
+
+### 🔖 Marked 12.0.0
+
+ホームページ：https://github.com/markedjs/marked
+ライセンス：MIT license
+
 ## ライセンス
 
 © 2024 led-mirage
@@ -221,3 +231,8 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 - スピーカーのON/OFFを切り替えれるように変更
 - ウィンドウサイズの初期値を設定ファイルで指定できるように変更
 - その他、バグ修正、微調整など
+
+### 0.5.0 (未定)
+
+- マークダウン形式のテキストをHTMLに変換するように変更
+- チャットリクエストがタイムアウトした際、リトライするかユーザーに選択してもらうように修正

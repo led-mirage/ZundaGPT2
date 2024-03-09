@@ -20,7 +20,7 @@ from character import CharacterAIVoice
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.4.0"
+APP_VERSION = "0.5.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -34,6 +34,7 @@ class Application:
         self.user_character = None
         self.assistant_character = None
         self.window = None
+        self.last_send_message = None
     
     # 開始する
     def start(self):
@@ -193,8 +194,18 @@ class Application:
         if self.user_character is not None and self.app_config.system["speaker_on"]:
             self.user_character.talk(text)
         self.window.evaluate_js(f"startResponse()")
+        self.last_send_message = text
         self.chat.send_message(
             text,
+            self.on_recieve_chunk,
+            self.on_recieve_sentence,
+            self.on_end_response,
+            self.on_chat_error)
+
+    # メッセージ再送信イベントハンドラ（UI）
+    def retry_send_message_to_chatgpt(self):
+        self.chat.send_message(
+            self.last_send_message,
             self.on_recieve_chunk,
             self.on_recieve_sentence,
             self.on_end_response,
@@ -216,9 +227,9 @@ class Application:
         self.window.evaluate_js(f"parsedSentence('{self.escape_js_string(sentence)}')")
     
     # レスポンス受信完了イベントハンドラ（Chat）
-    def on_end_response(self, response):
+    def on_end_response(self, content):
         ChatLog.save(self.settings, self.chat)
-        self.window.evaluate_js(f"endResponse()")
+        self.window.evaluate_js(f"endResponse('{self.escape_js_string(content)}')")
 
     # チャット例外イベントハンドラ（Chat）
     def on_chat_error(self, e: Exception, cause: str):
@@ -226,15 +237,17 @@ class Application:
         print(class_name)
         print(e)
 
-        if cause == "Authentication":
-            message = "APIの認証に失敗したのだ"
-        elif cause == "EndPointNotFound":
-            message = "APIのエンドポイントが間違っているのだ"
-        elif cause == "Timeout":
+        if cause == "Timeout":
             message = "APIの呼び出しがタイムアウトしたのだ"
+            self.window.evaluate_js(f"handleChatTimeoutException('{message}')")
         else:
-            message = f"なんかわからないエラーが発生したのだ（{class_name}）"
-        self.window.evaluate_js(f"handleChatException('{message}')")
+            if cause == "Authentication":
+                message = "APIの認証に失敗したのだ"
+            elif cause == "EndPointNotFound":
+                message = "APIのエンドポイントが間違っているのだ"
+            else:
+                message = f"なんかわからないエラーが発生したのだ（{class_name}）"
+            self.window.evaluate_js(f"handleChatException('{message}')")
 
     # 文字をエスケープする
     def escape_js_string(self, s):
