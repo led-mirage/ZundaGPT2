@@ -4,6 +4,16 @@ Copyright (c) 2024 led-mirage
 
 ## 更新情報
 
+### 🌟 0.6.0
+
+その１
+
+https://github.com/led-mirage/ZundaGPT2/assets/139528700/67fe1176-4db7-4375-9fb9-ba4f789ba24c
+
+その２
+
+https://github.com/led-mirage/ZundaGPT2/assets/139528700/bd78af1b-c17a-4b88-bd3d-9ae32225208d
+
 ### 🌟 0.5.0
 
 その１
