@@ -20,7 +20,7 @@ from character import CharacterAIVoice
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.5.1"
+APP_VERSION = "0.6.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -215,6 +215,11 @@ class Application:
     def toggle_speaker(self):
         self.app_config.system["speaker_on"] = not self.app_config.system["speaker_on"]
         self.app_config.save()
+
+    # メッセージ削除イベントハンドラ（UI）
+    def trancate_messages(self, index):
+        self.chat.truncate_messages(index)
+        ChatLog.save(self.settings, self.chat)
 
     # チャンク受信イベントハンドラ（Chat）
     def on_recieve_chunk(self, chunk):
