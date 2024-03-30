@@ -26,7 +26,7 @@ https://github.com/led-mirage/ZundaGPT2/assets/139528700/bd78af1b-c17a-4b88-bd3d
 
 - Windows 11 Pro 23H2
 - Python 3.12.0
-- VOICEVOX 0.16.1
+- VOICEVOX 0.18.0
 - A.I.VOICE Editor 1.4.9.0
 - COEIROINK v.2.3.4
 
@@ -72,7 +72,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.6.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.7.0
 
 #### 3. 実行
 
@@ -148,9 +148,9 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（72個中5個のアンチウィルスエンジンで検出 :2024/03/23 v0.6.0 ）。
+（71個中5個のアンチウィルスエンジンで検出 :2024/03/30 v0.7.0）。
 
-<img src="doc/virustotal_0.6.0.png" width="600">
+<img src="doc/virustotal_0.7.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -250,3 +250,8 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 
 - メッセージの削除ボタンを追加
 - PyInstallerの更新（6.4.0を使用）
+
+### 0.7.0 (2024/3/30)
+
+- 再回答ボタンを追加
+- チャットログが１つしかない場合に、そのログを削除できないバグを修正
