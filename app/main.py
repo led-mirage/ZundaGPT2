@@ -20,7 +20,7 @@ from character import CharacterAIVoice
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.8.0"
+APP_VERSION = "0.9.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -68,7 +68,8 @@ class Application:
             self.settings.chat["model"],
             self.settings.chat["instruction"],
             self.settings.chat["bad_response"],
-            self.settings.chat["history_size"]
+            self.settings.chat["history_size"],
+            self.app_config.system["chat_api_timeout"]
         )
 
         self.user_character = self.create_user_character()
