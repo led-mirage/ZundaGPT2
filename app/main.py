@@ -20,7 +20,7 @@ from character import CharacterAIVoice
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.9.0"
+APP_VERSION = "0.10.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス

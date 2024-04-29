@@ -66,7 +66,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.9.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.10.0
 
 #### 3. 実行
 
@@ -142,9 +142,9 @@ OpenAIのAPIキーはあなただけのものなので、人に教えたらダ�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（71個中7個のアンチウィルスエンジンで検出 :2024/04/21 v0.9.0）。
+（72個中6個のアンチウィルスエンジンで検出 :2024/04/29 v0.10.0）。
 
-<img src="doc/virustotal_0.9.0.png" width="600">
+<img src="doc/virustotal_0.10.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -275,3 +275,7 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 - openaiのバージョンを1.12.0から1.23.2に更新
 - ChatAPIのタイムアウト値を設定ファイル（app_config.json）に持つように変更
 - AIの回答中にあるURLが正しくリンク表示にならない問題に対処
+
+### 0.10.0 (2024/4/29)
+
+- Tex形式の行列式が正しく表示されない問題を解消
