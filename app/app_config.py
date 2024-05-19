@@ -17,7 +17,7 @@ from character import CharacterVoicevox
 from character import CharacterAIVoice
 
 class AppConfig:
-    FILE_VER = 2
+    FILE_VER = 3
     FILE_CONFIG = "appConfig.json"
 
     def __init__(self, config_file_path=FILE_CONFIG):
@@ -41,6 +41,12 @@ class AppConfig:
             "coeiroink_path": "",
             "aivoice_path": CharacterAIVoice.DEFAULT_INSTALL_PATH,
         }
+        self.gemini = {
+            "safty_filter_harassment": "BLOCK_MEDIUM_AND_ABOVE",
+            "safty_filter_hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
+            "safty_filter_sexually_explicit": "BLOCK_MEDIUM_AND_ABOVE",
+            "safty_filter_dangerous_content": "BLOCK_MEDIUM_AND_ABOVE",
+        }
 
     # deepcopy
     def __deepcopy__(self, memo):
@@ -49,6 +55,7 @@ class AppConfig:
         new_copy._config_file_path = self._config_file_path
         new_copy.system = copy.deepcopy(self.system, memo)
         new_copy.tts = copy.deepcopy(self.tts, memo)
+        new_copy.gemini = copy.deepcopy(self.gemini, memo)
         return new_copy
 
     # TTSソフトウェアのインストールパスを取得する（ユーティリティ関数）
@@ -73,6 +80,7 @@ class AppConfig:
             config["file_ver"] = AppConfig.FILE_VER
             config["system"] = self.system
             config["tts"] = self.tts
+            config["gemini"] = self.gemini
 
             json.dump(config, file, ensure_ascii=False, indent=4)
 
@@ -89,6 +97,7 @@ class AppConfig:
                 file_ver = data.get("file_ver", 0)
                 self.update_dict(self.system, data.get("system", self.system))
                 self.update_dict(self.tts, data.get("tts", self.tts))
+                self.update_dict(self.gemini, data.get("gemini", self.gemini))
 
         if file_ver < AppConfig.FILE_VER:
             self._save_nolock()

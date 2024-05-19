@@ -3,3 +3,4 @@ requests==2.31.0
 pyaudio==0.2.14
 openai==1.23.2
 pythonnet==3.0.3
+google-generativeai==0.5.4
