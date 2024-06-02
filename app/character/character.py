@@ -6,7 +6,10 @@
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
+import io
+import logging
 import os
+import shutil
 import subprocess
 import time
 
@@ -15,6 +18,10 @@ import clr
 from sound import play_sound
 from voiceapi import VoicevoxAPI
 from voiceapi import CoeiroinkApi
+from gtts import gTTS
+from langdetect import detect
+from pydub import AudioSegment
+import win32com.client
 
 # VOICEVOXキャラクター
 class CharacterVoicevox:
@@ -149,3 +156,71 @@ class CharacterAIVoice:
                 tts_control.Connect()
                 cls._tts_control = tts_control
 
+# Google Text-to-Speechキャラクター
+class CharacterGoogleTTS:
+    # TTSエンジンを利用可能かどうかを調べる
+    def is_available(self):
+        if self.is_ffmpeg_installed():
+            return (True, "Available")
+        else:
+            message = "Google Text-to-Speechを使用するには、あらかじめFFmpegをインストールしておく必要があります\n\n" +\
+                      "FFmpegをインストールしてパスを通しておいてください"
+            return (False, message)
+
+    # 話す
+    def talk(self, text: str):
+        if self.is_available() is False:
+            return
+
+        try:
+            lang = detect(text)
+        except Exception as e:
+            # 言語の自動判定に失敗した場合は発音せずにリターンする
+            logging.debug(f"langdetect:言語自動判別失敗({type(e).__name__}): " + text)
+            return
+
+        tts = gTTS(text=text, lang=lang, lang_check=False)
+        audio_data = io.BytesIO()
+        tts.write_to_fp(audio_data)
+        audio_data.seek(0)
+        wave_data = self.mp3_to_wav(audio_data)
+        play_sound(wave_data)
+
+    # FFmpegがインストールされているかどうかを判定
+    def is_ffmpeg_installed(self):
+        if shutil.which("ffmpeg") is None:
+            return False
+        if shutil.which("ffprobe") is None:
+            return False
+        return True
+
+    # MP3データをWAVデータに変換
+    def mp3_to_wav(self, mp3_stream: io.BytesIO):
+        # MP3データをAudioSegmentにロード
+        audio = AudioSegment.from_file(mp3_stream, format="mp3")
+        
+        # WAVデータをメモリ内のバイナリストリームにエクスポート
+        wav_stream = io.BytesIO()
+        audio.export(wav_stream, format="wav")
+        
+        # WAVのバイナリデータ（bytes）を取得して返却
+        wav_binary = wav_stream.getvalue()
+        return wav_binary
+
+# SAPI5 キャラクター
+class CharacterSAPI5:
+    # コンストラクタ
+    def __init__(self, speaker_id, speed_rate):
+        self.sapi = win32com.client.Dispatch("SAPI.SpVoice")
+        cat  = win32com.client.Dispatch("SAPI.SpObjectTokenCategory")
+        cat.SetID(r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices", False)
+        voices = cat.EnumerateTokens()
+        for voice in voices:
+            if speaker_id in voice.GetAttribute("Name"):
+                self.sapi.Voice = voice
+                self.sapi.Rate = speed_rate
+                break
+
+    # 話す
+    def talk(self, text: str):
+        self.sapi.Speak(text)

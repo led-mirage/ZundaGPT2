@@ -17,10 +17,12 @@ from chat import Chat
 from character import CharacterVoicevox
 from character import CharacterCoeiroink
 from character import CharacterAIVoice
+from character import CharacterGoogleTTS
+from character import CharacterSAPI5
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "0.11.0"
+APP_VERSION = "1.0.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -307,14 +309,29 @@ class Application:
         speed_scale = param["speed_scale"]
         pitch_scale = param["pitch_scale"]
 
+        character = None
         if tts_software == "VOICEVOX":
-            return CharacterVoicevox(speaker_id, speed_scale, pitch_scale, tts_software_path)
+            character = CharacterVoicevox(speaker_id, speed_scale, pitch_scale, tts_software_path)
         elif tts_software == "COEIROINK":
-            return CharacterCoeiroink(speaker_id, speed_scale, pitch_scale, tts_software_path)
+            character = CharacterCoeiroink(speaker_id, speed_scale, pitch_scale, tts_software_path)
         elif tts_software == "AIVOICE":
-            return CharacterAIVoice(speaker_id, tts_software_path)
+            character = CharacterAIVoice(speaker_id, tts_software_path)
+        elif tts_software == "GTTS":
+            character = CharacterGoogleTTS()
+        elif tts_software == "SAPI5":
+            character = CharacterSAPI5(speaker_id, speed_scale)
         else:
-            return None
+            character = None
+
+        if character is not None:
+            if hasattr(character, "is_available"):
+                (available, message) = character.is_available()
+                if not available:
+                    message = message.replace("\n", "\\n")
+                    self._window.evaluate_js(f"handleChatException('{message}')")
+                    character = None
+
+        return character
 
 if __name__ == '__main__':
     app = Application()

@@ -1,6 +1,10 @@
 pywebview==4.4.1
-requests==2.31.0
+requests==2.32.3
 pyaudio==0.2.14
 openai==1.23.2
 pythonnet==3.0.3
 google-generativeai==0.5.4
+gtts==2.5.1
+langdetect==1.0.9
+pydub==0.25.1
+pywin32==306

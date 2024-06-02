@@ -11,9 +11,10 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - OpenAI GPT (Azure OpenAI Serviceも利用可能)
 - Google Gemini
 
-## 最新情報 バージョン 0.11.0
+## 最新情報 バージョン 1.0.0
 
-Google Gemini APIに対応したのだ！
+Google Text-to-Speech(gTTS)に対応したのだ！  
+SAPI5に対応したのだ！
 
 ## スクリーンショット
 
@@ -33,7 +34,7 @@ https://github.com/led-mirage/ZundaGPT2/assets/139528700/106ec571-6c54-4bd3-83da
 
 - Windows 11 Pro 23H2
 - Python 3.12.0
-- VOICEVOX 0.18.0
+- VOICEVOX 0.19.2
 - A.I.VOICE Editor 1.4.9.0
 - COEIROINK v.2.3.4
 
@@ -58,6 +59,8 @@ https://github.com/led-mirage/ZundaGPT2/assets/139528700/106ec571-6c54-4bd3-83da
 - [VOICEVOX](https://voicevox.hiroshiba.jp/  )（無料）
 - [COEIROINK](https://coeiroink.com/)（無料）
 - [A.I.VOICE](https://aivoice.jp/)（有料）
+- Google Text-to-Speech（無料）… FFmpegが必要
+- SAPI5（無料）… インストール不要
 
 用意ができたら、次の実行方法にゴーなのだ。
 
@@ -86,7 +89,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v0.11.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.0.0
 
 #### 3. 実行
 
@@ -166,9 +169,9 @@ OpenAIやGoogle GeminiのAPIキーはあなただけのものなので、人に�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（72個中2個のアンチウィルスエンジンで検出 :2024/05/19 v0.11.0）。
+（74個中3個のアンチウィルスエンジンで検出 :2024/06/02 v1.0.0）。
 
-<img src="doc/virustotal_0.11.0.png" width="600">
+<img src="doc/virustotal_1.0.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -191,6 +194,11 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 ホームページ： https://github.com/google-gemini/generative-ai-python  
 ライセンス：Apache License 2.0
 
+### 🔖 gTTS 2.5.1
+
+ホームページ： https://github.com/pndurette/gTTS  
+ライセンス：MIT License
+
 ### 🔖 requests 2.31.0
 
 ホームページ： https://requests.readthedocs.io/en/latest/  
@@ -205,6 +213,21 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 
 ホームページ：https://github.com/pythonnet/pythonnet  
 ライセンス：MIT License
+
+### 🔖 langdetect 1.0.9
+
+ホームページ：https://github.com/Mimino666/langdetect  
+ライセンス：Apache License 2.0
+
+### 🔖 pydub 0.25.1
+
+ホームページ：https://github.com/jiaaro/pydub  
+ライセンス：MIT License
+
+### 🔖 pywin32 306
+
+ホームページ：https://github.com/mhammond/pywin32  
+ライセンス：Python Software Foundation License (PSF)
 
 ### 🔖 MathJax 3.2.2
 
@@ -312,3 +335,10 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 ### 0.11.0 (2024/5/19)
 
 - Google Gemini APIに対応
+
+### 1.0.0 (2024/6/2)
+
+- Google Text-to-Speechに対応
+- SAPI5に対応
+- requestsのバージョンを2.32.2に更新
+- バージョンを1.x.xに改定
