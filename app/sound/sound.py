@@ -7,6 +7,7 @@
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
 import io
+import time
 import wave
 
 import pyaudio
@@ -29,6 +30,7 @@ def play_sound(wave_data: bytes):
         while data != b'':
             stream.write(data)
             data = wave_file.readframes(1024)
+        time.sleep(0.2)
     finally:
         stream.stop_stream()
         stream.close()

@@ -89,7 +89,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.0.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.0.1
 
 #### 3. 実行
 
@@ -169,9 +169,9 @@ OpenAIやGoogle GeminiのAPIキーはあなただけのものなので、人に�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（74個中3個のアンチウィルスエンジンで検出 :2024/06/02 v1.0.0）。
+（72個中3個のアンチウィルスエンジンで検出 :2024/06/08 v1.0.1）。
 
-<img src="doc/virustotal_1.0.0.png" width="600">
+<img src="doc/virustotal_1.0.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -184,12 +184,12 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 1.23.2
+### 🔖 openai 1.33.0
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-generativeai 0.5.4
+### 🔖 google-generativeai 0.6.0
 
 ホームページ： https://github.com/google-gemini/generative-ai-python  
 ライセンス：Apache License 2.0
@@ -199,7 +199,7 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 ホームページ： https://github.com/pndurette/gTTS  
 ライセンス：MIT License
 
-### 🔖 requests 2.31.0
+### 🔖 requests 2.32.3
 
 ホームページ： https://requests.readthedocs.io/en/latest/  
 ライセンス：Apache License 2.0
@@ -342,3 +342,10 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 - SAPI5に対応
 - requestsのバージョンを2.32.2に更新
 - バージョンを1.x.xに改定
+
+### 1.0.1 (2024/6/8)
+
+- openaiのバージョンを1.33.0に更新
+- google-generativeaiのバージョンを0.6.0に更新
+- requestsのバージョンを2.32.3に更新
+- 再生環境による文末の音声途切れ問題を軽減するため、再生終了後に0.2秒間の待機時間を追加
