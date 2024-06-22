@@ -11,10 +11,9 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - OpenAI GPT (Azure OpenAI Serviceも利用可能)
 - Google Gemini
 
-## 最新情報 バージョン 1.0.0
+## 最新情報 バージョン 1.1.0
 
-Google Text-to-Speech(gTTS)に対応したのだ！  
-SAPI5に対応したのだ！
+印刷機能を追加したのだ！
 
 ## スクリーンショット
 
@@ -35,7 +34,7 @@ https://github.com/led-mirage/ZundaGPT2/assets/139528700/106ec571-6c54-4bd3-83da
 - Windows 11 Pro 23H2
 - Python 3.12.0
 - VOICEVOX 0.19.2
-- A.I.VOICE Editor 1.4.9.0
+- A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
 ## 必要なもの
@@ -89,7 +88,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.0.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.1.0
 
 #### 3. 実行
 
@@ -142,6 +141,21 @@ pip install -r requirements.txt
 python app\main.py
 ```
 
+#### 7. 起動用のバッチファイル（オプション）
+
+以下のような起動用のバッチファイルを用意しておくと便利なのだ。
+
+```bash
+start pythonw app\main.py
+```
+
+Pythonの仮想環境を使用している場合は、以下の例のようにすればOKなのだ。
+
+```bash
+call venv\scripts\activate
+start pythonw app\main.py
+```
+
 ## 注意事項
 
 ### ⚡ OpenAIの利用料金について
@@ -169,9 +183,9 @@ OpenAIやGoogle GeminiのAPIキーはあなただけのものなので、人に�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2024/06/08 v1.0.1）。
+（74個中5個のアンチウィルスエンジンで検出 :2024/06/22 v1.1.0）。
 
-<img src="doc/virustotal_1.0.1.png" width="600">
+<img src="doc/virustotal_1.1.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -349,3 +363,9 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 - google-generativeaiのバージョンを0.6.0に更新
 - requestsのバージョンを2.32.3に更新
 - 再生環境による文末の音声途切れ問題を軽減するため、再生終了後に0.2秒間の待機時間を追加
+
+### 1.1.0 (2024/6/22)
+
+- 印刷機能の追加
+- 画面上部のボタンにツールチップを追加
+- PyInstallerのバージョンを6.8.0に更新
