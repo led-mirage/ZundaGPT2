@@ -1,4 +1,4 @@
-# ZundaGPT2
+# <img src="assets/ZundaGPT2.ico" width="48"> ZundaGPT2
 
 Copyright (c) 2024 led-mirage
 
@@ -11,9 +11,9 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - OpenAI GPT (Azure OpenAI Serviceも利用可能)
 - Google Gemini
 
-## 最新情報 バージョン 1.1.0
+## 最新情報 バージョン 1.2.0
 
-印刷機能を追加したのだ！
+アプリのアイコンを追加したのだ！
 
 ## スクリーンショット
 
@@ -88,7 +88,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.1.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.2.0
 
 #### 3. 実行
 
@@ -183,9 +183,9 @@ OpenAIやGoogle GeminiのAPIキーはあなただけのものなので、人に�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（74個中5個のアンチウィルスエンジンで検出 :2024/06/22 v1.1.0）。
+（74個中5個のアンチウィルスエンジンで検出 :2024/06/23 v1.2.0）。
 
-<img src="doc/virustotal_1.1.0.png" width="600">
+<img src="doc/virustotal_1.2.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -369,3 +369,8 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 - 印刷機能の追加
 - 画面上部のボタンにツールチップを追加
 - PyInstallerのバージョンを6.8.0に更新
+
+### 1.2.0 (2024/6/23)
+
+- アプリケーションアイコンの追加
+- 印刷する場合、codeブロックの中のテキストを右端で折り返すように修正
