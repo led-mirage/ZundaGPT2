@@ -160,7 +160,9 @@ cython_debug/
 #.idea/
 
 # Zunda
+ZundaGPT2.exe
 log/*
+log_original/*
 settings/*
 !settings/settings.json
 起動.bat
