@@ -88,7 +88,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.2.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.2.1
 
 #### 3. 実行
 
@@ -183,9 +183,9 @@ OpenAIやGoogle GeminiのAPIキーはあなただけのものなので、人に�
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
 VirusTotalでのチェック結果は以下の通りなのだ。  
-（74個中5個のアンチウィルスエンジンで検出 :2024/06/23 v1.2.0）。
+（74個中4個のアンチウィルスエンジンで検出 :2024/07/06 v1.2.1）。
 
-<img src="doc/virustotal_1.2.0.png" width="600">
+<img src="doc/virustotal_1.2.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -374,3 +374,8 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 
 - アプリケーションアイコンの追加
 - 印刷する場合、codeブロックの中のテキストを右端で折り返すように修正
+
+### 1.2.1 (2024/7/06)
+
+- 回答表示処理中にブラウザでエラー（OUT OF MEMORYなど）が発生する場合がある問題に対処  
+  parsedSentenceメソッド中のMathJax.typesetPromise()をコメントアウト

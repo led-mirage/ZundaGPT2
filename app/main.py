@@ -22,7 +22,7 @@ from character import CharacterSAPI5
 from chat_log import ChatLog
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.2.0"
+APP_VERSION = "1.2.1"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
