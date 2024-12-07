@@ -6,6 +6,7 @@
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
+import sys
 import copy
 
 import webview
@@ -21,8 +22,11 @@ from character import CharacterGoogleTTS
 from character import CharacterSAPI5
 from chat_log import ChatLog
 
+if getattr(sys, "frozen", False):
+    import pyi_splash
+
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.2.1"
+APP_VERSION = "1.3.0"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -334,5 +338,8 @@ class Application:
         return character
 
 if __name__ == '__main__':
+    if getattr(sys, "frozen", False):
+        pyi_splash.close()
+
     app = Application()
     app.start()
