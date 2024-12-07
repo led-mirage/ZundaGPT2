@@ -11,11 +11,13 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - OpenAI GPT (Azure OpenAI Serviceも利用可能)
 - Google Gemini
 
-## 最新情報 バージョン 1.2.0
+## 最新情報 バージョン 1.3.0
 
-アプリのアイコンを追加したのだ！
+起動時に表示されるスプラッシュ画面を追加したのだ！
 
 ## スクリーンショット
+
+<img src="assets/ZundaGPT2_splash.png" width="200" />
 
 v0.11.0 紹介動画
 
@@ -88,11 +90,13 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.2.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.3.0
 
 #### 3. 実行
 
 ZundaGPT2.exeをダブルクリックすればアプリが起動するのだ。
+
+※起動時にスプラッシュ画面を表示したくない人は、`ZundaGPT2.ns.exe`を替わりに使ってほしいのだ。
 
 #### 4. 注意事項
 
@@ -182,10 +186,10 @@ OpenAIやGoogle GeminiのAPIキーはあなただけのものなので、人に�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでのチェック結果は以下の通りなのだ。  
-（74個中4個のアンチウィルスエンジンで検出 :2024/07/06 v1.2.1）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/d447c163085a8b15fb85ddeddae63d9623841885c8f2852730e842a04432d123)は以下の通りなのだ。  
+（71個中5個のアンチウィルスエンジンで検出 :2024/12/07 v1.3.0）。
 
-<img src="doc/virustotal_1.2.1.png" width="600">
+<img src="doc/virustotal_1.3.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -193,17 +197,17 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 
 ## 使用しているライブラリ
 
-### 🔖 pywebview 4.4.1
+### 🔖 pywebview 5.3.2
 
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 1.33.0
+### 🔖 openai 1.57.0
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-generativeai 0.6.0
+### 🔖 google-generativeai 0.8.3
 
 ホームページ： https://github.com/google-gemini/generative-ai-python  
 ライセンス：Apache License 2.0
@@ -379,3 +383,10 @@ VirusTotalでのチェック結果は以下の通りなのだ。
 
 - 回答表示処理中にブラウザでエラー（OUT OF MEMORYなど）が発生する場合がある問題に対処  
   parsedSentenceメソッド中のMathJax.typesetPromise()をコメントアウト
+
+### 1.3.0 (2024/12/07)
+
+- 起動時に表示されるスプラッシュ画面を追加
+- pywebviewのバージョンを5.3.2に更新
+- openaiのバージョンを1.57.0に更新
+- google-generativeaiのバージョンを0.8.3に更新
