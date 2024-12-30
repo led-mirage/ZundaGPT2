@@ -21,12 +21,14 @@ from character import CharacterAIVoice
 from character import CharacterGoogleTTS
 from character import CharacterSAPI5
 from chat_log import ChatLog
+from voiceapi import VoicevoxAPI
+from voiceapi import CoeiroinkApi
 
 if getattr(sys, "frozen", False):
     import pyi_splash # type: ignore
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.4.0"
+APP_VERSION = "1.4.1"
 COPYRIGHT = "Copyright 2024 led-mirage"
 
 # アプリケーションクラス
@@ -46,6 +48,8 @@ class Application:
     def start(self):
         self.app_config = AppConfig()
         self.app_config.load()
+        VoicevoxAPI.server = self.app_config.tts["voicevox_server"]
+        CoeiroinkApi.server = self.app_config.tts["coeiroink_server"]
         width = self.app_config.system["window_width"]
         height = self.app_config.system["window_height"]
 

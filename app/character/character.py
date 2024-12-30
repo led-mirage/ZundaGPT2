@@ -146,7 +146,7 @@ class CharacterAIVoice:
         if os.path.isfile(aivoice_path):
             if CharacterAIVoice._tts_control is None:
                 clr.AddReference(aivoice_path)
-                from AI.Talk.Editor.Api import TtsControl, HostStatus
+                from AI.Talk.Editor.Api import TtsControl, HostStatus # type: ignore
 
                 tts_control = TtsControl()
                 host_name = tts_control.GetAvailableHostNames()[0]
