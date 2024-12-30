@@ -12,7 +12,13 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - Google Gemini
 - Anthropic Claude
 
-## 最新情報 バージョン 1.4.0
+## 最新情報
+
+### バージョン 1.4.1
+
+バグフィックス
+
+### バージョン 1.4.0
 
 Anthropic社のClaudeシリーズに対応したのだ✨
 
@@ -102,7 +108,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.4.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.4.1
 
 #### 3. 実行
 
@@ -202,10 +208,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f21f2f50ee0e0be2fcccc0d6478e8c56c3ca7c3f7093157a36b9834df859ac8f)は以下の通りなのだ。  
-（72個中4個のアンチウィルスエンジンで検出 :2024/12/29 v1.4.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/a34f1bebb53b29f1ba46f2f032b771249c965564e78b7f6e53b8355ae4280c5a)は以下の通りなのだ。  
+（72個中4個のアンチウィルスエンジンで検出 :2024/12/30 v1.4.1）。
 
-<img src="doc/virustotal_1.4.0.png" width="600">
+<img src="doc/virustotal_1.4.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -416,3 +422,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f21f2f5
 
 - Anthropic社のAI、Claudeシリーズに対応
 - チャット内容の表示を改善
+
+### 1.4.1 (2024/12/30)
+
+- appConfig.jsonの`voicevox_server`と`coeiroink_server`がプログラムに反映されないバグを修正
