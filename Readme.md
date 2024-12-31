@@ -40,9 +40,9 @@ https://github.com/led-mirage/ZundaGPT2/assets/139528700/106ec571-6c54-4bd3-83da
 
 ## 動作確認環境
 
-- Windows 11 Pro 23H2
+- Windows 11 Pro 23H2、24H2
 - Python 3.12.0
-- VOICEVOX 0.19.2
+- VOICEVOX 0.22.3
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
@@ -293,6 +293,13 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/a34f1be
 
 ホームページ：https://github.com/julkue/mark.js  
 ライセンス：MIT license
+
+## 資料
+
+- [VOICEVOXキャラクターリスト](doc/voicevox_speaker_list.md)
+- [COEIROINKキャラクターリスト](doc/coeiroink_speaker_list.md)
+- [炬燵で快適！VOICEVOXとZundaGPT2を別のPCで連携する方法](炬燵で快適！VOICEVOXとZundaGPT2を別のPCで連携する方法.md)
+- [炬燵で快適！COEIROINKとZundaGPT2を別のPCで連携する方法](炬燵で快適！COEIROINKとZundaGPT2を別のPCで連携する方法.md)
 
 ## ライセンス
 
