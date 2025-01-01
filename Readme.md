@@ -1,6 +1,6 @@
 # <img src="assets/ZundaGPT2.ico" width="48"> ZundaGPT2
 
-Copyright (c) 2024 led-mirage
+Copyright (c) 2024-2025 led-mirage
 
 ## 概要
 
@@ -14,7 +14,7 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
-### バージョン 1.4.1
+### バージョン 1.4.1 - 1.4.2
 
 バグフィックス
 
@@ -108,7 +108,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.4.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.4.2
 
 #### 3. 実行
 
@@ -208,10 +208,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/a34f1bebb53b29f1ba46f2f032b771249c965564e78b7f6e53b8355ae4280c5a)は以下の通りなのだ。  
-（72個中4個のアンチウィルスエンジンで検出 :2024/12/30 v1.4.1）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/67af87779989913105e53918fab505221439fac524644b3a730d714ee9880478)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/01/01 v1.4.2）。
 
-<img src="doc/virustotal_1.4.1.png" width="600">
+<img src="doc/virustotal_1.4.2.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -426,3 +426,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/a34f1be
 ### 1.4.1 (2024/12/30)
 
 - appConfig.jsonの`voicevox_server`と`coeiroink_server`がプログラムに反映されないバグを修正
+
+### 1.4.2 (2025/01/01)
+
+- コードブロック中にURLがあった場合に、不要な変換がおこなわれてしまう不具合を修正
