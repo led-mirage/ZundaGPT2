@@ -28,7 +28,7 @@ if getattr(sys, "frozen", False):
     import pyi_splash # type: ignore
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.4.2"
+APP_VERSION = "1.4.3-dev"
 COPYRIGHT = "Copyright 2024-2025 led-mirage"
 
 # アプリケーションクラス
@@ -343,6 +343,32 @@ class Application:
                     character = None
 
         return character
+
+    # チャットのリプレイ
+    def replay(self):
+        def process_sentence(sentence):
+            self._window.evaluate_js(f"addReplayMessage('{self.escape_js_string(sentence)}')")
+
+            if message["role"] == "assistant":
+                self.assistant_character.talk(sentence)
+            else:
+                self.user_character.talk(sentence)
+
+        for message in self.chat.messages:
+            self._window.evaluate_js(f"startReplayMessageBlock('{self.escape_js_string(message["role"])}')")
+            sentence = ""
+            for c in message["content"]:
+                sentence += c
+                if sentence.endswith(("。", "\n", "？", "！")):
+                    process_sentence(sentence)
+                    sentence = ""
+            
+            if sentence != "":
+                process_sentence(sentence)
+
+            self._window.evaluate_js(f"endReplayMessageBlock('{self.escape_js_string(message["content"])}')")
+
+        self._window.evaluate_js(f"setChatMessages({self.chat.messages})")
 
 if __name__ == '__main__':
     if getattr(sys, "frozen", False):

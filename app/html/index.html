@@ -99,6 +99,13 @@ document.addEventListener("DOMContentLoaded", function() {
         if ((event.ctrlKey || event.metaKey) && event.keyCode === 70) { // Ctrl + F
             searchText();
         }
+        else if ((event.ctrlKey || event.metaKey) && event.keyCode === 82) { // Ctrl + R
+            let result = confirm("リプレイを開始しますか？");
+            if (result) {
+                document.getElementById("chat-messages").innerHTML = "";
+                pywebview.api.replay();
+            }
+        }
         else if (event.keyCode == 27) { // ESC
             var instance = new Mark(document.body);
             g_searchTextIndex = g_searchTextTotal = 0;
@@ -723,6 +730,49 @@ function showChatRetryButton() {
             button.style.display = "inline";
         }
     });
+}
+
+// Pythonから呼び出される関数
+// リプレイ機能：メッセージブロック開始
+function startReplayMessageBlock(role) {
+    if (role === "assistant") {
+        addChatMessage("replay", g_assistantName, g_assistantColor, "")
+    }
+    else {
+        addChatMessage("replay", g_userName, g_userColor, "")
+    }
+    scrollToBottom();
+}
+
+// Pythonから呼び出される関数
+// リプレイ機能：文章追加
+function addReplayMessage(text) {
+    const messageTextElements = document.querySelectorAll("#chat-messages .message-text");
+    const lastMessageTextElement = messageTextElements[messageTextElements.length - 1];
+    if(lastMessageTextElement) {
+        lastMessageTextElement.innerHTML += escapeHtml(text);
+        scrollToBottom();
+    }
+}
+
+// Pythonから呼び出される関数
+// リプレイ機能：メッセージブロック終了
+function endReplayMessageBlock(content) {
+    const messageTextElements = document.querySelectorAll("#chat-messages .message-text");
+    const lastMessageTextElement = messageTextElements[messageTextElements.length - 1];
+    if(lastMessageTextElement) {
+        let html = convertTextToHtmlWithMarkdown(content);
+        html = escapeTex(html);
+        html = adjustURL(html);
+        html = marked.parse(html);
+        html = unescapeTex(html);
+        lastMessageTextElement.innerHTML = html;
+        lastMessageTextElement.querySelectorAll("pre code").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+        addTargetBlank(lastMessageTextElement);
+    }
+    MathJax.typesetPromise();
 }
 </script>
 
