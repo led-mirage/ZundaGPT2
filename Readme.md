@@ -30,15 +30,9 @@ Anthropic社のClaudeシリーズに対応したのだ✨
 
 <img src="assets/ZundaGPT2_splash.png" width="200" />
 
-v0.11.0 紹介動画
+v1.4.0 - v1.5.0 紹介動画
 
-その１
-
-https://github.com/led-mirage/ZundaGPT2/assets/139528700/68a2f260-d540-4a94-b8ff-623bf8c8d04e
-
-その２
-
-https://github.com/led-mirage/ZundaGPT2/assets/139528700/106ec571-6c54-4bd3-83da-1aafe61580a4
+https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 
 過去のバージョンの紹介動画は[こちら](Readme_note.md)を見て欲しいのだ。
 
