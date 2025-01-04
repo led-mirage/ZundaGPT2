@@ -1,5 +1,5 @@
 {
-    "file_ver": 4,
+    "file_ver": 5,
     "settings": {
         "display_name": "ZundaGPT",
         "description": "既定値",
@@ -9,6 +9,7 @@
     "user": {
         "name": "あなた",
         "name_color": "#007bff",
+        "icon": "chat_icons/user_black.png",
         "tts_software": "VOICEVOX",
         "speaker_id": "13",
         "speed_scale": 1.2,
@@ -17,6 +18,7 @@
     "assistant": {
         "name": "ずんだ",
         "name_color": "#006400",
+        "icon": "chat_icons/zunda_lime.png",
         "tts_software": "VOICEVOX",
         "speaker_id": "3",
         "speed_scale": 1.2,
