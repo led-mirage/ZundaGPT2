@@ -14,6 +14,10 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
+### バージョン 1.5.0 
+
+チャット用のアイコンが表示できるようになったのだ✨
+
 ### バージョン 1.4.3
 
 リプレイ機能（実験的機能）を実装したのだ✨
@@ -208,10 +212,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/266e4968a86e2e841f7b9a1c980f3d22675ff2edb31bc2694d98bdf3462f9646)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/01/02 v1.4.3）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/3bacf7d9f1c679636ecf48693f046aff42ec14e73d989741cca4509787a73a75)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/01/04 v1.5.0）。
 
-<img src="doc/virustotal_1.4.3.png" width="600">
+<img src="doc/virustotal_1.5.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -303,7 +307,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/266e496
 
 ## ライセンス
 
-© 2024 led-mirage
+© 2024-2025 led-mirage
 
 本アプリケーションは [MITライセンス](https://opensource.org/licenses/MIT) の下で公開されているのだ。詳細については、プロジェクトに含まれる LICENSE ファイルを参照して欲しいのだ。
 
@@ -442,3 +446,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/266e496
 
 - リプレイ機能（実験的機能）の実装… Ctrl + R でリプレイ開始
 - Anthropic APIでエラーが発生したときのメッセージを分かりやすくした
+
+### 1.5.0 (2025/01/04)
+
+- チャットアイコンを表示する機能を追加
