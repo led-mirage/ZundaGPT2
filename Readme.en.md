@@ -18,6 +18,8 @@ The available AIs are as follows:
 
 <img src="assets/ZundaGPT2_splash.png" width="200" />
 
+https://github.com/user-attachments/assets/bf280955-9b12-42df-973c-d49c369e6fb5
+
 ## Language Support
 
 Starting from version 1.6.0, ZundaGPT2 supports both English and Japanese, allowing for flexible use depending on your language preference.
