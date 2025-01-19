@@ -2,7 +2,7 @@
 #
 # VOICEキャラクターモジュール
 #
-# Copyright (c) 2024 led-mirage
+# Copyright (c) 2024-2025 led-mirage
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
@@ -22,6 +22,7 @@ from gtts import gTTS
 from langdetect import detect
 from pydub import AudioSegment
 import win32com.client
+from multi_lang import get_text_resource
 
 # VOICEVOXキャラクター
 class CharacterVoicevox:
@@ -163,8 +164,7 @@ class CharacterGoogleTTS:
         if self.is_ffmpeg_installed():
             return (True, "Available")
         else:
-            message = "Google Text-to-Speechを使用するには、あらかじめFFmpegをインストールしておく必要があります\n\n" +\
-                      "FFmpegをインストールしてパスを通しておいてください"
+            message = get_text_resource("ERROR_GOOGLETTS_FFMPEG_NOT_FOUND")
             return (False, message)
 
     # 話す
@@ -176,7 +176,7 @@ class CharacterGoogleTTS:
             lang = detect(text)
         except Exception as e:
             # 言語の自動判定に失敗した場合は発音せずにリターンする
-            logging.debug(f"langdetect:言語自動判別失敗({type(e).__name__}): " + text)
+            logging.debug(f"langdetect: Language auto-detection failed({type(e).__name__}): " + text)
             return
 
         tts = gTTS(text=text, lang=lang, lang_check=False)

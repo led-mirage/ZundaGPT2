@@ -164,6 +164,7 @@ ZundaGPT2.exe
 log/*
 log_original/*
 settings/*
+!settings/settings.en.json
 !settings/settings.json
 !settings/settings_gemini.json
 !settings/settings_claude.json

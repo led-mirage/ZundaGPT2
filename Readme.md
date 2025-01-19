@@ -2,6 +2,8 @@
 
 Copyright (c) 2024-2025 led-mirage
 
+[English](Readme.en.md)
+
 ## 概要
 
 AIとチャットするアプリなのだ。質問と回答を音声で読み上げてくれるのが特徴なのだ。
@@ -13,6 +15,10 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - Anthropic Claude
 
 ## 最新情報
+
+### バージョン 1.6.0
+
+言語サポート機能（英語）を追加したのだ✨
 
 ### バージョン 1.5.0 
 
@@ -44,6 +50,20 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
+## 言語サポート
+
+バージョン1.6.0から表示言語を日本語と英語から選べるようになったのだ。
+
+使用する言語を変更するには`appConfig.json`ファイルの`language`設定を変更すればいいのだ。
+
+```json
+"language": "en"
+```
+
+設定できる値は ja（日本語）と en（英語）なのだ。
+
+また、英語版のキャラクター設定ファイル settings.en.jsonも用意したので、それも使ってみるといいのだ。
+
 ## 必要なもの
 
 このアプリ自体は無料だけど、このアプリを動作させるには以下のいずれかのAPIキーが必要になるのだ。
@@ -72,7 +92,7 @@ APIを利用するにはAnthropic ConsoleのアカウントとAPIの利用登録
 
 このアプリは以下のテキスト読み上げソフトウェアに対応しているのだ。どれか一つでいいからPCにインストールしておく必要があるのだ。
 
-- [VOICEVOX](https://voicevox.hiroshiba.jp/  )（無料）
+- [VOICEVOX](https://voicevox.hiroshiba.jp/)（無料）
 - [COEIROINK](https://coeiroink.com/)（無料）
 - [A.I.VOICE](https://aivoice.jp/)（有料）
 - Google Text-to-Speech（無料）… FFmpegが必要
@@ -106,7 +126,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.5.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.6.0
 
 #### 3. 実行
 
@@ -176,6 +196,16 @@ call venv\scripts\activate
 start pythonw app\main.py
 ```
 
+## キャラクターの設定
+
+画面右上の⚙️ボタンを押すことで、使用するキャラクターを選択することができるのだ。
+
+いくつかのデフォルトの設定がすでにあるけれど、設定ファイルをコピーして自分で編集することで自分好みのキャラクターを作ることができるのだ。
+
+キャラクターの設定ファイル（settings_xxx.json）はsettingsフォルダの中に格納されているから、それをコピーして編集すればOKなのだ。
+
+詳しい設定方法は(こちら)[Readme_detail.md]をみて欲しいのだ。
+
 ## 注意事項
 
 ### ⚡ OpenAIの利用料金について
@@ -206,10 +236,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/3bacf7d9f1c679636ecf48693f046aff42ec14e73d989741cca4509787a73a75)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/01/04 v1.5.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/5fc8ef3ac8f0d4a8f893687a2895772d257c2aa1f825b9bf85663caac2f8f9f1)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/01/19 v1.6.0）。
 
-<img src="doc/virustotal_1.5.0.png" width="600">
+<img src="doc/virustotal_1.6.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -444,3 +474,8 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/3bacf7d
 ### 1.5.0 (2025/01/04)
 
 - チャットアイコンを表示する機能を追加
+
+### 1.6.0 (2025/01/19)
+
+- 言語サポート機能の追加（英語）
+- Fix: index.htmlで使っているscriptタグにSRIハッシュを追加

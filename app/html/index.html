@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>ZundaGPT2</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/stackoverflow-dark.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js" integrity="sha512-tjg8I2d6Fi0OBGz1csmr7RfI4uupYaCfL/RqhVRTS42RMGwfBsjwBGmhzhI+e2dPmyew8cFkoxnVkGvADDLvbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="css/style.css">
 <script>
 MathJax = {
@@ -27,6 +27,7 @@ marked.setOptions(
 );
 </script>
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+<script src="js/textResources.js" defer></script>
 </head>
 <body>
 <div class="chat-container">
@@ -34,13 +35,13 @@ marked.setOptions(
     <span id="settings-name">ZundaGPT</span>
     <nav>
       <ul>
-        <li><button onclick="prevChat()" class="tooltip">prev<span class="tooltiptext">前の会話</span></button></li>
-        <li><button onclick="nextChat()" class="tooltip">next<span class="tooltiptext">次の会話</span></button></li>
-        <li><button onclick="newChat()" class="tooltip">new<span class="tooltiptext">新しい会話</span></button></li>
-        <li><button onclick="deleteChat()" class="emoji tooltip">🗑️<span class="tooltiptext">削除</span></button></li>
-        <li><button onclick="toggleSpeaker()" class="emoji tooltip" id="speaker-button">🔊<span class="tooltiptext">音声</span></button></li>
-        <li><button onclick="window.print()" class="emoji tooltip">🖨️<span class="tooltiptext">印刷</span></button></li>
-        <li><button onclick="settings()" class="emoji tooltip">⚙️<span class="tooltiptext">設定</span></button></li>
+        <li><button id="prev-button" onclick="prevChat()" class="tooltip">prev<span class="tooltiptext">前の会話</span></button></li>
+        <li><button id="next-button" onclick="nextChat()" class="tooltip">next<span class="tooltiptext">次の会話</span></button></li>
+        <li><button id="new-button" onclick="newChat()" class="tooltip">new<span class="tooltiptext">新しい会話</span></button></li>
+        <li><button id="delete-button" onclick="deleteChat()" class="emoji tooltip">🗑️<span class="tooltiptext">削除</span></button></li>
+        <li><button id="speaker-button" onclick="toggleSpeaker()" class="emoji tooltip" id="speaker-button">🔊<span class="tooltiptext">音声</span></button></li>
+        <li><button id="print-button" onclick="window.print()" class="emoji tooltip">🖨️<span class="tooltiptext">印刷</span></button></li>
+        <li><button id="settings-button" onclick="settings()" class="emoji tooltip">⚙️<span class="tooltiptext">設定</span></button></li>
     </ul>
     </nav>
   </div>
@@ -102,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
             searchText();
         }
         else if ((event.ctrlKey || event.metaKey) && event.keyCode === 82) { // Ctrl + R
-            let result = confirm("リプレイを開始しますか？");
+            let result = confirm(getTextResource("replayConfirm"));
             if (result) {
                 document.getElementById("chat-messages").innerHTML = "";
                 pywebview.api.replay();
@@ -171,6 +172,84 @@ window.onfocus = function() {
     document.getElementById("message").blur();
 }
 
+// UIコンポーネントの初期化
+function initUIComponents(language) {
+    setCurrentLanguage(language);
+
+    let button = document.getElementById("submit-button");
+    if (button) {
+        button.textContent = getTextResource("submitButton");
+    }
+
+    button = document.getElementById("prev-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("prevButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("prevButtonTooltip");
+        }
+    }
+
+    button = document.getElementById("next-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("nextButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("nextButtonTooltip");
+        }
+    }
+
+    button = document.getElementById("new-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("newButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("newButtonTooltip");
+        }
+    }
+
+    button = document.getElementById("delete-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("deleteButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("deleteButtonTooltip");
+        }
+    }
+
+    button = document.getElementById("speaker-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("speakerOnButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("speakerOnButtonTooltip");
+        }
+    }
+
+    button = document.getElementById("print-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("printButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("printButtonTooltip");
+        }
+    }
+
+    button = document.getElementById("settings-button");
+    if (button) {
+        button.childNodes[0].nodeValue = getTextResource("settingsButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("settingsButtonTooltip");
+        }
+    }
+
+    let textarea = document.getElementById("message");
+    if (textarea) {
+        textarea.placeholder = getTextResource("messagePlaceholder");
+    }
+}
+
 // 送信ボタン押下時イベントハンドラ
 function submit() {
     const button = document.getElementById("submit-button");
@@ -222,11 +301,11 @@ function setSubmitButtonState(isSending) {
     const button = document.getElementById("submit-button");
     if (button) {
         if (isSending) {
-            button.textContent = "停止";
+            button.textContent = getTextResource("stopButton");
             button.classList.add("submit-button-disabled")
         }
         else {
-            button.textContent = "送信";
+            button.textContent = getTextResource("submitButton");
             button.classList.remove("submit-button-disabled")
         }
     }
@@ -279,10 +358,18 @@ async function toggleSpeaker() {
 function setSpeakerStateText() {
     let button = document.getElementById("speaker-button");
     if (g_speakerOn) {
-        button.innerHTML = '🔊<span class="tooltiptext">音声</span>';
+        button.childNodes[0].nodeValue = getTextResource("speakerOnButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("speakerOnButtonTooltip");
+        }
     }
     else {
-        button.innerHTML = '🔇<span class="tooltiptext">音声</span>';
+        button.childNodes[0].nodeValue = getTextResource("speakerOffButton");
+        const tooltip = button.querySelector('.tooltiptext');
+        if (tooltip) {
+            tooltip.textContent = getTextResource("speakerOffButtonTooltip");
+        }
     }
 }
 
@@ -509,7 +596,7 @@ async function deleteChat() {
     const messageTextElements = document.querySelectorAll("#chat-messages .message-text");
     if (messageTextElements.length === 0) return;
 
-    if (!confirm("本当に削除しますか？")) return;
+    if (!confirm(getTextResource("deleteConfirm"))) return;
 
     try {
         await pywebview.api.delete_current_chat();
@@ -531,7 +618,7 @@ async function settings() {
 
 // テキストを検索する
 function searchText() {
-    const searchText = prompt("検索する文字列を入力してください", "");
+    const searchText = prompt(getTextResource("searchPrompt"), "");
     if (searchText) {
         g_searchTextIndex = 0;
         index = 0;
@@ -570,7 +657,7 @@ function highlightSearchResult(delay=0) {
 
 // メッセージの削除ボタンが押された
 async function deleteChatMessage(event) {
-    if (!confirm("以降のメッセージを削除しますか？")) return;
+    if (!confirm(getTextResource("deleteFromHereConfirm"))) return;
 
     hideChatRetryButton();
 
@@ -702,7 +789,7 @@ function handleChatException(message) {
 // Pythonから呼び出される関数
 // チャット応答で例外が発生した
 async function handleChatTimeoutException(message) {
-    if (confirm(`${message}\nリトライしますか？`)) {
+    if (confirm(`${message}\n` + getTextResource("retryConfirm"))) {
         const messageTextElements = document.querySelectorAll("#chat-messages .message-text");
         const lastMessageTextElement = messageTextElements[messageTextElements.length - 1];
         if (lastMessageTextElement) {
