@@ -1,8 +1,8 @@
 # ZundaGPT2
 #
-# メイン
+# アプリケーション設定
 #
-# Copyright (c) 2024 led-mirage
+# Copyright (c) 2024-2025 led-mirage
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
@@ -17,7 +17,7 @@ from character import CharacterVoicevox
 from character import CharacterAIVoice
 
 class AppConfig:
-    FILE_VER = 3
+    FILE_VER = 4
     FILE_CONFIG = "appConfig.json"
 
     def __init__(self, config_file_path=FILE_CONFIG):
@@ -32,7 +32,8 @@ class AppConfig:
             "speaker_on": True,
             "window_width": 600,
             "window_height": 800,
-            "chat_api_timeout": 30
+            "chat_api_timeout": 30,
+            "language": "ja"
         }
         self.tts = {
             "voicevox_server": VoicevoxAPI.DEFAULT_SERVER,
