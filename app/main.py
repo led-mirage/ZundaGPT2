@@ -30,7 +30,7 @@ if getattr(sys, "frozen", False):
     import pyi_splash # type: ignore
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.6.0"
+APP_VERSION = "1.6.2"
 COPYRIGHT = "Copyright 2024-2025 led-mirage"
 
 # アプリケーションクラス
@@ -124,8 +124,25 @@ class Application:
         speaker_on = self.app_config.system["speaker_on"]
         welcome_title = self.settings.settings.get("welcome_title", "")
         welcome_message = self.settings.settings.get("welcome_message", "")
+        ai_agent_available = "true" if self.chat.is_ai_agent_available() else "false"
+        ai_agent_creation_error = self.chat.client_creation_error
+
         self._window.evaluate_js(
-            f"setChatInfo('{display_name}', '{user_name}', '{user_color}', '{user_icon}', '{assistant_name}', '{assistant_color}', '{assistant_icon}', {str(speaker_on).lower()}, '{welcome_title}', '{welcome_message}')")
+            f"setChatInfo("
+            f"'{display_name}', "
+            f"'{user_name}', "
+            f"'{user_color}', "
+            f"'{user_icon}', "
+            f"'{assistant_name}', "
+            f"'{assistant_color}', "
+            f"'{assistant_icon}', "
+            f"{str(speaker_on).lower()}, "
+            f"'{welcome_title}', "
+            f"'{welcome_message}', "
+            f"{ai_agent_available}, "
+            f"'{ai_agent_creation_error}'"
+            f")"
+        )
 
     # ひとつ前のチャットを表示して続ける
     def prev_chat(self):

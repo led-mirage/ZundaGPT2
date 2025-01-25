@@ -126,7 +126,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.6.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.6.2
 
 #### 3. 実行
 
@@ -236,10 +236,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/5fc8ef3ac8f0d4a8f893687a2895772d257c2aa1f825b9bf85663caac2f8f9f1)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/01/19 v1.6.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/19217dda7bc752833dbdd031533db43bf120d08d717eb08ffecf08869c06b882)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/01/25 v1.6.2）。
 
-<img src="doc/virustotal_1.6.0.png" width="600">
+<img src="doc/virustotal_1.6.2.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -479,3 +479,8 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/5fc8ef3
 
 - 言語サポート機能の追加（英語）
 - Fix: index.htmlで使っているscriptタグにSRIハッシュを追加
+
+### 1.6.2 (2025/01/25)
+
+- Fix: 環境変数がセットされていないときのエラー処理を変更
+- ZundaGPT2Liteに合わせるために、バージョン1.6.1は欠番
