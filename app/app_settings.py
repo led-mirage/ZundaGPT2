@@ -1,6 +1,6 @@
 # ZundaGPT2
 #
-# メイン
+# チャット設定クラス
 #
 # Copyright (c) 2024-2025 led-mirage
 # このソースコードは MITライセンス の下でライセンスされています。
@@ -116,6 +116,10 @@ class Settings:
         for key in target.keys():
             if key in src:
                 target[key] = src[key]
+
+    # 設定ファイルのパスを取得する
+    def get_path(self):
+        return self._settings_file_path
 
     @classmethod
     def get_settings_files(cls):
