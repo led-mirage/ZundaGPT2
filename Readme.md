@@ -16,6 +16,10 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
+### バージョン 1.8.0
+
+コードブロックにコピーボタンをつけて、簡単にクリップボードにコピーできるようにしたのだ✨
+
 ### バージョン 1.7.0
 
 設定画面からチャット設定ファイルを開けるようにしたのだ✨
@@ -23,10 +27,6 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 ### バージョン 1.6.0
 
 言語サポート機能（英語）を追加したのだ✨
-
-### バージョン 1.5.0 
-
-チャット用のアイコンが表示できるようになったのだ✨
 
 ## スクリーンショット
 
@@ -122,7 +122,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.7.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.8.0
 
 #### 3. 実行
 
@@ -232,10 +232,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/ebefdb83f90dbb04aeb8e143d6a88066695462da6b297dbb3ed8be455b7b6bad)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/01/26 v1.7.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/67e6c97bbebd6adf4db7eecffd8931cf89e92e7397b37d2486909f1756eb71a3)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/02/02 v1.8.0）。
 
-<img src="doc/virustotal_1.7.0.png" width="600">
+<img src="doc/virustotal_1.8.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -318,6 +318,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/ebefdb8
 ホームページ：https://github.com/julkue/mark.js  
 ライセンス：MIT license
 
+### 🔖 Font Awesome Free 6.7.2
+
+ホームページ：https://fontawesome.com/
+ライセンス：Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+
 ## 資料
 
 - [VOICEVOXキャラクターリスト](doc/voicevox_speaker_list.md)
@@ -332,6 +337,10 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/ebefdb8
 本アプリケーションは [MITライセンス](https://opensource.org/licenses/MIT) の下で公開されているのだ。詳細については、プロジェクトに含まれる LICENSE ファイルを参照して欲しいのだ。
 
 ## バージョン履歴
+
+### 1.8.0 (2025/02/02)
+
+- コードブロックにクリップボードにコピーするボタンを追加
 
 ### 1.7.0 (2025/01/26)
 
