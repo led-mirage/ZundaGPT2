@@ -206,7 +206,7 @@ footer {
     position: absolute;
     z-index: 1;
     top: 150%;
-    left: 25%;
+    right: 0;
     transform: translateY(-50%);
     white-space: nowrap;
     opacity: 0; /* 初期状態で透明にする */

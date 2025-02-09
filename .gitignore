@@ -165,6 +165,8 @@ log/*
 log_original/*
 settings/*
 !settings/settings.en.json
+!settings/settings.es.json
+!settings/settings.fi.json
 !settings/settings.json
 !settings/settings_gemini.json
 !settings/settings_claude.json
