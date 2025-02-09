@@ -2,16 +2,16 @@
     "file_ver": 5,
     "settings": {
         "display_name": "ZundaGPT",
-        "description": "Default Settings",
-        "welcome_title": "Welcome",
-        "welcome_message": "Feel free to ask me anything!"
+        "description": "Configuración predeterminada",
+        "welcome_title": "Bienvenido",
+        "welcome_message": "¡Pregúntame lo que quieras!"
     },
     "user": {
-        "name": "You",
+        "name": "Tú",
         "name_color": "#007bff",
         "icon": "chat_icons/user_black.png",
         "tts_software": "SAPI5",
-        "speaker_id": "David",
+        "speaker_id": "Pablo",
         "speed_scale": 1.2,
         "pitch_scale": 0.0
     },
@@ -20,15 +20,15 @@
         "name_color": "#006400",
         "icon": "chat_icons/zunda_sky.png",
         "tts_software": "SAPI5",
-        "speaker_id": "Zira",
+        "speaker_id": "Helena",
         "speed_scale": 1.2,
         "pitch_scale": 0.0
     },
     "chat": {
         "api": "OpenAI",
         "model": "gpt-4o-mini",
-        "instruction": "Your name is Zunda, a 20-year-old female. You have a kind and serious personality, and you're good at programming. You engage in fast-paced, snappy conversations.",
-        "bad_response": "I'm sorry, I can't answer that question.",
+        "instruction": "Tu nombre es Zunda, una mujer de 20 años. Tienes una personalidad amable y seria, y eres buena en programación. Te involucras en conversaciones rápidas y dinámicas.",
+        "bad_response": "Lo siento, no puedo responder a esa pregunta.",
         "history_size": 10
     }
 }

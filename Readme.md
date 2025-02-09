@@ -16,6 +16,12 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
+### バージョン 1.10.0
+
+- ファイル横断検索機能を実装したのだ✨
+- デザインを一部変更したのだ✨
+- フィンランド語とスペイン語に対応したのだ✨
+
 ### バージョン 1.9.0
 
 メッセージをコピーするボタンとコンテキストメニューを追加したのだ✨
@@ -24,13 +30,11 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 コードブロックにコピーボタンをつけて、簡単にクリップボードにコピーできるようにしたのだ✨
 
-### バージョン 1.7.0
-
-設定画面からチャット設定ファイルを開けるようにしたのだ✨
-
 ## スクリーンショット
 
 <img src="assets/ZundaGPT2_splash.png" width="200" />
+
+<img src="doc/screenshot_1.10.0.png" width="600" />
 
 v1.4.0 - v1.5.0 紹介動画
 
@@ -48,17 +52,20 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 
 ## 言語サポート
 
-バージョン1.6.0から表示言語を日本語と英語から選べるようになったのだ。
-
 使用する言語を変更するには`appConfig.json`ファイルの`language`設定を変更すればいいのだ。
 
 ```json
 "language": "en"
 ```
 
-設定できる値は ja（日本語）と en（英語）なのだ。
+設定できる値は以下の通りなのだ。
 
-また、英語版のキャラクター設定ファイル settings.en.jsonも用意したので、それも使ってみるといいのだ。
+| 設定値 | 言語 | キャラクター設定ファイル | 実装バージョン |
+|-|-|-|-|
+| ja | 日本語 | settings.json | 1.6.0 |
+| en | 英語 | settings.en.json | 1.6.0 |
+| fi | フィンランド語 | settings.fi.json | 1.10.0 |
+| es | スペイン語 | settings.es.json | 1.10.0 |
 
 ## 必要なもの
 
@@ -122,7 +129,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.9.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.10.0
 
 #### 3. 実行
 
@@ -232,10 +239,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/9d9b31385c2fb53037155bebc61859686650355c84af77b8f27e0cc8afeff97f)は以下の通りなのだ。  
-（71個中3個のアンチウィルスエンジンで検出 :2025/02/06 v1.9.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/99c4982f206685a14b60be57f95e881877aef3ea08b1e4203fb7e9fb7138c164)は以下の通りなのだ。  
+（71個中3個のアンチウィルスエンジンで検出 :2025/02/09 v1.10.0）。
 
-<img src="doc/virustotal_1.9.0.png" width="600">
+<img src="doc/virustotal_1.10.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -320,7 +327,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/9d9b313
 
 ### 🔖 Font Awesome Free 6.7.2
 
-ホームページ：https://fontawesome.com/
+ホームページ：https://fontawesome.com/  
 ライセンス：Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 
 ## 資料
@@ -337,6 +344,12 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/9d9b313
 本アプリケーションは [MITライセンス](https://opensource.org/licenses/MIT) の下で公開されているのだ。詳細については、プロジェクトに含まれる LICENSE ファイルを参照して欲しいのだ。
 
 ## バージョン履歴
+
+### 1.10.0 (2025/02/09)
+
+- ファイル横断検索機能の実装
+- デザインを一部変更
+- フィンランド語とスペイン語に対応
 
 ### 1.9.0 (2025/02/06)
 
