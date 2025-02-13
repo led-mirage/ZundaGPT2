@@ -19,6 +19,10 @@ MathJax = {
     },
     chtml: {
         displayAlign: "left"
+    },
+    options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        ignoreHtmlClass: "mathjax_ignore",
     }
 };
 marked.setOptions(
@@ -570,6 +574,7 @@ function addChatMessage(role, speakerName, color, messageText) {
         addTargetBlank(messageElement);
     }
     else {
+        messageElement.classList.add("mathjax_ignore");
         messageElement.innerHTML = escapeHtml(messageText);
     }
 
