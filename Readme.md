@@ -130,7 +130,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.11.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.11.1
 
 #### 3. 実行
 
@@ -240,10 +240,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/b9332ce0735a138c8d8cb2492954c23dff52ace55a887248699b289d79a4a542)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/02/11 v1.11.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/90e8abc34cb760d4167c788d15d5f39ba5eeec36baf26f623c0293b6885a26d1)は以下の通りなのだ。  
+（71個中3個のアンチウィルスエンジンで検出 :2025/02/13 v1.11.1）。
 
-<img src="doc/virustotal_1.11.0.png" width="600">
+<img src="doc/virustotal_1.11.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -345,6 +345,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/b9332ce
 本アプリケーションは [MITライセンス](https://opensource.org/licenses/MIT) の下で公開されているのだ。詳細については、プロジェクトに含まれる LICENSE ファイルを参照して欲しいのだ。
 
 ## バージョン履歴
+
+### 1.11.1 (2025/02/13)
+
+- Fix: ファイル横断検索画面でのHTMLエンコード抜けの修正
+- Fix: プログラムコード部分や、ユーザーのメッセージ部分はMathJaxで数式に変換しないように修正
 
 ### 1.11.0 (2025/02/11)
 
