@@ -6,6 +6,8 @@
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
+import textwrap
+
 # テキストリソースの定義
 text_resources = {
     # 日本語
@@ -24,6 +26,22 @@ text_resources = {
         "ERROR_API_ERROR_OCCURRED": "APIエラーが発生したのだ",
         "ERROR_UNKNOWN_OCCURED": "なんかわからないエラーが発生したのだ",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Google Text-to-Speechを使用するには、あらかじめFFmpegをインストールしておく必要があります\n\nFFmpegをインストールしてパスを通しておいてください",
+        "SUMMARIZE_PROMPT": textwrap.dedent("""\
+            以下のチャット会話を分かりやすく要約してください。
+
+            【出力形式】
+            - タイトル(h2)：会話の主題を端的に表現
+            - ジャンル(h3)：会話の分類を一言で
+            - 要点（h3）：箇条書き
+            - まとめ（h3）：会話の結論や決定事項を簡潔に
+
+            【制約事項】
+            - マークダウン形式で出力
+            - 重要なキーワードは**強調**
+            - 技術的な用語は`コードスタイル`で表示
+
+            ---
+            """),
     },
     # 英語
     "en": {
@@ -41,6 +59,22 @@ text_resources = {
         "ERROR_API_ERROR_OCCURRED": "An API error occurred.",
         "ERROR_UNKNOWN_OCCURED": "An unknown error has occurred.",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "To use Google Text-to-Speech, you need to install FFmpeg beforehand.\n\nPlease install FFmpeg and ensure that it is added to the system path.",
+        "SUMMARIZE_PROMPT": textwrap.dedent("""\
+            Please summarize the following chat conversation clearly and concisely.
+
+            [Output Format]
+            - Title (h2): Briefly express the topic of the conversation
+            - Genre (h3): Classify the conversation in one word
+            - Key Points (h3): Bullet points
+            - Summary (h3): A concise conclusion or decision point from the conversation
+
+            [Constraints]
+            - Output in Markdown format
+            - Highlight important keywords with **
+            - Display technical terms in `code style`
+
+            ---
+            """),
     },
     # フィンランド語
     "fi": {
@@ -58,6 +92,22 @@ text_resources = {
         "ERROR_API_ERROR_OCCURRED": "API-virhe tapahtui.",
         "ERROR_UNKNOWN_OCCURED": "Tapahtui tuntematon virhe.",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Google Text-to-Speech -toiminnon käyttö edellyttää FFmpeg-asennusta etukäteen.\n\nAsenna FFmpeg ja varmista, että se on lisätty järjestelmäpolkuun.",
+        "SUMMARIZE_PROMPT": textwrap.dedent("""\
+            Tiivistä seuraava keskustelu selkeästi ja ytimekkäästi.
+
+            [Output Format]
+            - Otsikko (h2): Kuvaa keskustelun aihe lyhyesti
+            - Genre (h3): Luokittele keskustelu yhdellä sanalla
+            - Avainkohdat (h3): Luettelomerkit
+            - Yhteenveto (h3): Ytimekäs johtopäätös tai päätöspiste keskustelusta
+
+            [Constraints]
+            - Tulosta Markdown-muodossa
+            - Korosta tärkeitä avainsanoja **
+            - Näytä tekniset termit `koodityylillä`
+
+            ---
+            """),
     },
     # スペイン語語
     "es": {
@@ -74,7 +124,23 @@ text_resources = {
         "ERROR_RATE_LIMIT_REACHED": "Se alcanzó el límite de solicitudes.",
         "ERROR_API_ERROR_OCCURRED": "Ocurrió un error en la API.",
         "ERROR_UNKNOWN_OCCURED": "Ocurrió un error desconocido.",
-        "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Para usar Google Text-to-Speech, necesitas instalar FFmpeg previamente.\n\nPor favor, instala FFmpeg y asegúrate de que se haya agregado a la ruta del sistema."
+        "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Para usar Google Text-to-Speech, necesitas instalar FFmpeg previamente.\n\nPor favor, instala FFmpeg y asegúrate de que se haya agregado a la ruta del sistema.",
+        "SUMMARIZE_PROMPT": textwrap.dedent("""\
+            Por favor, resume la siguiente conversación de chat de manera clara y concisa.
+
+            [Formato de Salida]
+            - Título (h2): Expresa brevemente el tema de la conversación
+            - Género (h3): Clasifica la conversación en una palabra
+            - Puntos Clave (h3): Viñetas
+            - Resumen (h3): Una conclusión o decisión concisa derivada de la conversación
+
+            [Restricciones]
+            - Salida en formato Markdown
+            - Resalta las palabras clave importantes con **
+            - Muestra los términos técnicos en estilo `código`
+
+            ---
+            """),
     }
 }
 
@@ -92,5 +158,9 @@ def set_current_language(language):
         current_language = "en"
 
 # テキストリソースを取得する関数
-def get_text_resource(key):
-    return text_resources.get(current_language, {}).get(key, key)
+def get_text_resource(key, lang=None):
+    language = current_language
+    if lang is not None and lang in text_resources:
+        language = lang
+
+    return text_resources.get(language, {}).get(key, key)
