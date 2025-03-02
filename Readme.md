@@ -345,6 +345,10 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/618b6ae
 
 ## バージョン履歴
 
+### 次回リリース時の修正項目
+
+- モーダルダイアログのCSSのリファクタリング
+
 ### 1.13.0 (2025/02/19)
 
 - OpenAI o1-preview、o1-miniモデルに対応
