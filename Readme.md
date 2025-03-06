@@ -16,6 +16,11 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
+### バージョン 1.14.0
+
+- Claude 3.7 SonnetのExtended Thinkingモードに対応したのだ✨
+  - Extended Thinkingモードを有効にするには、settings.jsonファイルのextended_thinkingプロパティをtrueにするとよいのだよ。
+
 ### バージョン 1.13.0
 
 - OpenAI o1-preview、o1-miniモデルに対応したのだ✨
@@ -24,11 +29,6 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 - チャットを要約する機能を追加したのだ✨
 - チャット全体をクリップボードにコピーする機能を追加したのだ✨
-
-### バージョン 1.11.0
-
-- 設定切替画面で設定ファイルのグルーピングができるようになったのだ✨
-- 設定ファイルが多くなった時に便利なのだ✨
 
 ## スクリーンショット
 
@@ -129,7 +129,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.13.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.14.0
 
 #### 3. 実行
 
@@ -239,10 +239,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/618b6ae66213f0e35370304b849e236029862bf4b66adb87985a843b558d3866)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/02/19 v1.13.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/83bd8304975bc43fed23423cdbc4813c4abe44e74e4f83c7eb8f1c34d0003c07)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/03/06 v1.14.0）。
 
-<img src="doc/virustotal_1.13.0.png" width="600">
+<img src="doc/virustotal_1.14.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -265,7 +265,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/618b6ae
 ホームページ： https://github.com/google-gemini/generative-ai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.42.0
+### 🔖 anthropic 0.49.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -345,8 +345,9 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/618b6ae
 
 ## バージョン履歴
 
-### 次回リリース時の修正項目
+### 1.14.0 (2025/03/06)
 
+- Claude 3.7 Sonnet の Extended Thinking（拡張思考モード）に対応
 - モーダルダイアログのCSSのリファクタリング
 
 ### 1.13.0 (2025/02/19)
