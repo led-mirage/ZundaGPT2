@@ -20,6 +20,8 @@ The available AIs are as follows:
 
 https://github.com/user-attachments/assets/bf280955-9b12-42df-973c-d49c369e6fb5
 
+<div class="page" />
+
 ## Language Support
 
 To change the language, modify the `language` setting in the `appConfig.json` file:
@@ -36,6 +38,7 @@ The following values can be configured:
 | en      | English  | settings.en.json        | 1.6.0                   |
 | fi      | Finnish  | settings.fi.json        | 1.10.0                  |
 | es      | Spanish  | settings.es.json        | 1.10.0                  |
+| de      | German   | settings.de.json        | 1.15.0                  |
 
 ## Tested Environments
 
@@ -44,6 +47,8 @@ The following values can be configured:
 - VOICEVOX 0.22.3
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
+
+<div class="page" />
 
 ## Requirements
 
@@ -78,6 +83,8 @@ This app supports the following text-to-speech software. You need to have at lea
 - SAPI5 (Free) ... No installation required
 
 Once you're ready, move on to the next step for execution.
+
+<div class="page" />
 
 ## Execution Method
 
@@ -116,6 +123,8 @@ If you prefer not to display the splash screen at startup, use ZundaGPT2.ns.exe 
 This executable file (EXE) is created using a library called PyInstaller. Unfortunately, it is often mistakenly flagged as malware or a virus by antivirus software. This issue is widely discussed online, indicating it is a common occurrence, but a fundamental solution has not yet been found.
 
 Rest assured, there are no malicious programs included in this app. However, if you have concerns, please execute it using the "Running with Python" method described below.
+
+<div class="page" />
 
 ### 🛩️ Execution Method ②: Running with Python
 
@@ -158,6 +167,8 @@ To launch the app, execute the following command from the command prompt:
 python app\main.py
 ```
 
+<div class="page" />
+
 #### 7. Create a Batch File for Startup (Optional)
 
 It can be handy to create a startup batch file like the one below:
@@ -172,6 +183,8 @@ If you're using a Python virtual environment, you can set it up like the example
 call venv\scripts\activate
 start pythonw app\main.py
 ```
+
+<div class="page" />
 
 ## Character Settings
 
@@ -199,6 +212,8 @@ As mentioned in this document, there is currently a free tier available for the 
 
 Using the Anthropic API also incurs separate charges (pay-as-you-go). As of December 29, 2024, there seems to be no free tier available. You can use the API by charging any amount you like on your credit card. However, as with other APIs, be cautious of excessive usage.
 
+<div class="page" />
+
 ### ⚡ Importance of API Keys
 
 The API keys for OpenAI, Google Gemini, and Anthropic are for your use only, so don't share them with others. If they leak, they might be used without your permission by malicious parties. If your key is compromised, simply delete the current API key via the OpenAI, Google, or Anthropic portal and create a new one.
@@ -211,6 +226,8 @@ Above all, please pay close attention to your API keys and usage fees.
 
 So far, no particular issues have been found, but bugs are inherently potential issues and can never be entirely eliminated. Additionally, please understand that the copyright holder cannot be held liable for any damages you may incur as a result of these bugs. Use the app with this understanding.
 
+<div class="page" />
+
 ## Libraries Used
 
 ### 🔖 pywebview 5.3.2
@@ -218,17 +235,17 @@ So far, no particular issues have been found, but bugs are inherently potential 
 Homepage： https://github.com/r0x0r/pywebview  
 License：BSD-3-Clause license
 
-### 🔖 openai 1.57.0
+### 🔖 openai 1.76.0
 
 Homepage： https://github.com/openai/openai-python  
 License：Apache License 2.0
 
-### 🔖 google-generativeai 0.8.3
+### 🔖 google-generativeai 0.8.5
 
 Homepage： https://github.com/google-gemini/generative-ai-python  
 License：Apache License 2.0
 
-### 🔖 anthropic 0.42.0
+### 🔖 anthropic 0.50.0
 
 Homepage： https://github.com/anthropics/anthropic-sdk-python  
 License：MIT license
@@ -292,6 +309,8 @@ License：MIT license
 
 Homepage：https://fontawesome.com/
 License：Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+
+<div class="page" />
 
 ## License
 

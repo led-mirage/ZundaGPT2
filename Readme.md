@@ -16,6 +16,13 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
+### バージョン 1.15.0
+ 
+- キャラクター設定ファイル（settings_xxx.json）に以下の項目を追加したのだ✨
+  - **api_key_envvar**: APIキーを格納する環境変数名 
+  - **api_endpoint_envvar**: APIエンドポイントを格納する環境変数名（AzureOpenAI Serviceにのみ影響）
+- ドイツ語に対応したのだ✨
+
 ### バージョン 1.14.0
 
 - Claude 3.7 SonnetのExtended Thinkingモードに対応したのだ✨
@@ -25,10 +32,7 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 - OpenAI o1-preview、o1-miniモデルに対応したのだ✨
 
-### バージョン 1.12.0
-
-- チャットを要約する機能を追加したのだ✨
-- チャット全体をクリップボードにコピーする機能を追加したのだ✨
+<div class="page" />
 
 ## スクリーンショット
 
@@ -50,6 +54,48 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
+<div class="page" />
+
+## 対応AIモデル（2025/04/27現在）
+
+動作確認済みのモデルは以下の通りなのだ。
+
+### OpenAI
+
+- GPT-4.1 （モデル名：gpt-4.1）
+- GPT-4.1 mini （モデル名：gpt-4.1-mini） 無料枠あり
+- GPT-4.1 nano （モデル名：gpt-4.1-nano） 無料枠あり
+- GPT-4o （モデル名：gpt-4o）
+- GPT-4o mini （モデル名：gpt-4.1-mini） 無料枠あり
+- GPT-3.5 Turbo （モデル名：gpt-3.5-turbo）
+- ChatGPT-4o （モデル名：chatgpt-4o-latest）
+- GPT-4o Search Preview （モデル名：gpt-4o-search-preview）
+- GPT-4o mini Search Preview （モデル名：gpt-4o-mini-search-preview） 無料枠あり
+- o4-mini （モデル名：o4-mini）
+- o3-mini （モデル名：o3-mini）
+- o1 （モデル名：o1）
+- o1-mini （モデル名：o1-mini）
+
+### Anthropic Claude
+
+- Claude 3.7 Sonnet （モデル名：claude-3-7-sonnet-latest）
+- Claude 3.7 Sonnet Extended Thinking Mode （モデル名：claude-3-7-sonnet-latest）
+- Claude 3.5 Haiku （モデル名：claude-3-5-haiku-latest）
+- Claude 3.5 Sonnet V2 （モデル名：claude-3-5-sonnet-latest）
+- Claude 3 Opus （モデル名：claude-3-opus-latest）
+
+### Google Gemini
+
+- Gemini 2.5 Flash Preview （モデル名：gemini-2.5-flash-preview-04-17） 無料枠あり
+- Gemini 2.5 Pro Preview （モデル名：gemini-2.5-pro-exp-03-25） 無料枠あり
+- Gemini 2.0 Flash （モデル名：gemini-2.0-flash） 無料枠あり
+- Gemini 2.0 Flash Lite （モデル名：gemini-2.0-flash-lite） 無料枠あり
+- Gemini 1.5 Flash （モデル名：gemini-1.5-flash） 無料枠あり
+- Gemini 1.5 Flash 8B （モデル名：gemini-1.5-flash-8b） 無料枠あり
+- Gemini 1.5 Pro （モデル名：gemini-1.5-pro） 無料枠あり
+
+<div class="page" />
+
 ## 言語サポート
 
 使用する言語を変更するには`appConfig.json`ファイルの`language`設定を変更すればいいのだ。
@@ -66,6 +112,9 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 | en | 英語 | settings.en.json | 1.6.0 |
 | fi | フィンランド語 | settings.fi.json | 1.10.0 |
 | es | スペイン語 | settings.es.json | 1.10.0 |
+| de | ドイツ語 | settings.de.json | 1.15.0 |
+
+<div class="page" />
 
 ## 必要なもの
 
@@ -103,6 +152,8 @@ APIを利用するにはAnthropic ConsoleのアカウントとAPIの利用登録
 
 用意ができたら、次の実行方法にゴーなのだ。
 
+<div class="page" />
+
 ## 実行方法
 
 ### 🛩️ 準備：OSの環境変数を追加
@@ -119,6 +170,8 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 <img src="doc/envvar.png" style="width:300px">
 
+<div class="page" />
+
 ### 🛩️ 実行方法①：実行ファイル（EXEファイル）を使う方法
 
 #### 1. プロジェクト用のフォルダの作成
@@ -129,7 +182,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.14.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.15.0
 
 #### 3. 実行
 
@@ -142,6 +195,8 @@ ZundaGPT2.exeをダブルクリックすればアプリが起動するのだ。
 この実行ファイル（EXEファイル）は PyInstaller というライブラリを使って作成しているんだけど、割と頻繁にウィルス対策ソフトにマルウェアとかウィルスとかに誤認されるのだ。ネットとかを見るとこの問題が結構書かれているので、よくある事象のようだけど、残念なことに根本的な解決策は見つかっていないのだ。
 
 もちろん、このアプリに悪意のあるプログラムは入っていないのだけど、気になる人は下の「Pythonで実行する方法」で実行してほしいのだ。
+
+<div class="page" />
 
 ### 🛩️ 実行方法②：Pythonで実行する方法
 
@@ -184,6 +239,8 @@ pip install -r requirements.txt
 python app\main.py
 ```
 
+<div class="page" />
+
 #### 7. 起動用のバッチファイル（オプション）
 
 以下のような起動用のバッチファイルを用意しておくと便利なのだ。
@@ -199,6 +256,8 @@ call venv\scripts\activate
 start pythonw app\main.py
 ```
 
+<div class="page" />
+
 ## キャラクターの設定
 
 画面右上の⚙️ボタンを押すことで、使用するキャラクターを選択することができるのだ。
@@ -208,6 +267,8 @@ start pythonw app\main.py
 キャラクターの設定ファイル（settings_xxx.json）はsettingsフォルダの中に格納されているから、それをコピーして編集すればOKなのだ。
 
 詳しい設定方法は(こちら)[Readme_detail.md]をみて欲しいのだ。
+
+<div class="page" />
 
 ## 注意事項
 
@@ -239,14 +300,16 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/83bd8304975bc43fed23423cdbc4813c4abe44e74e4f83c7eb8f1c34d0003c07)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/03/06 v1.14.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/2c0af78580512769449eadb023c928b498c62d0d4f420f5383d9be1cee116252?nocache=1)は以下の通りなのだ。  
+（71個中3個のアンチウィルスエンジンで検出 :2025/05/04 v1.15.0）。
 
-<img src="doc/virustotal_1.14.0.png" width="600">
+<img src="doc/virustotal_1.15.0.png" width="600">
 
 ### ⚡ 免責事項
 
 いまのところ特に問題点は見つかっていないけど、バグなんてものは潜在的に必ずあるし、０になるなんてことはあり得ないのだ。また、もしバグがあってそのせいで貴方に損害を与えたとしても、著作権者はいかなる責任も負いかねるのでその点を理解して使って欲しいのだ。
+
+<div class="page" />
 
 ## 使用しているライブラリ
 
@@ -255,17 +318,17 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/83bd830
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 1.57.0
+### 🔖 openai 1.76.0
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-generativeai 0.8.3
+### 🔖 google-generativeai 0.8.5
 
 ホームページ： https://github.com/google-gemini/generative-ai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.49.0
+### 🔖 anthropic 0.50.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -330,6 +393,8 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/83bd830
 ホームページ：https://fontawesome.com/  
 ライセンス：Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 
+<div class="page" />
+
 ## 資料
 
 - [VOICEVOXキャラクターリスト](doc/voicevox_speaker_list.md)
@@ -343,7 +408,21 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/83bd830
 
 本アプリケーションは [MITライセンス](https://opensource.org/licenses/MIT) の下で公開されているのだ。詳細については、プロジェクトに含まれる LICENSE ファイルを参照して欲しいのだ。
 
+<div class="page" />
+
 ## バージョン履歴
+
+### 1.15.0 (2025/05/04) 
+
+- キャラクター設定ファイル（settings_xxx.json）に以下の項目を追加
+  - **api_key_envvar**: APIキーを格納する環境変数名 
+  - **api_endpoint_envvar**: APIエンドポイントを格納する環境変数名（AzureOpenAI Serviceにのみ影響）
+- ドイツ語に対応
+- openaiのバージョンを1.76.0に更新
+- anthropicのバージョンを0.50.0に更新
+- google-generativeaiのバージョンを0.8.5に更新
+- PyInstallerのバージョンを6.12.0に更新
+- タイポ修正
 
 ### 1.14.0 (2025/03/06)
 

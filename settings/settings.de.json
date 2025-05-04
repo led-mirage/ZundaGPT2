@@ -2,17 +2,17 @@
     "file_ver": 8,
     "settings": {
         "display_name": "ZundaGPT",
-        "description": "Oletusasetukset",
-        "welcome_title": "Tervetuloa",
-        "welcome_message": "Kysy minulta mitä tahansa!",
+        "description": "Standard-Einstellungen",
+        "welcome_title": "Willkommen",
+        "welcome_message": "Fragen Sie mich alles, was Sie möchten!",
         "group": "Default"
     },
     "user": {
-        "name": "Sinä",
+        "name": "Sie",
         "name_color": "#007bff",
         "icon": "chat_icons/user_black.png",
-        "tts_software": "",
-        "speaker_id": "",
+        "tts_software": "SAPI5",
+        "speaker_id": "Stefan",
         "speed_scale": 1.2,
         "pitch_scale": 0.0
     },
@@ -21,7 +21,7 @@
         "name_color": "#006400",
         "icon": "chat_icons/zunda_sky.png",
         "tts_software": "SAPI5",
-        "speaker_id": "Heidi",
+        "speaker_id": "Hedda",
         "speed_scale": 1.2,
         "pitch_scale": 0.0
     },
@@ -30,8 +30,8 @@
         "api_key_envvar": "",
         "api_endpoint_envvar": "",
         "model": "gpt-4o-mini",
-        "instruction": "Nimesi on Zunda, 20-vuotias nainen. Sinulla on ystävällinen ja vakava persoonallisuus, ja olet hyvä ohjelmoinnissa. Keskustelusi on nopeatahtista ja nopeaa.",
-        "bad_response": "Anteeksi, en voi vastata tuohon kysymykseen.",
+        "instruction": "Ihr Name ist Zunda, eine 20-jährige Frau. Sie haben eine freundliche und ernsthafte Persönlichkeit und sind gut im Programmieren. Sie führen schnelle, lebhafte Gespräche.",
+        "bad_response": "Entschuldigung, ich kann diese Frage nicht beantworten.",
         "history_size": 10
     },
     "claude_options": {

@@ -24,7 +24,7 @@ text_resources = {
         "ERROR_CONVERSATION_CONTENT_INAPPROPRIATE": "会話の内容が不適切だと判断されたのだ",
         "ERROR_RATE_LIMIT_REACHED": "レート制限に達したのだ",
         "ERROR_API_ERROR_OCCURRED": "APIエラーが発生したのだ",
-        "ERROR_UNKNOWN_OCCURED": "なんかわからないエラーが発生したのだ",
+        "ERROR_UNKNOWN_OCCURRED": "なんかわからないエラーが発生したのだ",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Google Text-to-Speechを使用するには、あらかじめFFmpegをインストールしておく必要があります\n\nFFmpegをインストールしてパスを通しておいてください",
         "SUMMARIZE_PROMPT": textwrap.dedent("""\
             以下のチャット会話を分かりやすく要約してください。
@@ -57,7 +57,7 @@ text_resources = {
         "ERROR_CONVERSATION_CONTENT_INAPPROPRIATE": "The content of the conversation was deemed inappropriate.",
         "ERROR_RATE_LIMIT_REACHED": "Rate limit reached.",
         "ERROR_API_ERROR_OCCURRED": "An API error occurred.",
-        "ERROR_UNKNOWN_OCCURED": "An unknown error has occurred.",
+        "ERROR_UNKNOWN_OCCURRED": "An unknown error has occurred.",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "To use Google Text-to-Speech, you need to install FFmpeg beforehand.\n\nPlease install FFmpeg and ensure that it is added to the system path.",
         "SUMMARIZE_PROMPT": textwrap.dedent("""\
             Please summarize the following chat conversation clearly and concisely.
@@ -90,7 +90,7 @@ text_resources = {
         "ERROR_CONVERSATION_CONTENT_INAPPROPRIATE": "Keskustelun sisältö todettiin sopimattomaksi.",
         "ERROR_RATE_LIMIT_REACHED": "Nopeusraja on saavutettu.",
         "ERROR_API_ERROR_OCCURRED": "API-virhe tapahtui.",
-        "ERROR_UNKNOWN_OCCURED": "Tapahtui tuntematon virhe.",
+        "ERROR_UNKNOWN_OCCURRED": "Tapahtui tuntematon virhe.",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Google Text-to-Speech -toiminnon käyttö edellyttää FFmpeg-asennusta etukäteen.\n\nAsenna FFmpeg ja varmista, että se on lisätty järjestelmäpolkuun.",
         "SUMMARIZE_PROMPT": textwrap.dedent("""\
             Tiivistä seuraava keskustelu selkeästi ja ytimekkäästi.
@@ -109,7 +109,7 @@ text_resources = {
             ---
             """),
     },
-    # スペイン語語
+    # スペイン語
     "es": {
         "ERROR_MISSING_OPENAI_API_KEY": "La variable de entorno OPENAI_API_KEY no está configurada.",
         "ERROR_MISSING_AZURE_OPENAI_ENDPOINT": "La variable de entorno AZURE_OPENAI_ENDPOINT no está configurada.",
@@ -123,7 +123,7 @@ text_resources = {
         "ERROR_CONVERSATION_CONTENT_INAPPROPRIATE": "El contenido de la conversación fue considerado inapropiado.",
         "ERROR_RATE_LIMIT_REACHED": "Se alcanzó el límite de solicitudes.",
         "ERROR_API_ERROR_OCCURRED": "Ocurrió un error en la API.",
-        "ERROR_UNKNOWN_OCCURED": "Ocurrió un error desconocido.",
+        "ERROR_UNKNOWN_OCCURRED": "Ocurrió un error desconocido.",
         "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Para usar Google Text-to-Speech, necesitas instalar FFmpeg previamente.\n\nPor favor, instala FFmpeg y asegúrate de que se haya agregado a la ruta del sistema.",
         "SUMMARIZE_PROMPT": textwrap.dedent("""\
             Por favor, resume la siguiente conversación de chat de manera clara y concisa.
@@ -138,6 +138,39 @@ text_resources = {
             - Salida en formato Markdown
             - Resalta las palabras clave importantes con **
             - Muestra los términos técnicos en estilo `código`
+
+            ---
+            """),
+    },
+    # ドイツ語
+    "de": {
+        "ERROR_MISSING_OPENAI_API_KEY": "Die Umgebungsvariable OPENAI_API_KEY ist nicht gesetzt.",
+        "ERROR_MISSING_AZURE_OPENAI_ENDPOINT": "Die Umgebungsvariable AZURE_OPENAI_ENDPOINT ist nicht gesetzt.",
+        "ERROR_MISSING_AZURE_OPENAI_API_KEY": "Die Umgebungsvariable AZURE_OPENAI_API_KEY ist nicht gesetzt.",
+        "ERROR_MISSING_GEMINI_API_KEY": "Die Umgebungsvariable GEMINI_API_KEY ist nicht gesetzt.",
+        "ERROR_MISSING_ANTHROPIC_API_KEY": "Die Umgebungsvariable ANTHROPIC_API_KEY ist nicht gesetzt.",
+        "ERROR_API_ID_IS_INCORRECT": "Die API-ID ist falsch.",
+        "ERROR_API_TIMEOUT": "Der API-Aufruf ist abgelaufen.",
+        "ERROR_API_AUTHENTICATION_FAILED": "Die API-Authentifizierung ist fehlgeschlagen.",
+        "ERROR_API_ENDPOINT_INCORRECT": "Der API-Endpunkt ist falsch.",
+        "ERROR_CONVERSATION_CONTENT_INAPPROPRIATE": "Der Inhalt des Gesprächs wurde als unangemessen eingestuft.",
+        "ERROR_RATE_LIMIT_REACHED": "Das Ratelimit wurde erreicht.",
+        "ERROR_API_ERROR_OCCURRED": "Ein API-Fehler ist aufgetreten.",
+        "ERROR_UNKNOWN_OCCURRED": "Ein unbekannter Fehler ist aufgetreten.",
+        "ERROR_GOOGLETTS_FFMPEG_NOT_FOUND": "Um Google Text-to-Speech zu verwenden, musst du vorher FFmpeg installieren.\n\nBitte installiere FFmpeg und stelle sicher, dass es zum Systempfad hinzugefügt wurde.",
+        "SUMMARIZE_PROMPT": textwrap.dedent("""\
+            Bitte fassen Sie das folgende Chat-Gespräch klar und präzise zusammen.
+
+            [Ausgabeformat]
+            - Titel (h2): Drücken Sie das Thema des Gesprächs kurz aus
+            - Genre (h3): Klassifizieren Sie das Gespräch in einem Wort
+            - Hauptpunkte (h3): Aufzählungspunkte
+            - Zusammenfassung (h3): Eine prägnante Schlussfolgerung oder Entscheidung aus dem Gespräch
+
+            [Einschränkungen]
+            - Ausgabe im Markdown-Format
+            - Wichtige Schlüsselwörter mit ** hervorheben
+            - Technische Begriffe im `Code-Stil` anzeigen
 
             ---
             """),
