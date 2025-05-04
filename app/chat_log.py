@@ -17,7 +17,7 @@ from chat import ChatFactory
 
 # チャットログクラス
 class ChatLog:
-    FILE_VER = 5
+    FILE_VER = 6
     LOG_FOLDER = "log"
 
     cache = {}
@@ -89,6 +89,10 @@ class ChatLog:
                     "budget_tokens": 2048,
                 }
 
+            if data["file_ver"] <= 5:
+                data["chat"]["api_key_envvar"] = ""
+                data["chat"]["api_endpoint_envvar"] = ""
+
             app_config = AppConfig()
             app_config.load()
 
@@ -107,6 +111,8 @@ class ChatLog:
                 settings.chat["bad_response"],
                 settings.chat["history_size"],
                 app_config.system["chat_api_timeout"],
+                settings.chat["api_key_envvar"],
+                settings.chat["api_endpoint_envvar"],
                 app_config.gemini,
                 settings.claude_options
             )
