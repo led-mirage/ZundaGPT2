@@ -1,5 +1,5 @@
 {
-    "file_ver": 4,
+    "file_ver": 5,
     "system": {
         "log_folder": "log",
         "settings_file": "settings.en.json",
@@ -7,7 +7,9 @@
         "window_width": 1000,
         "window_height": 800,
         "chat_api_timeout": 30,
-        "language": "en"
+        "language": "en",
+        "font_family": "",
+        "font_size": 16
     },
     "tts": {
         "voicevox_server": "http://127.0.0.1:50021",

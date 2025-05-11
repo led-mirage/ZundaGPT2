@@ -17,7 +17,7 @@ from character import CharacterVoicevox
 from character import CharacterAIVoice
 
 class AppConfig:
-    FILE_VER = 4
+    FILE_VER = 5
     FILE_CONFIG = "appConfig.json"
 
     def __init__(self, config_file_path=FILE_CONFIG):
@@ -33,7 +33,9 @@ class AppConfig:
             "window_width": 600,
             "window_height": 800,
             "chat_api_timeout": 30,
-            "language": "ja"
+            "language": "ja",
+            "font_family": "",
+            "font_size": 16,
         }
         self.tts = {
             "voicevox_server": VoicevoxAPI.DEFAULT_SERVER,

@@ -97,6 +97,21 @@ SAPI5は、Microsoftの音声認識や音声合成のAPIなのだ。Windowsの�
 
 Chat APIのタイムアウト値を秒数で指定するのだ。
 
+#### ✨ system/language（既定値 ja）
+
+表示用の言語を指定するのだ。
+
+#### ✨ system/font_family（既定値 空文字）
+
+テキストが表示されるときに使用するフォントの種類を指定するのだ。
+
+値が空文字の場合は以下のデフォルト値が使われるのだ。  
+Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
+
+#### ✨ system/font_size（既定値 16）
+
+テキストが表示されるときに使用するフォントサイズを指定するのだ。
+
 #### ✨ tts/voicevox_server（既定値 http://127.0.0.1:50021）
 
 VOICEVOXのサーバーのURLを記載するのだ。これがVOICEVOXのデフォルトなので、普通はここを変更する必要はないのだ。分かる人はわかると思うんだけど、このIPは自PCのIPになっているのだ。他のPCで実行しているVOICEVOXに声を生成してもらう場合は、このURLを変更すればいいのだ。ただ、ファイアウォールの設定とかいろいろ面倒なので、分からない人は気にする必要はないのだ。
