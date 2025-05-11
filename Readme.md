@@ -16,6 +16,12 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 
 ## 最新情報
 
+### バージョン 1.16.0
+
+- アプリケーション設定ファイルにフォントファミリとフォントサイズの項目を追加したのだ✨
+  - **font_family**: フォントの一覧（優先順）
+  - **font_size**: フォントサイズ（px単位）
+
 ### バージョン 1.15.0
  
 - キャラクター設定ファイル（settings_xxx.json）に以下の項目を追加したのだ✨
@@ -28,17 +34,13 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - Claude 3.7 SonnetのExtended Thinkingモードに対応したのだ✨
   - Extended Thinkingモードを有効にするには、settings.jsonファイルのextended_thinkingプロパティをtrueにするとよいのだよ。
 
-### バージョン 1.13.0
-
-- OpenAI o1-preview、o1-miniモデルに対応したのだ✨
-
 <div class="page" />
 
 ## スクリーンショット
 
-<img src="assets/ZundaGPT2_splash.png" width="200" />
+<img src="assets/ZundaGPT2_splash.png" width="200" /><br>
 
-<img src="doc/screenshot_1.10.0.png" width="600" />
+<img src="doc/screenshot_1.10.0.png" width="600" /><br>
 
 v1.4.0 - v1.5.0 紹介動画
 
@@ -50,7 +52,7 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 
 - Windows 11 Pro 23H2、24H2
 - Python 3.12.0
-- VOICEVOX 0.22.3
+- VOICEVOX 0.23.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
@@ -182,7 +184,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.15.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.16.0
 
 #### 3. 実行
 
@@ -300,10 +302,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/2c0af78580512769449eadb023c928b498c62d0d4f420f5383d9be1cee116252?nocache=1)は以下の通りなのだ。  
-（71個中3個のアンチウィルスエンジンで検出 :2025/05/04 v1.15.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8d833de0a5d78ed13f5872111fd33ea33ca85db9b16c4f9f930cd4453e850200?nocache=1)は以下の通りなのだ。  
+（72個中4個のアンチウィルスエンジンで検出 :2025/05/11 v1.16.0）。
 
-<img src="doc/virustotal_1.15.0.png" width="600">
+<img src="doc/virustotal_1.16.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -411,6 +413,13 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/2c0af78
 <div class="page" />
 
 ## バージョン履歴
+
+### 1.16.0 (2025/05/11)
+
+- アプリケーション設定ファイルにフォントファミリとフォントサイズの項目を追加
+  - **font_family**: フォントの一覧（優先順）
+  - **font_size**: フォントサイズ（px単位）
+- Fix: 日本語の「」が重なって表示される問題を修正（CSSの修正）
 
 ### 1.15.0 (2025/05/04) 
 

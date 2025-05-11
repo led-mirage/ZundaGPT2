@@ -36,7 +36,7 @@ if getattr(sys, "frozen", False):
     import pyi_splash # type: ignore
 
 APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.15.0"
+APP_VERSION = "1.16.0"
 COPYRIGHT = "Copyright 2024-2025 led-mirage"
 
 # アプリケーションクラス
@@ -74,7 +74,6 @@ class Application:
     def page_loaded(self):
         lang = self.app_config.system["language"]
         set_current_language(lang)
-        self._window.evaluate_js(f"initUIComponents('{self.escape_js_string(lang)}')")
 
         if self.chat == None:
             self.new_chat()
@@ -86,6 +85,15 @@ class Application:
                 self._window.evaluate_js(f"moveToMessageAt({self.initial_message_index}, '{self.escape_js_string(self.initial_highlight_text)}')")
                 self.initial_message_index = -1
                 self.initial_highlight_text = ""
+
+    # アプリケーション設定取得（UI）
+    def get_app_config_js(self):
+        return {
+            "fontFamily": self.app_config.system["font_family"],
+            "fontSize": self.app_config.system["font_size"],
+            "language": self.app_config.system["language"],
+            "copyright": COPYRIGHT,
+        }
 
     # 新しいチャットを開始する
     def new_chat(self):
@@ -198,10 +206,6 @@ class Application:
     # チャットの内容をUIに送信する
     def set_chatmessages_to_ui(self, messages: list[dict]):
         self._window.evaluate_js(f"setChatMessages({messages})")
-
-    # コピーライト取得
-    def get_copyright(self):
-        return COPYRIGHT
 
     # カレントチャット削除イベントハンドラ（UI）
     def delete_current_chat(self):
