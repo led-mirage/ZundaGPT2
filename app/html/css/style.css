@@ -61,7 +61,7 @@ body {
     transition: opacity 1s, box-shadow 1s;
     width: 1.75rem;
     height: 1.75rem;
-    line-height: 1rem;    
+    line-height: 1rem;
 }
 .message-delete-btn:hover, .chat-reanswer-btn:hover, .message-copy-btn:hover {
     opacity: 1;
@@ -129,6 +129,8 @@ body {
     height: 3rem; /* 高さの初期値、必要に応じて */
 }
 .chat-input button {
+    width: 6rem;
+    font-size: 1rem;
     padding: 10px 20px;
     background-image: linear-gradient(to bottom, #007bff, #0056b3); /* グラデーション適用 */
     color: white;
@@ -173,6 +175,9 @@ footer {
     animation: glowing 3s linear infinite;
     color: #fff; /* 文字の色を設定 */
 }
+mark {
+    scroll-margin-top: 20px;
+}
 .welcome {
     display: flex;
     flex-direction: column;
@@ -199,7 +204,7 @@ footer {
     position: relative;
     display: inline-block;
 }
-.tooltiptext {
+.tooltip .tooltiptext {
     visibility: hidden;
     max-width: 200px;
     background-color: #555;
@@ -406,7 +411,7 @@ pre {
     cursor: pointer;
 }
 
-/* 印刷 */
+/* 印刷用 */
 @media print {
     @page {
         margin-top: 1.5cm;

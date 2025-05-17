@@ -184,7 +184,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.16.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.16.1
 
 #### 3. 実行
 
@@ -302,10 +302,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8d833de0a5d78ed13f5872111fd33ea33ca85db9b16c4f9f930cd4453e850200?nocache=1)は以下の通りなのだ。  
-（72個中4個のアンチウィルスエンジンで検出 :2025/05/11 v1.16.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/a8dd9a73963574fe4c2a36420c8db2989230183606d99c132e90e89a11806501?nocache=1)は以下の通りなのだ。  
+（72個中5個のアンチウィルスエンジンで検出 :2025/05/18 v1.16.1）。
 
-<img src="doc/virustotal_1.16.0.png" width="600">
+<img src="doc/virustotal_1.16.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -395,6 +395,15 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8d833de
 ホームページ：https://fontawesome.com/  
 ライセンス：Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 
+### 🔖 pyinstaller-versionfile
+
+ホームページ：https://github.com/DudeNr33/pyinstaller-versionfile  
+ライセンス：MIT license
+
+### 🔖 PyInstaller 6.12.0
+ホームページ： https://github.com/pyinstaller/pyinstaller  
+ライセンス： GPL 2.0 License / Apache License 2.0  
+
 <div class="page" />
 
 ## 資料
@@ -413,6 +422,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8d833de
 <div class="page" />
 
 ## バージョン履歴
+
+### 1.16.1 (2025/05/17)
+
+- リファクタリングのみ（機能の追加、変更はありません）
+  - View側にESMを導入して整理
 
 ### 1.16.0 (2025/05/11)
 

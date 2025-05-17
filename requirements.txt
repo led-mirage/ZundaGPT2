@@ -9,3 +9,4 @@ gtts==2.5.1
 langdetect==1.0.9
 pydub==0.25.1
 pywin32==306
+pyinstaller_versionfile==3.0.1
