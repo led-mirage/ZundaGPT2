@@ -152,12 +152,12 @@ class ChatAzureOpenAI(Chat):
             api_key = os.environ.get(api_key_envvar)
         else:
             api_key = os.environ.get("AZURE_OPENAI_API_KEY")
- 
+
         if api_endpoint:
             endpoint = os.environ.get(api_endpoint)
         else:
             endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
-        
+
         client = None
         if endpoint and api_key:
             client = AzureOpenAI(azure_endpoint=endpoint, api_key=api_key, api_version="2023-05-15", timeout=httpx.Timeout(api_timeout, connect=5.0))
@@ -425,7 +425,7 @@ class ChatClaude(Chat):
             elif e.status_code == 422:
                 on_error(e, "APIError", "UnprocessableEntity(422)")
             elif e.status_code == 429:
-                on_error(e, "RateLimit")
+                on_error(e, "APIError", "RateLimit")
             elif e.status_code == 529:
                 on_error(e, "APIError", "Overloaded(529)")
             else:
