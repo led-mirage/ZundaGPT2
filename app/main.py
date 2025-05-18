@@ -18,6 +18,7 @@ import sys
 import langdetect
 import webview
 
+from const import APP_NAME, APP_VERSION, COPYRIGHT
 from app_config import AppConfig
 from app_settings import Settings
 from character import (
@@ -35,9 +36,6 @@ from voiceapi import VoicevoxAPI, CoeiroinkApi
 if getattr(sys, "frozen", False):
     import pyi_splash # type: ignore
 
-APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.16.1"
-COPYRIGHT = "Copyright 2024-2025 led-mirage"
 
 # アプリケーションクラス
 class Application:
