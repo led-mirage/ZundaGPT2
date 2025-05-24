@@ -12,6 +12,7 @@ import os
 import shutil
 import subprocess
 import time
+from abc import ABC, abstractmethod
 
 import clr
 
@@ -22,10 +23,18 @@ from gtts import gTTS
 from langdetect import detect
 from pydub import AudioSegment
 import win32com.client
-from multi_lang import get_text_resource
+from utility.multi_lang import get_text_resource
+
+
+# キャラクター基底クラス
+class Character(ABC):
+    # 話す
+    @abstractmethod
+    def talk(self, text: str):
+        pass
 
 # VOICEVOXキャラクター
-class CharacterVoicevox:
+class CharacterVoicevox(Character):
     DEFAULT_INSTALL_PATH = "%LOCALAPPDATA%/Programs/VOICEVOX/VOICEVOX.exe"
 
     # コンストラクタ
@@ -70,7 +79,7 @@ class CharacterVoicevox:
                 return False
 
 # COEIROINKキャラクター
-class CharacterCoeiroink:
+class CharacterCoeiroink(Character):
     # コンストラクタ
     def __init__(self, speaker_id, speed_scale, pitch_scale, coeiroink_path):
         self.coeiroink_path = coeiroink_path
@@ -112,7 +121,7 @@ class CharacterCoeiroink:
                 return False
 
 # A.I.VOICEキャラクター
-class CharacterAIVoice:
+class CharacterAIVoice(Character):
     DEFAULT_INSTALL_PATH = "%ProgramW6432%/AI/AIVoice/AIVoiceEditor/AI.Talk.Editor.Api.dll"
 
     _tts_control = None
@@ -158,7 +167,7 @@ class CharacterAIVoice:
                 cls._tts_control = tts_control
 
 # Google Text-to-Speechキャラクター
-class CharacterGoogleTTS:
+class CharacterGoogleTTS(Character):
     # TTSエンジンを利用可能かどうかを調べる
     def is_available(self):
         if self.is_ffmpeg_installed():
@@ -208,7 +217,7 @@ class CharacterGoogleTTS:
         return wav_binary
 
 # SAPI5 キャラクター
-class CharacterSAPI5:
+class CharacterSAPI5(Character):
     # コンストラクタ
     def __init__(self, speaker_id, speed_rate):
         self.sapi = win32com.client.Dispatch("SAPI.SpVoice")
