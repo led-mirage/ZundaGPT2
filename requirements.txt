@@ -3,7 +3,7 @@ requests==2.32.3
 pyaudio==0.2.14
 openai==1.76.0
 pythonnet==3.0.3
-google-generativeai==0.8.5
+google-genai==1.16.1
 anthropic==0.50.0
 gtts==2.5.1
 langdetect==1.0.9

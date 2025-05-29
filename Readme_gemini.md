@@ -182,9 +182,9 @@ ZundaGPT2ではappConfig.jsonファイルの中でこれらの値を設定でき
 
 ```json
     "gemini": {
-        "safty_filter_harassment": "BLOCK_MEDIUM_AND_ABOVE",
-        "safty_filter_hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
-        "safty_filter_sexually_explicit": "BLOCK_MEDIUM_AND_ABOVE",
-        "safty_filter_dangerous_content": "BLOCK_MEDIUM_AND_ABOVE"
+        "safety_filter_harassment": "BLOCK_MEDIUM_AND_ABOVE",
+        "safety_filter_hate_speech": "BLOCK_MEDIUM_AND_ABOVE",
+        "safety_filter_sexually_explicit": "BLOCK_MEDIUM_AND_ABOVE",
+        "safety_filter_dangerous_content": "BLOCK_MEDIUM_AND_ABOVE"
     }
 ```
