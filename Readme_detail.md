@@ -112,6 +112,11 @@ Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Canta
 
 テキストが表示されるときに使用するフォントサイズを指定するのだ。
 
+#### ✨ system/log_level（既定値 ERROR）
+
+アプリケーションログを出力する際の閾値を指定するのだ。
+指定できるのは、DEBUG、INFO、WARNING、ERROR、CRITICALの５種類なのだ。
+
 #### ✨ tts/voicevox_server（既定値 http://127.0.0.1:50021）
 
 VOICEVOXのサーバーのURLを記載するのだ。これがVOICEVOXのデフォルトなので、普通はここを変更する必要はないのだ。分かる人はわかると思うんだけど、このIPは自PCのIPになっているのだ。他のPCで実行しているVOICEVOXに声を生成してもらう場合は、このURLを変更すればいいのだ。ただ、ファイアウォールの設定とかいろいろ面倒なので、分からない人は気にする必要はないのだ。

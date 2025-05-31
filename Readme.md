@@ -1,5 +1,12 @@
 # <img src="assets/ZundaGPT2.ico" width="48"> ZundaGPT2
 
+[![GitHub All Releases](https://img.shields.io/github/downloads/led-mirage/ZundaGPT2/total?color=blue)](https://github.com/led-mirage/ZundaGPT2/releases)
+[![GitHub release](https://img.shields.io/github/v/release/led-mirage/ZundaGPT2)](https://github.com/led-mirage/ZundaGPT2/releases)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![OpenAI API](https://img.shields.io/badge/OpenAI-GPT-crimson?logo=openai)](https://platform.openai.com/)
+[![Anthropic Claude](https://img.shields.io/badge/Anthropic-Claude-crimson?logo=anthropic)](https://www.anthropic.com/)
+[![Google Gemini](https://img.shields.io/badge/Google-Gemini-crimson?logo=google)](https://ai.google.dev/)
+
 Copyright (c) 2024-2025 led-mirage
 
 [English](Readme.en.md)
@@ -15,6 +22,11 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 - Anthropic Claude
 
 ## 最新情報
+
+### バージョン 1.17.0
+
+- アプリケーションログの出力機能を追加したのだ✨
+  - **appConfig.json**: log_level
 
 ### バージョン 1.16.0
 
@@ -188,7 +200,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.16.4
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.0
 
 #### 3. 実行
 
@@ -306,10 +318,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/d3fd5ff818ed3eee511d0342a5873753c13c74ff75178eccd9fb6fa5366689b1?nocache=1)は以下の通りなのだ。  
-（71個中2個のアンチウィルスエンジンで検出 :2025/05/29 v1.16.4）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/09b06fd90a4964991025a88c28c4db93dbf6f574b4feed4ff9a649dd3ef867cc?nocache=1)は以下の通りなのだ。  
+（72個中2個のアンチウィルスエンジンで検出 :2025/05/31 v1.17.0）。
 
-<img src="doc/virustotal_1.16.4.png" width="600">
+<img src="doc/virustotal_1.17.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -426,6 +438,12 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/d3fd5ff
 <div class="page" />
 
 ## バージョン履歴
+
+### 1.17.0 (2025/05/31)
+
+- アプリケーションログ出力機能追加
+  - 設定ファイル（appConfig.json）に出力するログレベルの閾値を追加
+  - 現在出力されるのは一部エラーのみ
 
 ### 1.16.4 (2025/05/30)
 
