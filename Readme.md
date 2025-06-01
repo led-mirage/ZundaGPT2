@@ -26,7 +26,7 @@ AIとチャットするアプリなのだ。質問と回答を音声で読み上
 ### バージョン 1.17.0
 
 - アプリケーションログの出力機能を追加したのだ✨
-  - **appConfig.json**: log_level
+  - **appConfig.json**: log_levelに出力するレベルを指定
 
 ### バージョン 1.16.0
 
@@ -80,7 +80,7 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 - GPT-4.1 mini （モデル名：gpt-4.1-mini） 無料枠あり
 - GPT-4.1 nano （モデル名：gpt-4.1-nano） 無料枠あり
 - GPT-4o （モデル名：gpt-4o）
-- GPT-4o mini （モデル名：gpt-4.1-mini） 無料枠あり
+- GPT-4o mini （モデル名：gpt-4o-mini） 無料枠あり
 - GPT-3.5 Turbo （モデル名：gpt-3.5-turbo）
 - ChatGPT-4o （モデル名：chatgpt-4o-latest）
 - GPT-4o Search Preview （モデル名：gpt-4o-search-preview）
@@ -438,6 +438,12 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/09b06fd
 <div class="page" />
 
 ## バージョン履歴
+
+### 1.17.1 (2025/06/01)
+
+- リリースモジュールのみの更新（機能の追加、変更はありません）
+  - settingsフォルダ内の設定ファイルで設定されているAIモデルを最近のモデルに変更
+  - 各EXEファイルのバージョンは1.17.0のまま変更はありません
 
 ### 1.17.0 (2025/05/31)
 
