@@ -105,12 +105,12 @@ https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
 ### Google Gemini（2025/04/27現在）
 
 - Gemini 2.5 Flash Preview （モデル名：gemini-2.5-flash-preview-04-17） 無料枠あり
-- Gemini 2.5 Pro Preview （モデル名：gemini-2.5-pro-exp-03-25） 無料枠あり
+- Gemini 2.5 Pro Preview （モデル名：gemini-2.5-pro-exp-03-25） ~~無料枠あり~~
 - Gemini 2.0 Flash （モデル名：gemini-2.0-flash） 無料枠あり
 - Gemini 2.0 Flash Lite （モデル名：gemini-2.0-flash-lite） 無料枠あり
 - Gemini 1.5 Flash （モデル名：gemini-1.5-flash） 無料枠あり
 - Gemini 1.5 Flash 8B （モデル名：gemini-1.5-flash-8b） 無料枠あり
-- Gemini 1.5 Pro （モデル名：gemini-1.5-pro） 無料枠あり
+- Gemini 1.5 Pro （モデル名：gemini-1.5-pro） ~~無料枠あり~~
 
 <div class="page" />
 
@@ -200,7 +200,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.2
 
 #### 3. 実行
 
@@ -318,10 +318,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/09b06fd90a4964991025a88c28c4db93dbf6f574b4feed4ff9a649dd3ef867cc?nocache=1)は以下の通りなのだ。  
-（72個中2個のアンチウィルスエンジンで検出 :2025/05/31 v1.17.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8fd791be9629aa465637778e277a5ca89b7dd1cc76857f9e035b88dbcab63d5d?nocache=1)は以下の通りなのだ。  
+（72個中4個のアンチウィルスエンジンで検出 :2025/06/04 v1.17.2）。
 
-<img src="doc/virustotal_1.17.0.png" width="600">
+<img src="doc/virustotal_1.17.2.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -438,6 +438,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/09b06fd
 <div class="page" />
 
 ## バージョン履歴
+
+### 1.17.2 (2025/06/04)
+
+- Fix: Geminiを使用した場合、チャットの要約機能が動かないバグを修正
+- キャラクター設定ファイルのAIモデルのデフォルト値を最近のモデルに変更
 
 ### 1.17.1 (2025/06/01)
 
