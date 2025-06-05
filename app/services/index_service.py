@@ -282,6 +282,10 @@ class IndexService:
         def process_sentence(sentence: str):
             self.window.js.addReplayMessage(sentence)
 
+            sentence = sentence.strip()
+            if sentence == "":
+                return
+
             if message["role"] == "assistant":
                 self.state.assistant_character.talk(sentence)
             else:
