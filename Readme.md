@@ -200,7 +200,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.2
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.3
 
 #### 3. 実行
 
@@ -318,10 +318,10 @@ Anthropic APIを利用するのにも別途料金（従量制）が発生する�
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8fd791be9629aa465637778e277a5ca89b7dd1cc76857f9e035b88dbcab63d5d?nocache=1)は以下の通りなのだ。  
-（72個中4個のアンチウィルスエンジンで検出 :2025/06/04 v1.17.2）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/c72d19682173eb57e6d2d8c921067029b680e68c81c5b279358a1aedb4248e77?nocache=1)は以下の通りなのだ。  
+（72個中4個のアンチウィルスエンジンで検出 :2025/06/05 v1.17.3）。
 
-<img src="doc/virustotal_1.17.2.png" width="600">
+<img src="doc/virustotal_1.17.3.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -438,6 +438,10 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8fd791b
 <div class="page" />
 
 ## バージョン履歴
+
+### 1.17.3 (2025/06/05)
+
+- Fix: リプレイ時に空行は読み上げをスキップするように修正
 
 ### 1.17.2 (2025/06/04)
 
