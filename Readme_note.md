@@ -4,6 +4,10 @@ Copyright (c) 2024 led-mirage
 
 ## 更新情報
 
+### 🌟 1.4.0 - 1.5.0
+
+https://github.com/user-attachments/assets/3be5b9bd-e9ba-49a9-bf3f-8de74b3c3909
+
 ### 🌟 0.11.0
 
 その１
