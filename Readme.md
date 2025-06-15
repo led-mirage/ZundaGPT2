@@ -180,7 +180,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.3
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.4
 
 #### 3. 実行
 
@@ -284,10 +284,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/c72d19682173eb57e6d2d8c921067029b680e68c81c5b279358a1aedb4248e77?nocache=1)は以下の通りなのだ。  
-（72個中4個のアンチウィルスエンジンで検出 :2025/06/05 v1.17.3）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f0ff7e4acd11a112d6c028ab6fe3fbe91adcd63bffa2b419da0629d7a5909790)は以下の通りなのだ。  
+（72個中5個のアンチウィルスエンジンで検出 :2025/06/05 v1.17.4）。
 
-<img src="doc/virustotal_1.17.3.png" width="600">
+<img src="doc/virustotal_1.17.4.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -410,6 +410,10 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/c72d196
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.17.4 (2025/06/15)
+
+- requestsライブラリを2.32.4に更新（CVE-2024-47081対応）
 
 ### 1.17.3 (2025/06/05)
 
