@@ -331,7 +331,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f0ff7e4
 ホームページ： https://github.com/pndurette/gTTS  
 ライセンス：MIT License
 
-### 🔖 requests 2.32.3
+### 🔖 requests 2.32.4
 
 ホームページ： https://requests.readthedocs.io/en/latest/  
 ライセンス：Apache License 2.0
