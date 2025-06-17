@@ -311,7 +311,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f0ff7e4
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 1.76.0
+### 🔖 openai 1.88.0
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
@@ -321,7 +321,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f0ff7e4
 ホームページ： https://github.com/googleapis/python-genai  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.50.0
+### 🔖 anthropic 0.54.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -410,6 +410,13 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f0ff7e4
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.18.0 (2025/06/17)
+
+- AzureOpenAIで使用するAPIバージョンを`2025-04-01-preview`に更新
+  - o4-miniなどの推論系のモデルに対応
+- openaiライブラリを1.88.0に更新
+- anthropicライブラリを0.54.0に更新
 
 ### 1.17.4 (2025/06/15)
 
