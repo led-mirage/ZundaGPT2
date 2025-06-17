@@ -180,7 +180,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.17.4
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.18.0
 
 #### 3. 実行
 
@@ -284,10 +284,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f0ff7e4acd11a112d6c028ab6fe3fbe91adcd63bffa2b419da0629d7a5909790)は以下の通りなのだ。  
-（72個中5個のアンチウィルスエンジンで検出 :2025/06/05 v1.17.4）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8a321927b88c2d376e4e6ceeea903735feb32b2d444e78e24cfda04adbfcc9a7?nocache=1)は以下の通りなのだ。  
+（71個中3個のアンチウィルスエンジンで検出 :2025/06/17 v1.18.0）。
 
-<img src="doc/virustotal_1.17.4.png" width="600">
+<img src="doc/virustotal_1.18.0.png" width="600">
 
 ### ⚡ 免責事項
 
