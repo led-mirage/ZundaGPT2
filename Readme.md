@@ -180,7 +180,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.18.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.19.0
 
 #### 3. 実行
 
@@ -284,10 +284,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8a321927b88c2d376e4e6ceeea903735feb32b2d444e78e24cfda04adbfcc9a7?nocache=1)は以下の通りなのだ。  
-（71個中3個のアンチウィルスエンジンで検出 :2025/06/17 v1.18.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/4836b57fee22e03e7555e63822aa92c7dd3fb1eb1a0455494edd76ec953fe8b4?nocache=1)は以下の通りなのだ。  
+（72個中3個のアンチウィルスエンジンで検出 :2025/06/26 v1.19.0）。
 
-<img src="doc/virustotal_1.18.0.png" width="600">
+<img src="doc/virustotal_1.19.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -311,17 +311,17 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8a32192
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 1.88.0
+### 🔖 openai 1.91.0
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-genai 1.16.1
+### 🔖 google-genai 1.21.1
 
 ホームページ： https://github.com/googleapis/python-genai  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.54.0
+### 🔖 anthropic 0.55.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -410,6 +410,16 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/8a32192
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.19.0 (2025/06/xx)
+
+- チャット画面のストリーミング表示を改善
+  - 受信中のメッセージもリアルタイムにマークダウンレンダリングするよう変更
+    - 読みやすさ・見た目を向上
+    - コードブロックは正しく閉じられるまでテキスト表示され、途中レンダリングによる崩れを防止
+  - openaiライブラリを1.91.0に更新
+  - anthropicライブラリを0.55.0に更新
+  - google-genaiのバージョンを1.21.1に更新
 
 ### 1.18.0 (2025/06/17)
 
