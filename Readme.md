@@ -284,10 +284,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/4836b57fee22e03e7555e63822aa92c7dd3fb1eb1a0455494edd76ec953fe8b4?nocache=1)は以下の通りなのだ。  
-（72個中3個のアンチウィルスエンジンで検出 :2025/06/26 v1.19.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/68c98f00a51310e10e2ab1102cb9f1d1ef374e37137756fd9ac148a13c651f1d?nocache=1)は以下の通りなのだ。  
+（72個中2個のアンチウィルスエンジンで検出 :2025/07/06 v1.20.0）。
 
-<img src="doc/virustotal_1.19.0.png" width="600">
+<img src="doc/virustotal_1.20.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -391,7 +391,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/4836b57
 ホームページ：https://github.com/DudeNr33/pyinstaller-versionfile  
 ライセンス：MIT license
 
-### 🔖 PyInstaller 6.13.0
+### 🔖 PyInstaller 6.14.1
 ホームページ： https://github.com/pyinstaller/pyinstaller  
 ライセンス： GPL 2.0 License / Apache License 2.0  
 
@@ -410,6 +410,14 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/4836b57
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.20.0 (2025/07/06)
+
+- 会話履歴送信時に文字数上限を指定できる`history_char_limit`オプションを追加
+  - `history_size`（履歴の最大件数）に加えて、合計文字数でも履歴送信を制御可能
+  - `history_char_limit`が 0 の場合、文字数制限はなし
+  - 文字数が上限を超えていても、過去3回分の会話は必ず送信される
+- PyInstallerのバージョンを6.14.1に更新
 
 ### 1.19.0 (2025/06/26)
 
