@@ -41,7 +41,7 @@ APIを使ってAIとチャットするアプリなのだ。
 ## 💎 動作確認環境
 
 - Windows 11 Pro 23H2、24H2
-- Python 3.12.0
+- Python 3.10-3.13（開発環境は 3.12.0）
 - VOICEVOX 0.23.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
@@ -180,7 +180,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.19.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.21.0
 
 #### 3. 実行
 
@@ -284,10 +284,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/68c98f00a51310e10e2ab1102cb9f1d1ef374e37137756fd9ac148a13c651f1d?nocache=1)は以下の通りなのだ。  
-（72個中2個のアンチウィルスエンジンで検出 :2025/07/06 v1.20.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f686b46671b0f9297a3f5621d544b8e5920cfabb9c8af97ce0373cf8567c071b?nocache=1)は以下の通りなのだ。  
+（72個中2個のアンチウィルスエンジンで検出 :2025/07/12 v1.21.0）。
 
-<img src="doc/virustotal_1.20.0.png" width="600">
+<img src="doc/virustotal_1.21.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -410,6 +410,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/68c98f0
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.21.0 (2025/07/12)
+
+- fix: 過去ログがロードできないバグを修正
+- fix: f-Stringの書式を修正（Python 3.10-3.11に対応）
 
 ### 1.20.0 (2025/07/06)
 
