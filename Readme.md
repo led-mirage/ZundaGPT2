@@ -180,7 +180,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.21.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.21.1
 
 #### 3. 実行
 
@@ -284,10 +284,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f686b46671b0f9297a3f5621d544b8e5920cfabb9c8af97ce0373cf8567c071b?nocache=1)は以下の通りなのだ。  
-（72個中2個のアンチウィルスエンジンで検出 :2025/07/12 v1.21.0）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/92a2f41710d71b49f672a7e5aa64e2cd40c7a4b4752120527a346649a98aba64?nocache=1)は以下の通りなのだ。  
+（72個中2個のアンチウィルスエンジンで検出 :2025/07/13 v1.21.1）。
 
-<img src="doc/virustotal_1.21.0.png" width="600">
+<img src="doc/virustotal_1.21.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -351,6 +351,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f686b46
 ホームページ：https://github.com/Mimino666/langdetect  
 ライセンス：Apache License 2.0
 
+### 🔖 pyperclip 1.9.0
+
+ホームページ： https://github.com/asweigart/pyperclip
+ライセンス：BSD 3-Clause "New" or "Revised" License
+
 ### 🔖 pydub 0.25.1
 
 ホームページ：https://github.com/jiaaro/pydub  
@@ -410,6 +415,11 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/f686b46
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.21.1 (2025/07/13)
+
+- クリップボードにテキストをコピーする処理をJS側からPython側に移設
+  - `ZundaGPT2 Lite`の修正にあわせてこちらも修正
 
 ### 1.21.0 (2025/07/12)
 
