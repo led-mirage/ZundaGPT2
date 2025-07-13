@@ -282,6 +282,11 @@ License：MIT License
 Homepage：https://github.com/Mimino666/langdetect  
 License：Apache License 2.0
 
+### 🔖 pyperclip 1.9.0
+
+Homepage： https://github.com/asweigart/pyperclip
+License：BSD 3-Clause "New" or "Revised" License
+
 ### 🔖 pydub 0.25.1
 
 Homepage：https://github.com/jiaaro/pydub  
