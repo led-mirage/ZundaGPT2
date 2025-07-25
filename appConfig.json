@@ -1,5 +1,5 @@
 {
-    "file_ver": 7,
+    "file_ver": 8,
     "system": {
         "log_folder": "log",
         "log_level": "ERROR",
@@ -10,7 +10,8 @@
         "chat_api_timeout": 30,
         "language": "en",
         "font_family": "",
-        "font_size": 16
+        "font_size": 16,
+        "theme": "light"
     },
     "tts": {
         "voicevox_server": "http://127.0.0.1:50021",
