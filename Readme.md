@@ -25,6 +25,7 @@ APIを使ってAIとチャットするアプリなのだ。
 - 過去ログ管理機能
 - リプレイ機能
 - 印刷機能
+- ダークモード対応✨
 
 アプリの紹介と、もっとも手軽な導入方法を[Zennの記事](https://zenn.dev/ledmirage/articles/7650f36d3a784a)にしたので、そちらも参考にしてほしいのだ✨
 
@@ -180,7 +181,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.21.2
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.22.0
 
 #### 3. 実行
 
@@ -284,10 +285,10 @@ start pythonw app\main.py
 
 これが嫌な人は（ボクも嫌だけど）、Python本体をインストールしてPythonから普通に実行して欲しいのだ。実行ファイルのほうが手軽だし、そのほうがPythonに詳しくない人にとっては簡単なんだけど、誤認問題がついて回ることは覚えておいて欲しいのだ。
 
-VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/1020b8aea84a5f0d2b4dd1b4612ec944908113f75bf747498084d1a628922137?nocache=1)は以下の通りなのだ。  
-（71個中2個のアンチウィルスエンジンで検出 :2025/07/21 v1.21.2）。
+VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/1f22c038497a818a66885d9fed8872e1c4363cd47cf04b803c3ddf7a9976f8e9?nocache=1)は以下の通りなのだ。  
+（72個中2個のアンチウィルスエンジンで検出 :2025/07/25 v1.22.0）。
 
-<img src="doc/virustotal_1.21.2.png" width="600">
+<img src="doc/virustotal_1.22.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -396,7 +397,7 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/1020b8a
 ホームページ：https://github.com/DudeNr33/pyinstaller-versionfile  
 ライセンス：MIT license
 
-### 🔖 PyInstaller 6.14.1
+### 🔖 PyInstaller 6.14.2
 ホームページ： https://github.com/pyinstaller/pyinstaller  
 ライセンス： GPL 2.0 License / Apache License 2.0  
 
@@ -415,6 +416,12 @@ VirusTotalでの[チェック結果](https://www.virustotal.com/gui/file/1020b8a
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.22.0 (2025/07/25)
+
+- ダークモードの実装
+  - appConfig.jsonファイルの "system"."theme" に `dark` または `light` を指定する
+- PyInstallerのバージョンを6.14.2に更新
 
 ### 1.21.2 (2025/07/21)
 
