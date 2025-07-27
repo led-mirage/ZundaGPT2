@@ -11,15 +11,23 @@ Copyright (c) 2024-2025 led-mirage
 
 [Japanese](Readme.md)
 
-## Overview
+## App Introduction & Getting Started
 
-This is an app that allows you to chat with AI. A unique feature of this app is that it reads questions and answers aloud.
+This is an app that lets you chat with AI using various APIs.
+You can customize your own character, and one of the unique features is that it can read out both questions and answers aloud by integrating with VOICEVOX and other text-to-speech tools.
 
-The available AIs are as follows:
+Here are the highlights of this app ✨
 
-- OpenAI GPT (Azure OpenAI Service is also available)
-- Google Gemini
-- Anthropic Claude
+* Supports the three major AI services (OpenAI, Google Gemini, and Anthropic Claude)
+* Character customization feature
+* Automatic message read-aloud feature
+* Markdown display and TeX-format formula rendering
+* Past conversation log management
+* Replay function
+* Printing function
+* Compatible with Raspberry Pi ✨ (X11/LXDE only, Japanese input via IBus only, printing not supported)
+* Compatible with Linux Mint ✨ (Cinnamon/x64 only, Japanese input via IBus only, printing not supported)
+* Dark mode supported ✨
 
 ## Screenshot
 
@@ -50,6 +58,8 @@ The following values can be configured:
 ## Tested Environments
 
 - Windows 11 Pro 23H2、24H2
+- Raspberry Pi OS Bookworm 64bit
+- Linux Mint 22.1 Cinnamon Edition
 - Python 3.10–3.13 (development environment: 3.12.0)
 - VOICEVOX 0.22.3
 - A.I.VOICE Editor 1.4.10.0

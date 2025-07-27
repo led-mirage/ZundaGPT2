@@ -25,9 +25,14 @@ APIを使ってAIとチャットするアプリなのだ。
 - 過去ログ管理機能
 - リプレイ機能
 - 印刷機能
+- Raspberry Pi対応✨（X11/LXDE、日本語入力はIBus限定、印刷機能は非対応）
+- Linux Mint対応✨（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）
 - ダークモード対応✨
 
 アプリの紹介と、もっとも手軽な導入方法を[Zennの記事](https://zenn.dev/ledmirage/articles/7650f36d3a784a)にしたので、そちらも参考にしてほしいのだ✨
+
+Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/ledmirage/articles/aa64356242aefb)にしたので、そちらを参考にしてほしいのだ✨  
+記事はZundaGPT2のものだけど、導入方法はほぼ同じなのだ。
 
 <div class="page" />
 
@@ -42,6 +47,8 @@ APIを使ってAIとチャットするアプリなのだ。
 ## 💎 動作確認環境
 
 - Windows 11 Pro 23H2、24H2
+- Raspberry Pi OS Bookworm 64bit
+- Linux Mint 22.1 Cinnamon Edition
 - Python 3.10-3.13（開発環境は 3.12.0）
 - VOICEVOX 0.23.0
 - A.I.VOICE Editor 1.4.10.0
@@ -289,7 +296,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 Windows版: (72個中2個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[https://www.virustotal.com/gui/file/87a35738504bd10ee3718dfa399b3f14836bab228c133f487b6b3b7c9208a302?nocache=1]
 Raspberry Pi版: (62個中0個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[https://www.virustotal.com/gui/file/9514e68b2c3b54b1b17e5a8ce728e88ac6cbae99b4ac4dd87b6218f366b4b2c1?nocache=1]
-Linux版: (x個中x個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[]
+Linux版: (63個中0個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[https://www.virustotal.com/gui/file/5a976bb965d21154c02c8526a40aa4c9a6656aa64daa4bbc549632ec8e8777d3?nocache=1]
 
 <img src="doc/virustotal_1.23.0.png" width="600">
 
