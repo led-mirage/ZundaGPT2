@@ -1,0 +1,9 @@
+pywebview[pyside6]==5.3.2
+requests==2.32.4
+openai==1.91.0
+google-genai==1.21.1
+anthropic==0.55.0
+gtts==2.5.1
+langdetect==1.0.9
+pyperclip==1.9.0
+pydub==0.25.1
