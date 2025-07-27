@@ -85,9 +85,9 @@ This app supports the following text-to-speech software. You need to have at lea
 
 - [VOICEVOX](https://voicevox.hiroshiba.jp/) (Free)
 - [COEIROINK](https://coeiroink.com/) (Free)
-- [A.I.VOICE](https://aivoice.jp/) (Paid)
+- [A.I.VOICE](https://aivoice.jp/) (Paid / Windows Only)
 - Google Text-to-Speech (Free) ... Requires FFmpeg
-- SAPI5 (Free) ... No installation required
+- SAPI5 (Free / Windows Only) ... No installation required
 
 Once you're ready, move on to the next step for execution.
 
