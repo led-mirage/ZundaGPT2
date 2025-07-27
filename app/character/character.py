@@ -9,12 +9,11 @@
 import io
 import logging
 import os
+import platform
 import shutil
 import subprocess
 import time
 from abc import ABC, abstractmethod
-
-import clr
 
 from sound import play_sound
 from voiceapi import VoicevoxAPI
@@ -22,8 +21,20 @@ from voiceapi import CoeiroinkApi
 from gtts import gTTS
 from langdetect import detect
 from pydub import AudioSegment
-import win32com.client
 from utility.multi_lang import get_text_resource
+
+IS_WINDOWS = platform.system() == 'Windows'
+
+if IS_WINDOWS:
+    try:
+        import clr # type: ignore
+        import win32com.client # type: ignore
+        WINDOWS_LIBS_AVAILABLE = True
+    except ImportError:
+        WINDOWS_LIBS_AVAILABLE = False
+        logging.warning("Windows-specific libraries not available")
+else:
+    WINDOWS_LIBS_AVAILABLE = False
 
 
 # キャラクター基底クラス
@@ -64,8 +75,10 @@ class CharacterVoicevox(Character):
         if CharacterVoicevox.is_voicevox_running():
             return True
         else:
-            appdata_local = os.getenv("LOCALAPPDATA")
-            voicevox_path = voicevox_path.replace("%LOCALAPPDATA%", appdata_local)
+            if IS_WINDOWS:
+                appdata_local = os.getenv("LOCALAPPDATA")
+                voicevox_path = voicevox_path.replace("%LOCALAPPDATA%", appdata_local)
+
             if os.path.isfile(voicevox_path):
                 subprocess.Popen(voicevox_path, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 loop_count = 0
@@ -77,7 +90,7 @@ class CharacterVoicevox(Character):
                 return True
             else:
                 return False
-
+ 
 # COEIROINKキャラクター
 class CharacterCoeiroink(Character):
     # コンストラクタ
@@ -120,51 +133,6 @@ class CharacterCoeiroink(Character):
             else:
                 return False
 
-# A.I.VOICEキャラクター
-class CharacterAIVoice(Character):
-    DEFAULT_INSTALL_PATH = "%ProgramW6432%/AI/AIVoice/AIVoiceEditor/AI.Talk.Editor.Api.dll"
-
-    _tts_control = None
-
-    # コンストラクタ
-    def __init__(self, speaker_id, aivoice_path= DEFAULT_INSTALL_PATH):
-        self.speaker_id = speaker_id
-        self.aivoice_path = aivoice_path
-        CharacterAIVoice.run_aivoice(self.aivoice_path)
-
-    # 話す
-    def talk(self, text):
-        CharacterAIVoice.run_aivoice(self.aivoice_path)
-        try:
-            tts_control = CharacterAIVoice._tts_control
-            tts_control.Connect()
-            tts_control.CurrentVoicePresetName = self.speaker_id
-            tts_control.Text = text
-            play_time = tts_control.GetPlayTime()
-            tts_control.Play()
-            time.sleep((play_time + 500) / 1000)
-        except Exception as err:
-            CharacterAIVoice._tts_control = None
-            print(err)
-            raise
-
-    # A.I.VOICEが起動していなかったら起動して接続する
-    @classmethod
-    def run_aivoice(cls, aivoice_path=DEFAULT_INSTALL_PATH):
-        program_dir = os.getenv("ProgramW6432")
-        aivoice_path = aivoice_path.replace("%ProgramW6432%", program_dir)
-        if os.path.isfile(aivoice_path):
-            if CharacterAIVoice._tts_control is None:
-                clr.AddReference(aivoice_path)
-                from AI.Talk.Editor.Api import TtsControl, HostStatus # type: ignore
-
-                tts_control = TtsControl()
-                host_name = tts_control.GetAvailableHostNames()[0]
-                tts_control.Initialize(host_name)        
-                if tts_control.Status == HostStatus.NotRunning:
-                    tts_control.StartHost()
-                tts_control.Connect()
-                cls._tts_control = tts_control
 
 # Google Text-to-Speechキャラクター
 class CharacterGoogleTTS(Character):
@@ -216,20 +184,91 @@ class CharacterGoogleTTS(Character):
         wav_binary = wav_stream.getvalue()
         return wav_binary
 
-# SAPI5 キャラクター
-class CharacterSAPI5(Character):
-    # コンストラクタ
-    def __init__(self, speaker_id, speed_rate):
-        self.sapi = win32com.client.Dispatch("SAPI.SpVoice")
-        cat  = win32com.client.Dispatch("SAPI.SpObjectTokenCategory")
-        cat.SetID(r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices", False)
-        voices = cat.EnumerateTokens()
-        for voice in voices:
-            if speaker_id in voice.GetAttribute("Name"):
-                self.sapi.Voice = voice
-                self.sapi.Rate = speed_rate
-                break
 
-    # 話す
-    def talk(self, text: str):
-        self.sapi.Speak(text)
+if IS_WINDOWS and WINDOWS_LIBS_AVAILABLE:
+    # A.I.VOICEキャラクター
+    class CharacterAIVoice(Character):
+        DEFAULT_INSTALL_PATH = "%ProgramW6432%/AI/AIVoice/AIVoiceEditor/AI.Talk.Editor.Api.dll"
+
+        _tts_control = None
+
+        # コンストラクタ
+        def __init__(self, speaker_id, aivoice_path= DEFAULT_INSTALL_PATH):
+            self.speaker_id = speaker_id
+            self.aivoice_path = aivoice_path
+            CharacterAIVoice.run_aivoice(self.aivoice_path)
+
+        # 話す
+        def talk(self, text):
+            CharacterAIVoice.run_aivoice(self.aivoice_path)
+            try:
+                tts_control = CharacterAIVoice._tts_control
+                tts_control.Connect()
+                tts_control.CurrentVoicePresetName = self.speaker_id
+                tts_control.Text = text
+                play_time = tts_control.GetPlayTime()
+                tts_control.Play()
+                time.sleep((play_time + 500) / 1000)
+            except Exception as err:
+                CharacterAIVoice._tts_control = None
+                print(err)
+                raise
+
+        # A.I.VOICEが起動していなかったら起動して接続する
+        @classmethod
+        def run_aivoice(cls, aivoice_path=DEFAULT_INSTALL_PATH):
+            program_dir = os.getenv("ProgramW6432")
+            aivoice_path = aivoice_path.replace("%ProgramW6432%", program_dir)
+            if os.path.isfile(aivoice_path):
+                if CharacterAIVoice._tts_control is None:
+                    clr.AddReference(aivoice_path)
+                    from AI.Talk.Editor.Api import TtsControl, HostStatus # type: ignore
+
+                    tts_control = TtsControl()
+                    host_name = tts_control.GetAvailableHostNames()[0]
+                    tts_control.Initialize(host_name)        
+                    if tts_control.Status == HostStatus.NotRunning:
+                        tts_control.StartHost()
+                    tts_control.Connect()
+                    cls._tts_control = tts_control
+
+
+    # SAPI5 キャラクター
+    class CharacterSAPI5(Character):
+        # コンストラクタ
+        def __init__(self, speaker_id, speed_rate):
+            self.sapi = win32com.client.Dispatch("SAPI.SpVoice")
+            cat  = win32com.client.Dispatch("SAPI.SpObjectTokenCategory")
+            cat.SetID(r"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech_OneCore\Voices", False)
+            voices = cat.EnumerateTokens()
+            for voice in voices:
+                if speaker_id in voice.GetAttribute("Name"):
+                    self.sapi.Voice = voice
+                    self.sapi.Rate = speed_rate
+                    break
+
+        # 話す
+        def talk(self, text: str):
+            self.sapi.Speak(text)
+
+else:
+    # Windows以外の環境、またはライブラリが利用できない場合のダミークラス
+    class CharacterAIVoice(Character):
+        DEFAULT_INSTALL_PATH = ""
+
+        def __init__(self, *args, **kwargs):
+            pass
+            #raise NotImplementedError("CharacterAIVoice is only available on Windows with required libraries")
+        
+        def talk(self, text: str):
+            pass
+            #raise NotImplementedError("CharacterAIVoice is only available on Windows")
+
+    class CharacterSAPI5(Character):
+        def __init__(self, *args, **kwargs):
+            pass
+            #raise NotImplementedError("CharacterSAPI5 is only available on Windows")
+        
+        def talk(self, text: str):
+            pass
+            #raise NotImplementedError("CharacterSAPI5 is only available on Windows")
