@@ -188,7 +188,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.23.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.24.0
 
 #### 3. 実行
 
@@ -426,6 +426,11 @@ Linux版: (63個中0個のアンチウィルスエンジンで検出 :2025/07/27
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.24.0 (2025/08/02)
+
+- AIのメッセージ応答完了時に、メッセージ先頭にスクロールする処理を追加
+- ビルドバッチ変更（毎回buildディレクトリを削除するように変更）
 
 ### 1.23.0 (2025/07/27)
 
