@@ -188,7 +188,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.23.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.24.0
 
 #### 3. 実行
 
@@ -294,11 +294,11 @@ start pythonw app\main.py
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-Windows版: (72個中2個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[https://www.virustotal.com/gui/file/87a35738504bd10ee3718dfa399b3f14836bab228c133f487b6b3b7c9208a302?nocache=1]
-Raspberry Pi版: (62個中0個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[https://www.virustotal.com/gui/file/9514e68b2c3b54b1b17e5a8ce728e88ac6cbae99b4ac4dd87b6218f366b4b2c1?nocache=1]
-Linux版: (63個中0個のアンチウィルスエンジンで検出 :2025/07/27 v1.23.0)[https://www.virustotal.com/gui/file/5a976bb965d21154c02c8526a40aa4c9a6656aa64daa4bbc549632ec8e8777d3?nocache=1]
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/08/03 v1.24.0](https://www.virustotal.com/gui/file/ebbaaf99f9b5d5510b28a2ce2b07f56c31d6576f1dfba687e8bf282559e049b6?nocache=1)  
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/03 v1.24.0](https://www.virustotal.com/gui/file/cc03d45281c504bd262f3b709eb231e2736476ae6dd60b472690be91fbf307d6?nocache=1)
+- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/08/03 v1.24.0](https://www.virustotal.com/gui/file/dfd075c2e85ee5f063644ce47a378077a1dc6748331c7279bf146a04acfa16dc?nocache=1)
 
-<img src="doc/virustotal_1.23.0.png" width="600">
+<img src="doc/virustotal_1.24.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -426,6 +426,11 @@ Linux版: (63個中0個のアンチウィルスエンジンで検出 :2025/07/27
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.24.0 (2025/08/03)
+
+- AIのメッセージ応答完了時に、メッセージ先頭にスクロールする処理を追加
+- ビルドバッチ変更（毎回buildディレクトリを削除するように変更）
 
 ### 1.23.0 (2025/07/27)
 
