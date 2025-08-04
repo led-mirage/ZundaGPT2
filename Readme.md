@@ -123,6 +123,7 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 | fi | フィンランド語 | settings.fi.json | 1.10.0 |
 | es | スペイン語 | settings.es.json | 1.10.0 |
 | de | ドイツ語 | settings.de.json | 1.15.0 |
+| fr | フランス語語 | settings.fr.json | 1.25.0 |
 
 <div class="page" />
 
@@ -188,7 +189,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.24.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.25.0
 
 #### 3. 実行
 
@@ -294,11 +295,11 @@ start pythonw app\main.py
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/08/03 v1.24.0](https://www.virustotal.com/gui/file/ebbaaf99f9b5d5510b28a2ce2b07f56c31d6576f1dfba687e8bf282559e049b6?nocache=1)  
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/03 v1.24.0](https://www.virustotal.com/gui/file/cc03d45281c504bd262f3b709eb231e2736476ae6dd60b472690be91fbf307d6?nocache=1)
-- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/08/03 v1.24.0](https://www.virustotal.com/gui/file/dfd075c2e85ee5f063644ce47a378077a1dc6748331c7279bf146a04acfa16dc?nocache=1)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/08/04 v1.25.0](https://www.virustotal.com/gui/file/f7898ed7bd9b56a5ff8ca42663ea7958147b541d178aafc3e3a7f7f70e45304b?nocache=1)  
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/04 v1.25.0](https://www.virustotal.com/gui/file/409304c46775e2f522868be9cdac021464f4f3df2d57443c75849107e22362b9?nocache=1)
+- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/08/04 v1.25.0](https://www.virustotal.com/gui/file/4118619092876171d1de5ee40c7ba27f4fbf4b7ed591a7d885323a5319cafa64?nocache=1)
 
-<img src="doc/virustotal_1.24.0.png" width="600">
+<img src="doc/virustotal_1.25.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -426,6 +427,11 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.25.0 (2025/08/04)
+
+- メッセージ入力テキストボックスの最大高を設定（制限以上になるとスクロールバーが出る）
+- フランス語に対応
 
 ### 1.24.0 (2025/08/03)
 
