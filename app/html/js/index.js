@@ -1221,3 +1221,5 @@ window.newChat = newChat;
 window.startReplayMessageBlock = startReplayMessageBlock;
 window.addReplayMessage = addReplayMessage;
 window.endReplayMessageBlock = endReplayMessageBlock;
+window.showProgressModal = showProgressModal;
+window.hideProgressModal = hideProgressModal;

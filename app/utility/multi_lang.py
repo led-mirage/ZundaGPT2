@@ -42,6 +42,7 @@ text_resources = {
 
             ---
             """),
+        "GENERATING_RESPONSE": "回答を生成しています…",
     },
     # 英語
     "en": {
@@ -75,6 +76,7 @@ text_resources = {
 
             ---
             """),
+        "GENERATING_RESPONSE": "Generating response...",
     },
     # フィンランド語
     "fi": {
@@ -108,6 +110,7 @@ text_resources = {
 
             ---
             """),
+        "GENERATING_RESPONSE": "Luodaan vastausta...",
     },
     # スペイン語
     "es": {
@@ -141,6 +144,7 @@ text_resources = {
 
             ---
             """),
+        "GENERATING_RESPONSE": "Generando respuesta...",
     },
     # ドイツ語
     "de": {
@@ -174,6 +178,7 @@ text_resources = {
 
             ---
             """),
+        "GENERATING_RESPONSE": "Antwort wird erstellt...",
     },
     # フランス語
     "fr": {
@@ -207,6 +212,7 @@ text_resources = {
 
             ---
             """),
+        "GENERATING_RESPONSE": "Génération de la réponse...",
     },
 }
 
