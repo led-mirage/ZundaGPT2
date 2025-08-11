@@ -253,7 +253,7 @@ So far, no particular issues have been found, but bugs are inherently potential 
 Homepage： https://github.com/r0x0r/pywebview  
 License：BSD-3-Clause license
 
-### 🔖 openai 1.91.0
+### 🔖 openai 1.99.6
 
 Homepage： https://github.com/openai/openai-python  
 License：Apache License 2.0
