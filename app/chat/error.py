@@ -1,11 +1,13 @@
 # ZundaGPT2
 #
-# アプリケーション定数
+# エラー定義
 #
 # Copyright (c) 2024-2025 led-mirage
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
-APP_NAME = "ZundaGPT2"
-APP_VERSION = "1.26.0"
-COPYRIGHT = "© 2024-2025 led-mirage"
+class StreamNotAllowedError(Exception):
+    def __init__(self, original: Exception, detail: str | None = None):
+        super().__init__(str(original))
+        self.original = original
+        self.detail = detail

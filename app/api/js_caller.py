@@ -59,6 +59,12 @@ class JSCaller:
     def parsedParagraph(self, paragraph: str):
         self.window.evaluate_js(f"parsedParagraph('{escape_js_string(paragraph)}')")
 
+    def showProgressModal(self, message: str):
+        self.window.evaluate_js(f"showProgressModal('{escape_js_string(message)}')")
+
+    def hideProgressModal(self):
+        self.window.evaluate_js("hideProgressModal()")
+
     def endResponse(self, content: str):
         self.window.evaluate_js(f"endResponse('{escape_js_string(content)}')")
 
