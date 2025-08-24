@@ -19,6 +19,7 @@ You can customize your own character, and one of the unique features is that it 
 Here are the highlights of this app ✨
 
 * Supports the three major AI services (OpenAI, Google Gemini, and Anthropic Claude)
+* Supports OpenAI API-compatible local LLMs
 * Character customization feature
 * Automatic message read-aloud feature
 * Markdown display and TeX-format formula rendering
