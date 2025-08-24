@@ -13,7 +13,9 @@ Copyright (c) 2024-2025 led-mirage
 
 ## 💎 最新情報
 
-**v1.26.0でOpenAI GPT-5ファミリに対応したのだ**✨
+**v1.27.0でローカルLLMに対応したのだ**✨
+
+llama.cppのようなOpenAI互換APIで動作するローカルLLMに対応したのだよ！
 
 ## 💎 アプリの紹介と導入方法
 
@@ -23,14 +25,15 @@ APIを使ってAIとチャットするアプリなのだ。
 このアプリのアピールポイントは次のとおりなのだ✨
 
 - ３大AIサービス（OpenAI、Google Gemini、Anthropic Claude）に対応
-- キャラクターカスタマイズ機能
+- ローカルLLM（OpenAI API互換）に対応✨
+- 柔軟なキャラクターカスタマイズ機能
 - メッセージ自動読み上げ機能
 - マークダウン表示、TeX形式の数式表示機能
 - 過去ログ管理機能
 - リプレイ機能
 - 印刷機能
-- Raspberry Pi対応✨（X11/LXDE、日本語入力はIBus限定、印刷機能は非対応）
-- Linux Mint対応✨（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）
+- Raspberry Pi対応（X11/LXDE、日本語入力はIBus限定、印刷機能は非対応）
+- Linux Mint対応（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）
 - ダークモード対応✨
 
 アプリの紹介と、もっとも手軽な導入方法を[Zennの記事](https://zenn.dev/ledmirage/articles/7650f36d3a784a)にしたので、そちらも参考にしてほしいのだ✨
@@ -198,7 +201,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.26.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.27.0
 
 #### 3. 実行
 
@@ -304,11 +307,11 @@ start pythonw app\main.py
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/08/11 v1.26.0](https://www.virustotal.com/gui/file/bec806e26b977dbd3a36100f3150dbf84cdab465cf2e693c9f5719ec08141e14?nocache=1)  
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/11 v1.26.0](https://www.virustotal.com/gui/file/3cbbb21665a2bd38cd3bd2e63c3410b26050e9db6a88fe0d6d61dd6a38b72b88?nocache=1)
-- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/11 v1.26.0](https://www.virustotal.com/gui/file/aee1675b970e528569e882d56b5f16124b9c002e46eec8f16d48fe2951a8bb6d?nocache=1)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/08/24 v1.27.0](https://www.virustotal.com/gui/file/094be9c68f613e7034debfba89993633b1747f51439a40fa0fa6b6af33d232aa?nocache=1)  
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/24 v1.27.0](https://www.virustotal.com/gui/file/98d40592e598beabde5cb82165f92462674e7975fd0a4abf7807fc84a9f95cb8?nocache=1)
+- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/08/24 v1.27.0](https://www.virustotal.com/gui/file/1e513daaf1fa7d8a6f6ecbc278cb6d20659891815394296d7a939bab815e92b7?nocache=1)
 
-<img src="doc/virustotal_1.26.0.png" width="600">
+<img src="doc/virustotal_1.27.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -436,6 +439,11 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.27.0 (2025/08/24)
+
+- ローカルLLM（llama.cppなどのOpenAI互換API）に対応
+  - settings.jsonのapi_base_urlにローカルLLMのURLを指定することでローカルLLMを使用可能に。
 
 ### 1.26.0 (2025/08/11)
 
