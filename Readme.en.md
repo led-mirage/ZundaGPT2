@@ -19,16 +19,17 @@ You can customize your own character, and one of the unique features is that it 
 Here are the highlights of this app ✨
 
 * Supports the three major AI services (OpenAI, Google Gemini, and Anthropic Claude)
-* Supports OpenAI API-compatible local LLMs
+* Supports OpenAI API-compatible local LLMs ✨
 * Character customization feature
 * Automatic message read-aloud feature
 * Markdown display and TeX-format formula rendering
 * Past conversation log management
 * Replay function
 * Printing function
-* Compatible with Raspberry Pi ✨ (X11/LXDE only, Japanese input via IBus only, printing not supported)
-* Compatible with Linux Mint ✨ (Cinnamon/x64 only, Japanese input via IBus only, printing not supported)
-* Dark mode supported ✨
+* Compatible with Raspberry Pi (X11/LXDE only, Japanese input via IBus only, printing not supported)
+* Compatible with Linux Mint (Cinnamon/x64 only, Japanese input via IBus only, printing not supported)
+* Dark mode supported
+- Custom CSS support ✨
 
 ## Screenshot
 
@@ -214,6 +215,45 @@ While there are several default character settings available, you can create you
 Character setting files (settings_xxx.json) are stored in the `settings` folder. Simply copy an existing file and modify it to create your own character.
 
 For detailed information about character configuration, please refer to [this guide](Readme_detail.md).
+
+## Custom CSS Settings
+
+By creating and adjusting a custom CSS (stylesheet), you can change the app’s color scheme, background image, and other design aspects.
+You can easily customize the appearance by modifying predefined CSS variables.
+
+The stylesheet should be named `custom.css` and placed inside the `css` folder.
+※ If you are using the packaged executable, create a `css` folder in the same directory as the executable.
+
+Here is an example of how to write the stylesheet.
+This sample shows how to set a background image:
+
+```css
+/* custom.css */
+:root {
+    /* Background image */
+    --background-image: url("images/cloud.jpg"); /* Local file path or an online URL */
+    --background-image-opacity: 0.8;
+
+    /* Transparency settings for UI elements */
+    --header-bgcolor: transparent;
+    --chat-messages-bgcolor: transparent;
+    --header-color: ivory; /* Header text color */
+
+    /* Chat message bubble settings */
+    --message-text-bgcolor: rgba(255, 255, 255, 0.7);
+    --message-text-color: #222;
+    --message-text-border-radius: 10px;  
+}
+```
+
+You can specify either a local file path or an online URL for the background image.
+If you use a local file, please keep the image size under **1.5MB**, otherwise it will not be displayed.
+
+Even if you are not familiar with CSS, you can still change the background image simply by replacing the path in the sample with the image you want to display.
+
+A full list of available variables can be found at the beginning of `app/html/css/style.css`.
+
+<div class="page" />
 
 ## Important Notes
 
