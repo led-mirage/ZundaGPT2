@@ -15,7 +15,7 @@ import threading
 from config.app_config import AppConfig
 
 class Settings:
-    FILE_VER = 10
+    FILE_VER = 11
     FOLDER_NAME = "settings"
 
     def __init__(self, settings_filename=None):
@@ -67,6 +67,21 @@ class Settings:
             "history_size": 20,
             "history_char_limit": 0,
         }
+        self.custom_style = {
+            "enable": False,
+            "background_image": "",
+            "background_image_opacity": "0.8",
+            "body_bgcolor": "",
+            "header_color": "",
+            "welcome_title_color": "",
+            "welcome_message_color": "",
+            "speaker_name_text_shadow": "",
+            "message_text_bgcolor": "",
+            "message_text_color": "",
+            "message_text_shadow": "",
+            "message_text_border_radius": "",
+            "message_text_em_color": "",
+        }
         self.claude_options = {
             "max_tokens": 4096,
             "extended_thinking": False,
@@ -82,6 +97,7 @@ class Settings:
         new_copy.user = copy.deepcopy(self.user, memo)
         new_copy.assistant = copy.deepcopy(self.assistant, memo)
         new_copy.chat = copy.deepcopy(self.chat, memo)
+        new_copy.custom_style = copy.deepcopy(self.custom_style, memo)
         new_copy.claude_options = copy.deepcopy(self.claude_options, memo)
         return new_copy
 
@@ -98,6 +114,7 @@ class Settings:
             setting["user"] = self.user
             setting["assistant"] = self.assistant
             setting["chat"] = self.chat
+            setting["custom_style"] = self.custom_style
             setting["claude_options"] = self.claude_options
 
             json.dump(setting, file, ensure_ascii=False, indent=4)
@@ -117,6 +134,7 @@ class Settings:
                 self.update_dict(self.user, data.get("user", self.user))
                 self.update_dict(self.assistant, data.get("assistant", self.assistant))
                 self.update_dict(self.chat, data.get("chat", self.chat))
+                self.update_dict(self.custom_style, data.get("custom_style", self.custom_style))
                 self.update_dict(self.claude_options, data.get("claude_options", self.claude_options))
 
         if file_ver < Settings.FILE_VER:

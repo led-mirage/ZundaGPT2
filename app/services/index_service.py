@@ -19,7 +19,7 @@ from app_state import AppState
 from app_window import AppWindow
 from chat_log import ChatLog
 from const import APP_NAME, APP_VERSION
-from utility.utils import get_location, get_exception_name
+from utility.utils import get_location, get_exception_name, to_css_url_format
 from utility.multi_lang import set_current_language, get_text_resource
 from chat.chat import ChatFactory, Chat, SendMessageListener
 from character import (
@@ -105,22 +105,59 @@ class IndexService:
 
     # チャットの情報をUIに通知する
     def set_chatinfo_to_ui(self):
-        display_name = self.state.settings.settings.get("display_name", "")
-        user_name = self.state.settings.user["name"]
-        user_color = self.state.settings.user["name_color"]
-        user_icon = self.get_image_base64(self.state.settings.user["icon"])
-        assistant_name = self.state.settings.assistant["name"]
-        assistant_color = self.state.settings.assistant["name_color"]
-        assistant_icon = self.get_image_base64(self.state.settings.assistant["icon"])
-        speaker_on = self.app_config.system["speaker_on"]
-        welcome_title = self.state.settings.settings.get("welcome_title", "")
-        welcome_message = self.state.settings.settings.get("welcome_message", "")
-        ai_agent_available = "true" if self.state.chat.is_ai_agent_available() else "false"
-        ai_agent_creation_error = self.state.chat.client_creation_error
+        system = {
+            "speaker_on": self.app_config.system["speaker_on"]
+        }
 
-        self.window.js.setChatInfo(display_name, user_name, user_color, user_icon,
-                                   assistant_name, assistant_color, assistant_icon, speaker_on,
-                                   welcome_title, welcome_message,ai_agent_available, ai_agent_creation_error)
+        settings = {
+            "display_name": self.state.settings.settings.get("display_name", ""),
+            "welcome_title": self.state.settings.settings.get("welcome_title", ""),
+            "welcome_message": self.state.settings.settings.get("welcome_message", "")
+        }
+
+        user = {
+            "name": self.state.settings.user["name"],
+            "color": self.state.settings.user["name_color"],
+            "icon": self.get_image_base64(self.state.settings.user["icon"])
+        }
+
+        assistant = {
+            "name": self.state.settings.assistant["name"],
+            "color": self.state.settings.assistant["name_color"],
+            "icon": self.get_image_base64(self.state.settings.assistant["icon"])
+        }
+
+        custom_style = {
+            "enable": self.state.settings.custom_style.get("enable", False),
+            "background_image": to_css_url_format(self.state.settings.custom_style.get("background_image", ""), 1.5),
+            "background_image_opacity": self.state.settings.custom_style.get("background_image_opacity", "0.8"),
+            "body_bgcolor": self.state.settings.custom_style.get("body_bgcolor", ""),
+            "header_color": self.state.settings.custom_style.get("header_color", ""),
+            "welcome_title_color": self.state.settings.custom_style.get("welcome_title_color", ""),
+            "welcome_message_color": self.state.settings.custom_style.get("welcome_message_color", ""),
+            "speaker_name_text_shadow": self.state.settings.custom_style.get("speaker_name_text_shadow", ""),
+            "message_text_bgcolor": self.state.settings.custom_style.get("message_text_bgcolor", ""),
+            "message_text_color": self.state.settings.custom_style.get("message_text_color", ""),
+            "message_text_shadow": self.state.settings.custom_style.get("message_text_shadow", ""),
+            "message_text_border_radius": self.state.settings.custom_style.get("message_text_border_radius", ""),
+            "message_text_em_color": self.state.settings.custom_style.get("message_text_em_color", ""),
+        }
+
+        chat = {
+            "ai_agent_available": self.state.chat.is_ai_agent_available(),
+            "ai_agent_creation_error": self.state.chat.client_creation_error
+        }
+
+        info = {
+            "system": system,
+            "settings": settings,
+            "user": user,
+            "assistant": assistant,
+            "custom_style": custom_style,
+            "chat": chat
+        }
+
+        self.window.js.setChatInfo(info)
 
     # ひとつ前のチャットを表示して続ける
     def prev_chat(self):
@@ -170,7 +207,7 @@ class IndexService:
             next_logfile = ChatLog.get_next_logfile(self.state.chat)
         
         ChatLog.delete_log_file(self.state.chat)
-        
+
         if next_logfile is not None:
             loaded_settings, loaded_chat = ChatLog.load(next_logfile)
             if loaded_settings is None:
