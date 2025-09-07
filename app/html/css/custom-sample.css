@@ -9,7 +9,7 @@
     --dark-background-image-opacity: 1.0;
 
     /* 画面要素の透過設定 */
-    --dark-bgcolor: transparent;
+    --dark-container-bgcolor: transparent;
     --dark-header-bgcolor: transparent;
     --dark-chat-messages-bgcolor: transparent;
     --dark-header-color: ivory; /* タイトル文字色 */
