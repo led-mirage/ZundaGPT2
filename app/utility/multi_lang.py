@@ -1,4 +1,4 @@
-# ZundaGPT2
+# ZundaGPT2 / ZundaGPT2 Lite
 #
 # 言語サポート
 #

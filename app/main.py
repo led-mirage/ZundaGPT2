@@ -22,6 +22,7 @@ from services.app_service import AppService
 from services.index_service import IndexService
 from services.settings_service import SettingsService
 from services.cross_file_search_service import CrossFileSearchService
+from utility.utils import get_screen_size
 
 if getattr(sys, "frozen", False):
     import pyi_splash # type: ignore
@@ -41,10 +42,12 @@ class Application:
         self.app_config.load()
         VoicevoxAPI.server = self.app_config.tts["voicevox_server"]
         CoeiroinkApi.server = self.app_config.tts["coeiroink_server"]
-        width = self.app_config.system["window_width"]
-        height = self.app_config.system["window_height"]
+        width, height = self.adjust_window_size(
+            self.app_config.system["window_width"],
+            self.app_config.system["window_height"]
+        )
 
-        window = AppWindow()
+        window = AppWindow(self.app_config)
         js_caller = JSCaller(window)
         window.set_js_caller(js_caller)
 
@@ -66,6 +69,14 @@ class Application:
         webview.start(gui=gui)
         #webview.start(gui=gui, debug=True) # 開発者ツールを表示する場合
 
+    def adjust_window_size(self, width: int, height: int):
+        if sys.platform != "win32": # WindowsはAppWindowのon_shownで処理する
+            screen_width, screen_height = get_screen_size()
+            width = min(width, screen_width)
+            height = min(height, screen_height)
+            return width, height
+        else:
+            return width, height
 
 if __name__ == '__main__':
     if getattr(sys, "frozen", False):

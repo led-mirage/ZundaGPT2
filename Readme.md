@@ -206,7 +206,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.28.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.30.0
 
 #### 3. 実行
 
@@ -354,11 +354,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/09/07 v1.29.0](https://www.virustotal.com/gui/file/a3bb741599d96be59528cd12fac34780293ad8e00a4d0866c6c24fb191b66a85?nocache=1)  
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/09/07 v1.29.0](https://www.virustotal.com/gui/file/aa42f3ab0b0926b729ea59c15c2c9fb23d480bf2afcc378ec0ca20bac1816ca4?nocache=1)
-- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/09/07 v1.29.0](https://www.virustotal.com/gui/file/f060f7b7c456d19fae2890937d5ebbdaa2e7fe342e647ed9dfe0a3d9f867524f?nocache=1)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.0](https://www.virustotal.com/gui/file/d4d7a79b8fa0be829ce114a0a81baecc02e33c52a9dec1164fe9e26e2e9eea4b?nocache=1)
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.0](https://www.virustotal.com/gui/file/ad8736bc5870d8d0e04fc63eaad2ed5147e7f48ce12cef3b1075b631862512a6?nocache=1)
+- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.0](https://www.virustotal.com/gui/file/d7adc355c679e7712aebb64da4121a8875011603d5ba0cbf25f2982110ae70da?nocache=1)
 
-<img src="doc/virustotal_1.29.0.png" width="600">
+<img src="doc/virustotal_1.30.0.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -444,7 +444,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 ### 🔖 pyperclip 1.9.0
 
-ホームページ： https://github.com/asweigart/pyperclip
+ホームページ： https://github.com/asweigart/pyperclip  
 ライセンス：BSD 3-Clause "New" or "Revised" License
 
 ### 🔖 pydub 0.25.1
@@ -488,6 +488,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 ライセンス：MIT license
 
 ### 🔖 PyInstaller 6.14.2
+
 ホームページ： https://github.com/pyinstaller/pyinstaller  
 ライセンス： GPL 2.0 License / Apache License 2.0  
 
@@ -506,6 +507,13 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.30.0 (2025/09/14)
+
+- ウィンドウサイズの自動保存・復元機能を追加
+- Darkスタイルの修正
+- 言語ファイルの統一
+- コメント・書式の統一
 
 ### 1.29.0 (2025/09/07)
 
