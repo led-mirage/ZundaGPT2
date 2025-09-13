@@ -356,7 +356,7 @@ License：Apache License 2.0
 
 ### 🔖 pyperclip 1.9.0
 
-Homepage： https://github.com/asweigart/pyperclip
+Homepage： https://github.com/asweigart/pyperclip  
 License：BSD 3-Clause "New" or "Revised" License
 
 ### 🔖 pydub 0.25.1
@@ -391,7 +391,7 @@ License：MIT license
 
 ### 🔖 Font Awesome Free 6.7.2
 
-Homepage：https://fontawesome.com/
+Homepage：https://fontawesome.com/  
 License：Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 
 ### 🔖 pyinstaller-versionfile
@@ -400,6 +400,7 @@ Homepage：https://github.com/DudeNr33/pyinstaller-versionfile
 License：MIT license
 
 ### 🔖 PyInstaller 6.14.2
+
 Homepage： https://github.com/pyinstaller/pyinstaller  
 License： GPL 2.0 License / Apache License 2.0  
 
