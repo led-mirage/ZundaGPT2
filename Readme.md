@@ -206,7 +206,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.30.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.30.1
 
 #### 3. 実行
 
@@ -354,11 +354,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.0](https://www.virustotal.com/gui/file/d4d7a79b8fa0be829ce114a0a81baecc02e33c52a9dec1164fe9e26e2e9eea4b?nocache=1)
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.0](https://www.virustotal.com/gui/file/ad8736bc5870d8d0e04fc63eaad2ed5147e7f48ce12cef3b1075b631862512a6?nocache=1)
-- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.0](https://www.virustotal.com/gui/file/d7adc355c679e7712aebb64da4121a8875011603d5ba0cbf25f2982110ae70da?nocache=1)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.1](https://www.virustotal.com/gui/file/e0495423bfd85134d7d882aeaddd14f5f2ed3c74341155a8b9554568cff1c97a?nocache=1)
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.1](https://www.virustotal.com/gui/file/daa94a11aa372918a56f1ffa4c5a351322ac286d8873a529932f1c2657d8a904?nocache=1)
+- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/09/14 v1.30.1](https://www.virustotal.com/gui/file/f6a23a1cb3c90d53bfb842e96981dd32716fe5dd6a03c514ecac12866d75931d?nocache=1)
 
-<img src="doc/virustotal_1.30.0.png" width="600">
+<img src="doc/virustotal_1.30.1.png" width="600">
 
 ### ⚡ 免責事項
 
@@ -507,6 +507,10 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 <details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+
+### 1.30.1 (2025/09/14)
+
+- fix: ウィンドウの最小化、最大化状態から元に戻す際にウィンドウサイズが固定化されるバグを修正
 
 ### 1.30.0 (2025/09/14)
 
