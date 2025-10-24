@@ -64,6 +64,14 @@ class AppWindow:
 
     def on_shown(self):
         if sys.platform == "win32":
+            # Windowsの場合、画面スケーリングが100%以外だと、
+            # webviewの初期表示が拡大率に影響され物理ピクセル数にならない。
+            # そのため、表示後にウィンドウサイズを調整する。
+            #
+            # また、LinuxではPyWebViewのresizeメソッドを呼ぶと、
+            # それ以降ウィンドウサイズの変更ができなくなるため（たぶんPyWebViewのバグ）
+            # main.pyの中でサイズ調整を行っている。
+            # Linuxには画面スケーリングの概念がないため、これで問題ない。
             width = self.app_config.system["window_width"]
             height = self.app_config.system["window_height"]
             screen_width, screen_height = get_screen_size(self.get_window_handle_for_windows())
