@@ -8,7 +8,7 @@
 
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from chat.chat import Chat
+    from chat import Chat
     from config.app_settings import Settings
     from character.character import Character
 
