@@ -226,9 +226,9 @@ class IndexService:
         self.state.chat.send_message(
             text,
             listener=SendMessageListener(
-                self.on_recieve_chunk,
-                self.on_recieve_sentence,
-                self.on_recieve_paragraph,
+                self.on_receive_chunk,
+                self.on_receive_sentence,
+                self.on_receive_paragraph,
                 self.on_non_streaming_start,
                 self.on_non_streaming_end,
                 self.on_end_response,
@@ -241,9 +241,9 @@ class IndexService:
         self.state.chat.send_message(
             self.state.last_send_message,
             listener=SendMessageListener(
-                self.on_recieve_chunk,
-                self.on_recieve_sentence,
-                self.on_recieve_paragraph,
+                self.on_receive_chunk,
+                self.on_receive_sentence,
+                self.on_receive_paragraph,
                 self.on_non_streaming_start,
                 self.on_non_streaming_end,
                 self.on_end_response,
@@ -402,17 +402,17 @@ class IndexService:
         return character
 
     # チャンク受信イベントハンドラ（Chat）
-    def on_recieve_chunk(self, chunk: str):
+    def on_receive_chunk(self, chunk: str):
         self.window.js.addChunk(chunk)
 
     # センテンス読み上げイベントハンドラ（Chat）
-    def on_recieve_sentence(self, sentence: str):
+    def on_receive_sentence(self, sentence: str):
         if self.state.assistant_character is not None and self.app_config.system["speaker_on"]:
             self.state.assistant_character.talk(sentence)
         self.window.js.parsedSentence(sentence)
 
     # 段落受信イベントハンドラ（Chat）
-    def on_recieve_paragraph(self, paragraph: str):
+    def on_receive_paragraph(self, paragraph: str):
         self.window.js.parsedParagraph(paragraph)
 
     # 非ストリーミング開始イベントハンドラ（Chat）
