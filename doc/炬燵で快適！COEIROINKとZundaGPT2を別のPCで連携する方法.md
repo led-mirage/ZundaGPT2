@@ -12,7 +12,7 @@
 
 ## 動作イメージ
 
-![動作イメージ](doc/別PC動作イメージ_COEIROINK.svg)
+![動作イメージ](images/別PC動作イメージ_COEIROINK.svg)
 
 ## 作戦
 
@@ -34,7 +34,7 @@ VOICEVOXとは少し違うけど、コマンドプロンプトで COEIROINK を�
 engine\engine.exe
 ```
 
-![COEIROINKエンジン](doc/Engine_COEIROINK.png)
+![COEIROINKエンジン](images/Engine_COEIROINK.png)
 
 ## 問題
 

@@ -11,12 +11,20 @@ Copyright (c) 2024-2025 led-mirage
 
 [English](Readme.en.md)
 
-## 💎 最新情報
+## 💎 ダウンロード
 
-**v1.29.0でキャラクター毎のカスタムスタイルを設定可能になったのだ**✨
+🚀 [最新版のダウンロードはこちらなのだ](https://led-mirage.github.io/ZundaGPT2/)
 
-キャラクター設定ファイルを編集することで、  
-キャラクター毎の背景画像、テキスト色などを設定できるようになったのだよ！
+## 💎 スクリーンショット
+
+<img src="assets/ZundaGPT2_splash.png" width="200" /><br>
+
+<img src="doc/images/screenshot_1.10.0.png" width="600" /><br>
+
+↓ カスタムCSSを使って背景画像を設定した例なのだ。
+<img src="doc/images/screenshot_1.28.0.png" width="600" /><br>
+
+<div class="page" />
 
 ## 💎 アプリの紹介と導入方法
 
@@ -45,20 +53,9 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 <div class="page" />
 
-## 💎 スクリーンショット
-
-<img src="assets/ZundaGPT2_splash.png" width="200" /><br>
-
-<img src="doc/screenshot_1.10.0.png" width="600" /><br>
-
-↓ カスタムCSSを使って背景画像を設定した例なのだ。
-<img src="doc/screenshot_1.28.0.png" width="600" /><br>
-
-<div class="page" />
-
 ## 💎 動作確認環境
 
-- Windows 11 Pro 23H2、24H2
+- Windows 11 Pro 23H2、24H2、25H2
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
 - Python 3.10-3.13（開発環境は 3.12.0）
@@ -75,9 +72,11 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 <details><summary>OpenAI（2025/10/19現在）</summary>
 
 - GPT-5 （モデル名：gpt-5）
+- GPT-5 pro （モデル名：gpt-5-pro）
 - GPT-5 mini （モデル名：gpt-5-mini）
 - GPT-5 nano （モデル名：gpt-5-nano）
 - GPT-5 Chat （モデル名：gpt-5-chat-latest）
+- GPT-5-Codex （モデル名：gpt-5-codex）
 - GPT-4.1 （モデル名：gpt-4.1）
 - GPT-4.1 mini （モデル名：gpt-4.1-mini） 無料枠あり
 - GPT-4.1 nano （モデル名：gpt-4.1-nano） 無料枠あり
@@ -192,7 +191,7 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索すると設定画面が立ち上がるので、そこでユーザー環境変数を追加すればいいのだ。
 
-<img src="doc/envvar.png" style="width:300px">
+<img src="doc/images/envvar.png" style="width:300px">
 
 <div class="page" />
 
@@ -206,7 +205,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.31.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.32.0
 
 #### 3. 実行
 
@@ -290,7 +289,7 @@ start pythonw app\main.py
 
 キャラクターの設定ファイル（settings_xxx.json）はsettingsフォルダの中に格納されているから、それをコピーして編集すればOKなのだ。
 
-詳しい設定方法は[こちら](Readme_detail.md)をみて欲しいのだ。
+詳しい設定方法は[こちら](doc/Readme_detail.md)をみて欲しいのだ。
 
 <div class="page" />
 
@@ -354,11 +353,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/10/19 v1.31.0](https://www.virustotal.com/gui/file/e078f22612b1e1d060da625bebb90d2c0e26db28eef7e0f288c9ff8f1974113c/detection)
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/10/19 v1.31.0](https://www.virustotal.com/gui/file/57c97a9f5a4b661d187d2b9518202ef8b5a75b5108747bb834bb63e2fbc6da2f/detection)
-- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/10/19 v1.31.0](https://www.virustotal.com/gui/file/4c8a096a3ea2bb904b747c55bf20d6277a56b9462e77f2aff5f5b0e649f977cb/detection)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/10/26 v1.32.0](https://www.virustotal.com/gui/file/d285792398208711d5b16b05edca0fb2a0bde7ddcbbcdce786427c740602f6b9/detection)
+- Raspberry Pi版: [61個中0個のアンチウィルスエンジンで検出 :2025/10/26 v1.32.0](https://www.virustotal.com/gui/file/d2169294d8b912d0390a176176d6adb01ad8acf39147669efc54bcc326e8d3af/detection)
+- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/10/26 v1.32.0](https://www.virustotal.com/gui/file/a05184974a95efb10e609f7f5abdffee093cd72f4258cfbcbfce5b106972e2ec/detection)
 
-<img src="doc/virustotal_1.31.0.png" width="600">
+<img src="doc/images/virustotal_1.32.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -371,8 +370,8 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 - [VOICEVOXキャラクターリスト](doc/voicevox_speaker_list.md)
 - [COEIROINKキャラクターリスト](doc/coeiroink_speaker_list.md)
-- [炬燵で快適！VOICEVOXとZundaGPT2を別のPCで連携する方法](炬燵で快適！VOICEVOXとZundaGPT2を別のPCで連携する方法.md)
-- [炬燵で快適！COEIROINKとZundaGPT2を別のPCで連携する方法](炬燵で快適！COEIROINKとZundaGPT2を別のPCで連携する方法.md)
+- [炬燵で快適！VOICEVOXとZundaGPT2を別のPCで連携する方法](doc/炬燵で快適！VOICEVOXとZundaGPT2を別のPCで連携する方法.md)
+- [炬燵で快適！COEIROINKとZundaGPT2を別のPCで連携する方法](doc/炬燵で快適！COEIROINKとZundaGPT2を別のPCで連携する方法.md)
 
 <div class="page" />
 
@@ -489,7 +488,11 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 ## 💎 バージョン履歴
 
-<details><summary>過去のバージョンアップの軌跡はこちらなのだ</summary>
+### 1.32.0 (2025/10/26)
+
+- OpenAI GPT-5-Codex、GPT-5 proに対応
+- chatパッケージのリファクタリング
+- タイポ修正
 
 ### 1.31.0 (2025/10/19)
 
@@ -511,6 +514,8 @@ VirusTotalでのチェック結果はこちらなのだ。
 - Darkスタイルの修正
 - 言語ファイルの統一
 - コメント・書式の統一
+
+<details><summary>それ以前のバージョンアップの履歴はこちらなのだ</summary>
 
 ### 1.29.0 (2025/09/07)
 

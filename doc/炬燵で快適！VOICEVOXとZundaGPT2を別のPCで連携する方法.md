@@ -18,7 +18,7 @@ ZundaGPT2 を使用するPCが貧弱なノートPCだったりすると、VOICEV
 
 ## 動作イメージ
 
-![別PC動作イメージ](doc/別PC動作イメージ_VOICEVOX.svg)
+![別PC動作イメージ](images/別PC動作イメージ_VOICEVOX.svg)
 
 ## 作戦
 
@@ -75,7 +75,7 @@ run.exe --host 192.168.1.100
 
 以上で、VOICEVOX エンジンが起動し接続待ち状態になるはずです。
 
-![VOICEVOXエンジン](doc/Engine_VOICEVOX.png)
+![VOICEVOXエンジン](images/Engine_VOICEVOX.png)
 
 ## ファイアウォールの設定
 
