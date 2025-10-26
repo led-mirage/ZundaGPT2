@@ -11,7 +11,19 @@ Copyright (c) 2024-2025 led-mirage
 
 [Japanese](Readme.md)
 
-## App Introduction & Getting Started
+## 💎 Download
+
+🚀 [Get the latest version here](https://led-mirage.github.io/ZundaGPT2Lite/)
+
+## 💎 Screenshot
+
+<img src="assets/ZundaGPT2_splash.png" width="200" />
+
+https://github.com/user-attachments/assets/bf280955-9b12-42df-973c-d49c369e6fb5
+
+<div class="page" />
+
+## 💎 App Introduction & Getting Started
 
 This is an app that lets you chat with AI using various APIs.
 You can customize your own character, and one of the unique features is that it can read out both questions and answers aloud by integrating with VOICEVOX and other text-to-speech tools.
@@ -31,15 +43,7 @@ Here are the highlights of this app ✨
 * Dark mode supported
 - Custom CSS support ✨
 
-## Screenshot
-
-<img src="assets/ZundaGPT2_splash.png" width="200" />
-
-https://github.com/user-attachments/assets/bf280955-9b12-42df-973c-d49c369e6fb5
-
-<div class="page" />
-
-## Language Support
+## 💎 Language Support
 
 To change the language, modify the `language` setting in the `appConfig.json` file:
 
@@ -58,9 +62,9 @@ The following values can be configured:
 | de      | German   | settings.de.json        | 1.15.0                  |
 | fr      | French   | settings.fr.json        | 1.25.0                  |
 
-## Tested Environments
+## 💎 Tested Environments
 
-- Windows 11 Pro 23H2、24H2
+- Windows 11 Pro 23H2, 24H2, 25H2
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
 - Python 3.10–3.13 (development environment: 3.12.0)
@@ -70,7 +74,7 @@ The following values can be configured:
 
 <div class="page" />
 
-## Requirements
+## 💎 Requirements
 
 While this app itself is free, one of the following API keys is required to operate it. 
 
@@ -106,7 +110,7 @@ Once you're ready, move on to the next step for execution.
 
 <div class="page" />
 
-## Execution Method
+## 💎 Execution Method
 
 ### 🛩️ Setup: Add OS Environment Variables
 
@@ -206,7 +210,7 @@ start pythonw app\main.py
 
 <div class="page" />
 
-## Character Settings
+## 💎 Character Settings
 
 You can select different AI personalities by clicking the ⚙️ button in the top-right corner of the screen.
 
@@ -216,7 +220,7 @@ Character setting files (settings_xxx.json) are stored in the `settings` folder.
 
 For detailed information about character configuration, please refer to [this guide](Readme_detail.md).
 
-## Custom CSS Settings
+## 💎 Custom CSS Settings
 
 By creating and adjusting a custom CSS (stylesheet), you can change the app’s color scheme, background image, and other design aspects.
 You can easily customize the appearance by modifying predefined CSS variables.
@@ -255,7 +259,7 @@ A full list of available variables can be found at the beginning of `app/html/cs
 
 <div class="page" />
 
-## Important Notes
+## 💎 Important Notes
 
 ### ⚡ About OpenAI Usage Fees
 
@@ -296,7 +300,7 @@ Please understand that the developer cannot be held responsible for any damages 
 
 <div class="page" />
 
-## Libraries Used
+## 💎 Libraries Used
 
 ### 🔖 pywebview 5.3.2
 
@@ -395,8 +399,9 @@ License： GPL 2.0 License / Apache License 2.0
 
 <div class="page" />
 
-## License
+## 💎 License
 
 © 2024-2025 led-mirage
 
-This application is released under the [MIT License](https://opensource.org/licenses/MIT). For more details, please refer to the LICENSE file included in the project.
+This application is released under the [MIT License](https://opensource.org/licenses/MIT).   
+For more details, please refer to the LICENSE file included in the project.
