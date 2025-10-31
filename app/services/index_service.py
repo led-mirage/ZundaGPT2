@@ -40,6 +40,7 @@ class IndexService:
         self.app_config = app_config
         self.state = state
         self.window = window
+        self.last_sent_images = None
 
     # ページロードイベントハンドラ（UI）
     def page_loaded(self):
@@ -218,13 +219,15 @@ class IndexService:
             self.window.js.newChat()
 
     # メッセージ送信イベントハンドラ（UI）
-    def send_message_to_chatgpt(self, text, speak=True):
+    def send_message_to_chatgpt(self, text, images, speak=True):
         if self.state.user_character is not None and self.app_config.system["speaker_on"] and speak:
             self.state.user_character.talk(text)
         self.window.js.startResponse()
         self.state.last_send_message = text
+        self.last_sent_images = images
         self.state.chat.send_message(
             text,
+            images,
             listener=SendMessageListener(
                 self.on_receive_chunk,
                 self.on_receive_sentence,
@@ -240,6 +243,7 @@ class IndexService:
     def retry_send_message_to_chatgpt(self):
         self.state.chat.send_message(
             self.state.last_send_message,
+            self.last_sent_images,
             listener=SendMessageListener(
                 self.on_receive_chunk,
                 self.on_receive_sentence,
@@ -265,7 +269,7 @@ class IndexService:
         text = self.state.chat.messages[index - 1]["content"]
         self.state.chat.truncate_messages(index - 1)
         ChatLog.save(self.state.settings, self.state.chat)
-        self.send_message_to_chatgpt(text, speak=False)
+        self.send_message_to_chatgpt(text, self.last_sent_images, speak=False)
 
     # チャットメッセージのテキストを取得する（UI）
     def get_message_text(self, index):

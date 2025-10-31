@@ -34,7 +34,7 @@ APIを使ってAIとチャットするアプリなのだ。
 このアプリのアピールポイントは次のとおりなのだ✨
 
 - ３大AIサービス（OpenAI、Google Gemini、Anthropic Claude）に対応
-- ローカルLLM（OpenAI API互換）に対応✨
+- ローカルLLM（OpenAI API互換）に対応
 - 柔軟なキャラクターカスタマイズ機能
 - メッセージ自動読み上げ機能
 - マークダウン表示、TeX形式の数式表示機能
@@ -44,7 +44,8 @@ APIを使ってAIとチャットするアプリなのだ。
 - Raspberry Pi対応（X11/LXDE、日本語入力はIBus限定、印刷機能は非対応）
 - Linux Mint対応（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）
 - ダークモード対応
-- スタイルシート（CSS）をカスタマイズ可能✨
+- スタイルシート（CSS）をカスタマイズ可能
+- 画像を使った質問が可能（実験的機能、OpenAIのみ）✨
 
 アプリの紹介と、もっとも手軽な導入方法を[Zennの記事](https://zenn.dev/ledmirage/articles/7650f36d3a784a)にしたので、そちらも参考にしてほしいのだ✨
 
@@ -205,7 +206,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.32.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.33.0
 
 #### 3. 実行
 
@@ -353,11 +354,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/10/26 v1.32.0](https://www.virustotal.com/gui/file/d285792398208711d5b16b05edca0fb2a0bde7ddcbbcdce786427c740602f6b9/detection)
-- Raspberry Pi版: [61個中0個のアンチウィルスエンジンで検出 :2025/10/26 v1.32.0](https://www.virustotal.com/gui/file/d2169294d8b912d0390a176176d6adb01ad8acf39147669efc54bcc326e8d3af/detection)
-- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/10/26 v1.32.0](https://www.virustotal.com/gui/file/a05184974a95efb10e609f7f5abdffee093cd72f4258cfbcbfce5b106972e2ec/detection)
+- Windows版: [71個中1個のアンチウィルスエンジンで検出 :2025/10/31 v1.33.0](https://www.virustotal.com/gui/file/e93d31b74243520d3d202a6307723e41d1fb1517d31b585409739423913ffd76/detection)
+- Raspberry Pi版: [61個中0個のアンチウィルスエンジンで検出 :2025/10/31 v1.33.0](https://www.virustotal.com/gui/file/409a69577a8c8e25ee7f0ae24a0fe0a8f1376ba3d81746dd1ada6bcde98b8ce5/detection)
+- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/10/31 v1.33.0](https://www.virustotal.com/gui/file/cd622f4756cc4b111da71db6bfcfe156beeee662539e91f9b85e9862cb9194ef/detection)
 
-<img src="doc/images/virustotal_1.32.0.png" width="600">
+<img src="doc/images/virustotal_1.33.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -488,6 +489,13 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 ## 💎 バージョン履歴
 
+### 1.33.0 (2025/10/31)
+
+- 画像送信機能の追加（実験的機能）
+  - OpenAIのみ、最大送信枚数：10枚
+  - テキストボックス内にドラッグ＆ドロップするか、クリップボードから貼り付けてください
+  - 貼り付けた画像は１回につき１度だけ送信され、チャットログには保存されません
+
 ### 1.32.0 (2025/10/26)
 
 - OpenAI GPT-5-Codex、GPT-5 proに対応
@@ -508,14 +516,14 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 - fix: ウィンドウの最小化、最大化状態から元に戻す際にウィンドウサイズが固定化されるバグを修正
 
+<details><summary>それ以前のバージョンアップの履歴はこちらなのだ</summary>
+
 ### 1.30.0 (2025/09/14)
 
 - ウィンドウサイズの自動保存・復元機能を追加
 - Darkスタイルの修正
 - 言語ファイルの統一
 - コメント・書式の統一
-
-<details><summary>それ以前のバージョンアップの履歴はこちらなのだ</summary>
 
 ### 1.29.0 (2025/09/07)
 
