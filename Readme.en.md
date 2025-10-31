@@ -31,7 +31,7 @@ You can customize your own character, and one of the unique features is that it 
 Here are the highlights of this app ✨
 
 * Supports the three major AI services (OpenAI, Google Gemini, and Anthropic Claude)
-* Supports OpenAI API-compatible local LLMs ✨
+* Supports OpenAI API-compatible local LLMs
 * Character customization feature
 * Automatic message read-aloud feature
 * Markdown display and TeX-format formula rendering
@@ -41,7 +41,8 @@ Here are the highlights of this app ✨
 * Compatible with Raspberry Pi (X11/LXDE only, Japanese input via IBus only, printing not supported)
 * Compatible with Linux Mint (Cinnamon/x64 only, Japanese input via IBus only, printing not supported)
 * Dark mode supported
-- Custom CSS support ✨
+* Custom CSS support
+* Image-based questions are now supported (experimental, OpenAI only) ✨
 
 ## 💎 Language Support
 
