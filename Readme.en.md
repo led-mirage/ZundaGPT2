@@ -42,7 +42,7 @@ Here are the highlights of this app ✨
 * Compatible with Linux Mint (Cinnamon/x64 only, Japanese input via IBus only, printing not supported)
 * Dark mode supported
 * Custom CSS support
-* Image-based questions are now supported (experimental, OpenAI only) ✨
+* Image-based questions are now supported (experimental) ✨
 
 ## 💎 Language Support
 
@@ -69,7 +69,7 @@ The following values can be configured:
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
 - Python 3.10–3.13 (development environment: 3.12.0)
-- VOICEVOX 0.22.3
+- VOICEVOX 0.25.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
@@ -362,6 +362,11 @@ License：MIT License
 
 Homepage：https://github.com/mhammond/pywin32  
 License：Python Software Foundation License (PSF)
+
+### 🔖 Pillow 12.0.0
+
+Homepage： https://github.com/python-pillow/Pillow  
+License：MIT-CMU license
 
 ### 🔖 MathJax 3.2.2
 

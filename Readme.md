@@ -45,7 +45,7 @@ APIを使ってAIとチャットするアプリなのだ。
 - Linux Mint対応（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）
 - ダークモード対応
 - スタイルシート（CSS）をカスタマイズ可能
-- 画像を使った質問が可能（実験的機能、OpenAIのみ）✨
+- 画像を使った質問が可能（実験的機能）✨
 
 アプリの紹介と、もっとも手軽な導入方法を[Zennの記事](https://zenn.dev/ledmirage/articles/7650f36d3a784a)にしたので、そちらも参考にしてほしいのだ✨
 
@@ -60,7 +60,7 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
 - Python 3.10-3.13（開発環境は 3.12.0）
-- VOICEVOX 0.23.0
+- VOICEVOX 0.25.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
 
@@ -206,7 +206,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.33.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.34.0
 
 #### 3. 実行
 
@@ -354,11 +354,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [71個中1個のアンチウィルスエンジンで検出 :2025/10/31 v1.33.0](https://www.virustotal.com/gui/file/e93d31b74243520d3d202a6307723e41d1fb1517d31b585409739423913ffd76/detection)
-- Raspberry Pi版: [61個中0個のアンチウィルスエンジンで検出 :2025/10/31 v1.33.0](https://www.virustotal.com/gui/file/409a69577a8c8e25ee7f0ae24a0fe0a8f1376ba3d81746dd1ada6bcde98b8ce5/detection)
-- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/10/31 v1.33.0](https://www.virustotal.com/gui/file/cd622f4756cc4b111da71db6bfcfe156beeee662539e91f9b85e9862cb9194ef/detection)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/11/02 v1.34.0](https://www.virustotal.com/gui/file/ee47b5a5c9c70fca1c3d080bf4f63356bf86d38a5000a375e8a8db910f6e3754/detection)
+- Raspberry Pi版: [60個中0個のアンチウィルスエンジンで検出 :2025/11/02 v1.34.0](https://www.virustotal.com/gui/file/8d8cdb96624cdf83da439297b762e5ae2595486d799142ad8457cfd8071bddf3/detection)
+- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/11/02 v1.34.0](https://www.virustotal.com/gui/file/23315c375d2badf83a31c84dfb986fc9addb250d69bb68b33d36780f0e39e2ff/detection)
 
-<img src="doc/images/virustotal_1.33.0.png" width="600">
+<img src="doc/images/virustotal_1.34.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -440,6 +440,11 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ：https://github.com/mhammond/pywin32  
 ライセンス：Python Software Foundation License (PSF)
 
+### 🔖 Pillow 12.0.0
+
+ホームページ： https://github.com/python-pillow/Pillow  
+ライセンス： MIT-CMUライセンス
+
 ### 🔖 MathJax 3.2.2
 
 ホームページ： https://github.com/mathjax/MathJax  
@@ -488,6 +493,12 @@ VirusTotalでのチェック結果はこちらなのだ。
 <div class="page" />
 
 ## 💎 バージョン履歴
+
+### 1.34.0 (2025/11/02)
+
+- 画像送信機能の追加（実験的機能）
+  - Claude、Geminiにも対応
+  - 画像をクリックすることで拡大表示する機能を追加
 
 ### 1.33.0 (2025/10/31)
 
