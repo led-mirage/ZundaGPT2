@@ -66,7 +66,11 @@ function createSettingFilesUI(settingFiles) {
 
 // 設定ファイル選択用のUIを構築する：details要素
 function createDetails(groupContainer, settingFiles) {
-    const groups = [... new Set(settingFiles.map(item => item.group))];
+    const groups = [...new Set(settingFiles.map(item => item.group))].sort((a, b) => {
+        // 大文字小文字を区別せずに昇順ソート
+        return a.localeCompare(b, undefined, { sensitivity: "base" });
+    });
+    //const groups = [... new Set(settingFiles.map(item => item.group))];
     groups.forEach(group => {
         const details = document.createElement("details");
         const summary = document.createElement("summary");
@@ -169,8 +173,21 @@ function createNameCell(item) {
 function createDetailCell(item) {
     const cell = document.createElement("td");
 
-    cell.appendChild(document.createTextNode(item.description));
-    cell.appendChild(document.createElement("br"));
+    // flexレイアウトで左:説明、右:削除ボタン に分ける
+    const container = document.createElement("div");
+    container.style.display = "flex";
+    container.style.justifyContent = "space-between";
+    container.style.alignItems = "center";
+    container.style.gap = "8px";
+
+    // 左側：説明＋リンク
+    const infoDiv = document.createElement("div");
+    infoDiv.style.flex = "1";
+
+    const descSpan = document.createElement("span");
+    descSpan.textContent = item.description;
+    infoDiv.appendChild(descSpan);
+    infoDiv.appendChild(document.createElement("br"));
 
     const span = document.createElement("span");
     span.className = "remark";
@@ -182,7 +199,36 @@ function createDetailCell(item) {
     link.addEventListener("click", () => edit(item.filename));
 
     span.appendChild(link);
-    cell.appendChild(span);
+    infoDiv.appendChild(span);
+
+    // 右側：ゴミ箱ボタン
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "🗑️";
+    deleteBtn.title = getTextResource("deleteButtonTooltip");
+    deleteBtn.style.cursor = "pointer";
+    deleteBtn.style.background = "transparent";
+    deleteBtn.style.border = "none";
+    deleteBtn.style.color = "inherit";
+    deleteBtn.style.fontSize = "1rem";
+
+    deleteBtn.addEventListener("click", async (event) => {
+        event.stopPropagation();
+        const confirmMessage = getTextResource("settingsDeleteConfirm")
+            .replace("${filename}", item.filename);
+        if (confirm(confirmMessage)) {
+            try {
+                await pywebview.api.delete_settings(item.filename);
+                await refresh();
+            } catch (error) {
+                console.error("Error deleting settings: " + error);
+                alert(getTextResource("settingsDeleteFailureMessage"));
+            }
+        }
+    });
+
+    container.appendChild(infoDiv);
+    container.appendChild(deleteBtn);
+    cell.appendChild(container);
 
     return cell;
 }
