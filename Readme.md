@@ -59,7 +59,7 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 - Windows 11 Pro 23H2、24H2、25H2
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
-- Python 3.10-3.13（開発環境は 3.12.0）
+- Python 3.10-3.12（開発環境は 3.12.0）
 - VOICEVOX 0.25.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
@@ -70,8 +70,12 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 動作確認済みのモデルは以下の通りなのだ。
 
-<details><summary>OpenAI（2025/10/19現在）</summary>
+<details><summary>OpenAI（2025/11/23現在）</summary>
 
+- GPT-5.1 （モデル名：gpt-5.1）
+- GPT-5.1 Chat （モデル名：gpt-5.1-chat-latest）
+- GPT-5.1 Codex （モデル名：gpt-5.1-codex）
+- GPT-5.1 Codex mini（モデル名：gpt-5.1-codex-mini）
 - GPT-5 （モデル名：gpt-5）
 - GPT-5 pro （モデル名：gpt-5-pro）
 - GPT-5 mini （モデル名：gpt-5-mini）
@@ -206,7 +210,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.34.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.35.0
 
 #### 3. 実行
 
@@ -354,11 +358,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/11/02 v1.34.0](https://www.virustotal.com/gui/file/ee47b5a5c9c70fca1c3d080bf4f63356bf86d38a5000a375e8a8db910f6e3754/detection)
-- Raspberry Pi版: [60個中0個のアンチウィルスエンジンで検出 :2025/11/02 v1.34.0](https://www.virustotal.com/gui/file/8d8cdb96624cdf83da439297b762e5ae2595486d799142ad8457cfd8071bddf3/detection)
-- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/11/02 v1.34.0](https://www.virustotal.com/gui/file/23315c375d2badf83a31c84dfb986fc9addb250d69bb68b33d36780f0e39e2ff/detection)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/11/23 v1.35.0](https://www.virustotal.com/gui/file/0c8f0151ca9ce5b351f00841e4523ba526b3e989f09a867f25097688e5617205/detection)
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/11/23 v1.35.0](https://www.virustotal.com/gui/file/dff03e4818e882e379ecff35b7b9e38cc0e4396891e5a8c62378624e5010178a/detection)
+- Linux版: [61個中0個のアンチウィルスエンジンで検出 :2025/11/23 v1.35.0](https://www.virustotal.com/gui/file/1f7e6c47a81f6d3d86515bcc6bbbb813586b6e36575664706d54f72e288fab12/detection)
 
-<img src="doc/images/virustotal_1.34.0.png" width="600">
+<img src="doc/images/virustotal_1.35.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -494,10 +498,16 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 ## 💎 バージョン履歴
 
-### 1.35.0 (2025/11/xx)
+### 1.35.0 (2025/11/23)
 
 - キャラ設定の削除機能を追加
 - 送信画像のサイズ調整機能を追加または調整
+- AI応答メッセージ表示ロジックの改善
+- Fix: GTP-5 Codex系のモデルを使用した際にレスポンスを処理できない問題を修正
+- Fix: タイムアウト時などにメッセージを再送した際、ユーザーの発言が重複して残ってしまう問題を修正
+- Fix: カスタムCSSが有効なとき、background_imageが設定されていないとエラーになる問題を修正
+- Fix: A.I.VOICEの起動制御を修正
+- Doc: 対応環境からPython 3.13を外した（将来的に修正予定）
 
 ### 1.34.0 (2025/11/02)
 
