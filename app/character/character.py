@@ -201,18 +201,18 @@ if IS_WINDOWS and WINDOWS_LIBS_AVAILABLE:
         # 話す
         def talk(self, text):
             CharacterAIVoice.run_aivoice(self.aivoice_path)
-            try:
-                tts_control = CharacterAIVoice._tts_control
-                tts_control.Connect()
-                tts_control.CurrentVoicePresetName = self.speaker_id
-                tts_control.Text = text
-                play_time = tts_control.GetPlayTime()
-                tts_control.Play()
-                time.sleep((play_time + 500) / 1000)
-            except Exception as err:
-                CharacterAIVoice._tts_control = None
-                print(err)
-                raise
+            if CharacterAIVoice._tts_control is not None:
+                try:
+                    tts_control = CharacterAIVoice._tts_control
+                    tts_control.Connect()
+                    tts_control.CurrentVoicePresetName = self.speaker_id
+                    tts_control.Text = text
+                    play_time = tts_control.GetPlayTime()
+                    tts_control.Play()
+                    time.sleep((play_time + 500) / 1000)
+                except Exception as err:
+                    CharacterAIVoice._tts_control = None
+                    print(err)
 
         # A.I.VOICEが起動していなかったら起動して接続する
         @classmethod

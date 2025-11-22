@@ -68,7 +68,7 @@ The following values can be configured:
 - Windows 11 Pro 23H2, 24H2, 25H2
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
-- Python 3.10–3.13 (development environment: 3.12.0)
+- Python 3.10–3.12 (development environment: 3.12.0)
 - VOICEVOX 0.25.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
