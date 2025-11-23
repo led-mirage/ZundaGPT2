@@ -210,7 +210,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.36.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.36.1
 
 #### 3. 実行
 
@@ -358,11 +358,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [70個中2個のアンチウィルスエンジンで検出 :2025/11/23 v1.36.0](https://www.virustotal.com/gui/file/fffe2c6fcba30d8e259b86ef5b707b150cfe0fa33e19c99a7218d6a69a1f42b3/detection)
-- Raspberry Pi版: [60個中0個のアンチウィルスエンジンで検出 :2025/11/23 v1.36.0](https://www.virustotal.com/gui/file/79c171f9afa4bd9f80b930658a1d7b53be11946bb28e4322b560437c8c66c998/detection)
-- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/11/23 v1.36.0](https://www.virustotal.com/gui/file/3592bb095d3a282cda0621a9cffbf7301e2b606dac55e69beb2762d48fc05eda/detection)
+- Windows版: [70個中2個のアンチウィルスエンジンで検出 :2025/11/24 v1.36.1](https://www.virustotal.com/gui/file/8e8b1856fac2aebb6080c012eb722ad5b840e418c60fbd70d4b745dd6be3e347/detection)
+- Raspberry Pi版: [60個中0個のアンチウィルスエンジンで検出 :2025/11/24 v1.36.1](https://www.virustotal.com/gui/file/3e2a6a97fc778e09778e48367e5f435ddb85dc310acf05ce88f20114ac1eba8e?nocache=1)
+- Linux版: [61個中0個のアンチウィルスエンジンで検出 :2025/11/24 v1.36.1](https://www.virustotal.com/gui/file/a782aebdfb6a1dbcb9a6be600fd5cf7fc9a95325faa4ccc397c7bcbfbb95bdbc/detection)
 
-<img src="doc/images/virustotal_1.36.0.png" width="600">
+<img src="doc/images/virustotal_1.36.1.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -498,6 +498,10 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 ## 💎 バージョン履歴
 
+### 1.36.1 (2025/11/24)
+
+- Fix: コードブロックの変換処理の修正漏れに対応
+
 ### 1.36.0 (2025/11/23)
 
 - キャラ設定ファイルをサブフォルダからも読み込めるようにした
@@ -534,13 +538,13 @@ VirusTotalでのチェック結果はこちらなのだ。
 - chatパッケージのリファクタリング
 - タイポ修正
 
+<details><summary>それ以前のバージョンアップの履歴はこちらなのだ</summary>
+
 ### 1.31.0 (2025/10/19)
 
 - openaiライブラリを2.5.0に更新
 - google-genaiライブラリを1.45.0に更新
 - anthropicライブラリを0.71.0に更新
-
-<details><summary>それ以前のバージョンアップの履歴はこちらなのだ</summary>
 
 ### 1.30.2 (2025/10/05)
 
