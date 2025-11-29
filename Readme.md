@@ -18,6 +18,7 @@ VOICEVOXやCOEIROINKなどと連携して質問と回答をリアルタイムに
 
 ## 💎 スクリーンショット
 
+↓ カスタマイズ例（背景画像はAI生成画像）  
 <img src="doc/images/screenshot_1.37.0.png" width="600" /><br>
 
 <div class="page" />
