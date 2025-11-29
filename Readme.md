@@ -11,46 +11,43 @@ Copyright (c) 2024-2025 led-mirage
 
 [English](Readme.en.md)
 
+## 💎 What's ZundaGPT2?
+
+ZundaGPT2 はキャラクターや画面を自分好みにカスタマイズできるAIチャットクライアントなのだ。  
+VOICEVOXやCOEIROINKなどと連携して質問と回答をリアルタイムに読み上げてくれるのだ。
+
+## 💎 スクリーンショット
+
+↓ カスタマイズ例（背景画像はAI生成画像）  
+<img src="doc/images/screenshot_1.37.0.png" width="600" /><br>
+
+<div class="page" />
+
 ## 💎 ダウンロード
 
 🚀 [最新版のダウンロードはこちらなのだ](https://led-mirage.github.io/ZundaGPT2/)
 
-## 💎 スクリーンショット
-
-<img src="assets/ZundaGPT2_splash.png" width="200" /><br>
-
-<img src="doc/images/screenshot_1.10.0.png" width="600" /><br>
-
-↓ カスタムCSSを使って背景画像を設定した例なのだ。
-<img src="doc/images/screenshot_1.28.0.png" width="600" /><br>
-
-<div class="page" />
-
-## 💎 アプリの紹介と導入方法
-
-APIを使ってAIとチャットするアプリなのだ。
-キャラクターをカスタマイズできることと、VOICEVOXなどと連携して質問と回答を音声で読み上げてくれるのが特徴なのだ。
+## 💎 アプリの特徴と導入方法
 
 このアプリのアピールポイントは次のとおりなのだ✨
 
-- ３大AIサービス（OpenAI、Google Gemini、Anthropic Claude）に対応
-- ローカルLLM（OpenAI API互換）に対応
-- 柔軟なキャラクターカスタマイズ機能
-- メッセージ自動読み上げ機能
+- ３大AIサービス（OpenAI、Gemini、Claude）およびローカルLLMに対応
 - マークダウン表示、TeX形式の数式表示機能
+- キャラクターカスタマイズ機能
+- 画面デザインのカスタマイズ機能
+- メッセージ自動読み上げ機能
 - 過去ログ管理機能
-- リプレイ機能
 - 印刷機能
-- Raspberry Pi対応（X11/LXDE、日本語入力はIBus限定、印刷機能は非対応）
-- Linux Mint対応（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）
-- ダークモード対応
-- スタイルシート（CSS）をカスタマイズ可能
-- 画像を使った質問が可能（実験的機能）✨
+- リプレイ機能
+- マルチプラットフォーム対応（Windows / Linux / Raspberry Pi）
+
+※ ローカルLLMはOpenAI API互換のものに対応  
+※ Linux Mint対応（Cinnamon/x64、日本語入力はIBus限定、印刷機能は非対応）  
+※ Raspberry Pi対応（X11/LXDE、日本語入力はIBus限定、印刷機能は非対応）
 
 アプリの紹介と、もっとも手軽な導入方法を[Zennの記事](https://zenn.dev/ledmirage/articles/7650f36d3a784a)にしたので、そちらも参考にしてほしいのだ✨
 
 Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/ledmirage/articles/aa64356242aefb)にしたので、そちらを参考にしてほしいのだ✨  
-記事はZundaGPT2のものだけど、導入方法はほぼ同じなのだ。
 
 <div class="page" />
 
@@ -99,8 +96,9 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 </details>
 
-<details><summary>Anthropic Claude（2025/10/19現在）</summary>
+<details><summary>Anthropic Claude（2025/11/28現在）</summary>
 
+- Claude Opus 4.5 （モデル名：claude-opus-4-5）
 - Claude Opus 4.1 （モデル名：claude-opus-4-1）
 - Claude Opus 4 （モデル名：claude-opus-4-0）
 - Claude Opus 3 （モデル名：claude-3-opus-latest）
@@ -210,7 +208,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.36.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.37.0
 
 #### 3. 実行
 
@@ -358,11 +356,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [70個中2個のアンチウィルスエンジンで検出 :2025/11/24 v1.36.1](https://www.virustotal.com/gui/file/8e8b1856fac2aebb6080c012eb722ad5b840e418c60fbd70d4b745dd6be3e347/detection)
-- Raspberry Pi版: [60個中0個のアンチウィルスエンジンで検出 :2025/11/24 v1.36.1](https://www.virustotal.com/gui/file/3e2a6a97fc778e09778e48367e5f435ddb85dc310acf05ce88f20114ac1eba8e?nocache=1)
-- Linux版: [61個中0個のアンチウィルスエンジンで検出 :2025/11/24 v1.36.1](https://www.virustotal.com/gui/file/a782aebdfb6a1dbcb9a6be600fd5cf7fc9a95325faa4ccc397c7bcbfbb95bdbc/detection)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/11/29 v1.37.0](https://www.virustotal.com/gui/file/e55a2acfce4000515d04a079abe80517640cd3c624a933f0b85d0c1e0be6e0c5/detection)
+- Raspberry Pi版: [60個中0個のアンチウィルスエンジンで検出 :2025/11/29 v1.37.0](https://www.virustotal.com/gui/file/74cd59e946fbf2081356a6d337d0233cf7f3e0e79c3f4687f347814c8c1127e9/detection)
+- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/11/29 v1.37.0](https://www.virustotal.com/gui/file/7792c4572402e154ff4bb7065936a02b52e63270529dc0c8c8f0c454e2ae11f1/detection)
 
-<img src="doc/images/virustotal_1.36.1.png" width="600">
+<img src="doc/images/virustotal_1.37.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -389,17 +387,17 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 2.5.0
+### 🔖 openai 2.8.1
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-genai 1.45.0
+### 🔖 google-genai 1.52.0
 
 ホームページ： https://github.com/googleapis/python-genai  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.71.0
+### 🔖 anthropic 0.75.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -497,6 +495,14 @@ VirusTotalでのチェック結果はこちらなのだ。
 <div class="page" />
 
 ## 💎 バージョン履歴
+
+### 1.37.0 (2025/11/29)
+
+- フルスクリーンモードに対応
+- Welcome画面にキャラアイコンを表示するかどうかの設定を追加
+- openai ライブラリを 2.8.1 に更新
+- google-genai ライブラリを 1.52.0 に更新
+- anthropic ライブラリを 0.75.0 に更新
 
 ### 1.36.1 (2025/11/24)
 
