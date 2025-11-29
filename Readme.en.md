@@ -11,38 +11,38 @@ Copyright (c) 2024-2025 led-mirage
 
 [Japanese](Readme.md)
 
-## 💎 Download
+## 💎 What's ZundaGPT2?
 
-🚀 [Get the latest version here](https://led-mirage.github.io/ZundaGPT2Lite/)
+ZundaGPT2 is an AI chat client that lets you customize characters and the interface to your liking.
+It can also work with tools like VOICEVOX and COEIROINK to read questions and answers aloud in real time."
 
 ## 💎 Screenshot
 
-<img src="assets/ZundaGPT2_splash.png" width="200" />
+<img src="doc/images/screenshot_1.37.0.png" width="600" /><br>
 
-https://github.com/user-attachments/assets/bf280955-9b12-42df-973c-d49c369e6fb5
+## 💎 Download
+
+🚀 [Get the latest version here](https://led-mirage.github.io/ZundaGPT2Lite/)
 
 <div class="page" />
 
 ## 💎 App Introduction & Getting Started
 
-This is an app that lets you chat with AI using various APIs.
-You can customize your own character, and one of the unique features is that it can read out both questions and answers aloud by integrating with VOICEVOX and other text-to-speech tools.
+Here are the key features of this app ✨
 
-Here are the highlights of this app ✨
+- Supports three major AI services (OpenAI, Gemini, Claude) as well as local LLMs
+- Markdown rendering and TeX-style math formula display
+- Character customization
+- UI/theme customization
+- Automatic message text-to-speech
+- Chat history management
+- Printing support
+- Replay feature
+- Multi-platform support (Windows / Linux / Raspberry Pi)
 
-* Supports the three major AI services (OpenAI, Google Gemini, and Anthropic Claude)
-* Supports OpenAI API-compatible local LLMs
-* Character customization feature
-* Automatic message read-aloud feature
-* Markdown display and TeX-format formula rendering
-* Past conversation log management
-* Replay function
-* Printing function
-* Compatible with Raspberry Pi (X11/LXDE only, Japanese input via IBus only, printing not supported)
-* Compatible with Linux Mint (Cinnamon/x64 only, Japanese input via IBus only, printing not supported)
-* Dark mode supported
-* Custom CSS support
-* Image-based questions are now supported (experimental) ✨
+※ Local LLMs must be compatible with the OpenAI API  
+※ Linux Mint supported (Cinnamon / x64, Japanese input via IBus only, printing not supported)  
+※ Raspberry Pi supported (X11 / LXDE, Japanese input via IBus only, printing not supported)
 
 ## 💎 Language Support
 
@@ -308,17 +308,17 @@ Please understand that the developer cannot be held responsible for any damages 
 Homepage： https://github.com/r0x0r/pywebview  
 License：BSD-3-Clause license
 
-### 🔖 openai 2.5.0
+### 🔖 openai 2.8.1
 
 Homepage： https://github.com/openai/openai-python  
 License：Apache License 2.0
 
-### 🔖 google-genai 1.45.0
+### 🔖 google-genai 1.52.0
 
 Homepage： https://github.com/googleapis/python-genai  
 License：Apache License 2.0
 
-### 🔖 anthropic 0.71.0
+### 🔖 anthropic 0.75.0
 
 Homepage： https://github.com/anthropics/anthropic-sdk-python  
 License：MIT license
