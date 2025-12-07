@@ -19,6 +19,9 @@ VOICEVOXやCOEIROINKなどと連携して質問と回答をリアルタイムに
 ## 💎 スクリーンショット
 
 ↓ カスタマイズ例（背景画像はAI生成画像）  
+<img src="doc/images/screenshot_1.38.1.png" width="600" /><br>
+
+↓ 会話例  
 <img src="doc/images/screenshot_1.37.0.png" width="600" /><br>
 
 <div class="page" />
@@ -208,7 +211,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.38.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.38.1
 
 #### 3. 実行
 
@@ -356,11 +359,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/12/06 v1.38.0](https://www.virustotal.com/gui/file/102f24d526d687b824ff9675a77a05cd881b6644bb6eb07cd88003cee04111ea/detection)
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/12/06 v1.38.0](https://www.virustotal.com/gui/file/5115a54df54e6810d7bf71e9ca1276931d8a562efa19f6f8913eb4cf5375ebde/detection)
-- Linux版: [63個中0個のアンチウィルスエンジンで検出 :2025/12/06 v1.38.0](https://www.virustotal.com/gui/file/9af5094c46eab85a4c3865b92ac3daaa13afbfd7f5c4b150edf755875c446e26/detection)
+- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/12/07 v1.38.1](https://www.virustotal.com/gui/file/cc0ddffdce82c419cb015dc7cb56fa669394cf9e3e6021455891bfcdf19593e6/detection)
+- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/12/07 v1.38.1](https://www.virustotal.com/gui/file/36a930fc05fb459f8c33bcbfaaa2e0cf1a241e3c6f0d7a06685100976e1ea2aa/detection)
+- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/12/07 v1.38.1](https://www.virustotal.com/gui/file/633d3396b4f0b79587a1aa9aa609cb226afc73a47433f9f7f2ab9b38dbad7921/detection)
 
-<img src="doc/images/virustotal_1.38.0.png" width="600">
+<img src="doc/images/virustotal_1.38.1.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -495,6 +498,13 @@ VirusTotalでのチェック結果はこちらなのだ。
 <div class="page" />
 
 ## 💎 バージョン履歴
+
+バージョンアップの詳しい内容については [Zennの記事](https://zenn.dev/ledmirage/books/8ec854ef6b8e12) を見て欲しいのだ。
+
+### 1.38.1 (2025/12/xx)
+
+- Fix: 印刷時、メッセージコピーボタンを非表示にするよう修正
+- Fix: ダークモード時、印刷時にキャラの背景画像が印刷されない問題を修正
 
 ### 1.38.0 (2025/12/06)
 
