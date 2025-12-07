@@ -24,6 +24,9 @@
     .message-delete-btn {
         visibility: hidden;
     }
+    .message-copy-btn {
+        visibility: hidden;
+    }
     .chat-reanswer-btn {
         visibility: hidden;
     }
