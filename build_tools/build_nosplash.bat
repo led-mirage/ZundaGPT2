@@ -22,7 +22,7 @@ if exist build rmdir /s /q build
     --noconsole ^
     --paths=./app ^
     --add-data "./app/html;html" ^
-    --name ZundaGPT2 ^
+    --name ZundaGPT2.ns ^
     --icon "assets/ZundaGPT2.ico" ^
     --splash "assets/ZundaGPT2_splash.png" ^
     --version-file "build_tools/version.txt" ^
