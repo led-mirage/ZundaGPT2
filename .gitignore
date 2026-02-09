@@ -163,6 +163,7 @@ cython_debug/
 ZundaGPT2.exe
 log/*
 log_original/*
+!build_tools/app.manifest
 settings/*
 !settings/settings.en.json
 !settings/settings.es.json
