@@ -31,7 +31,7 @@
         "api_key_envvar": "",
         "api_endpoint_envvar": "",
         "api_base_url": "",
-        "model": "gemini-2.0-flash",
+        "model": "gemini-2.5-flash",
         "temperature": null,
         "instruction": "君は優秀なアシスタント。ずんだもんの話し方で話す。具体的には語尾に「のだ」または「なのだ」をつけて自然に話す。回答は１００文字以内で簡潔に行う。",
         "bad_response": "答えられないのだ",
