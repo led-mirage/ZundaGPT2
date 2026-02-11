@@ -7,7 +7,7 @@
 [![Anthropic Claude](https://img.shields.io/badge/Anthropic-Claude-crimson?logo=anthropic)](https://www.anthropic.com/)
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini-crimson?logo=google)](https://ai.google.dev/)
 
-Copyright (c) 2024-2025 led-mirage
+Copyright (c) 2024-2026 led-mirage
 
 [English](Readme.en.md)
 
@@ -70,8 +70,12 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 動作確認済みのモデルは以下の通りなのだ。
 
-<details><summary>OpenAI（2025/11/23現在）</summary>
+<details><summary>OpenAI（2026/02/10現在）</summary>
 
+- GPT-5.2 （モデル名：gpt-5.2）
+- GPT-5.2 Chat （モデル名：gpt-5.2-chat-latest）
+- GPT-5.2 Codex （モデル名：gpt-5.2-codex）
+- GPT-5.2 Pro（モデル名：gpt-5.2-pro）
 - GPT-5.1 （モデル名：gpt-5.1）
 - GPT-5.1 Chat （モデル名：gpt-5.1-chat-latest）
 - GPT-5.1 Codex （モデル名：gpt-5.1-codex）
@@ -95,34 +99,34 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 - o3 （モデル名：o3）
 - o3-mini （モデル名：o3-mini）
 - o1 （モデル名：o1）
-- o1-mini （モデル名：o1-mini）
 
 </details>
 
-<details><summary>Anthropic Claude（2025/11/28現在）</summary>
+<details><summary>Anthropic Claude（2026/02/10現在）</summary>
 
+- Claude Opus 4.6 （モデル名：claude-opus-4-6）
 - Claude Opus 4.5 （モデル名：claude-opus-4-5）
 - Claude Opus 4.1 （モデル名：claude-opus-4-1）
 - Claude Opus 4 （モデル名：claude-opus-4-0）
-- Claude Opus 3 （モデル名：claude-3-opus-latest）
 - Claude Sonnet 4.5 （モデル名：claude-sonnet-4-5）
 - Claude Sonnet 4 （モデル名：claude-sonnet-4-0）
 - Claude Sonnet 3.7 （モデル名：claude-3-7-sonnet-latest）
-- Claude Sonnet 3.5 V2 （モデル名：claude-3-5-sonnet-latest）
 - Claude Haiku 4.5 （モデル名：claude-haiku-4-5）
 - Claude Haiku 3.5 （モデル名：claude-3-5-haiku-latest）
 - Claude Haiku 3 （モデル名：claude-3-haiku-20240307）
 
 </details>
 
-<details><summary>Google Gemini（2025/10/19現在）</summary>
+<details><summary>Google Gemini（2026/02/10現在）</summary>
 
-- Gemini 2.5 Pro （モデル名：gemini-2.5-pro） 無料枠あり
+- Gemini 3 Pro Preview（モデル名：gemini-3-pro-preview）
+- Gemini 3 Flash Preview（モデル名：gemini-3-flash-preview） 無料枠あり
+- Gemini 2.5 Pro （モデル名：gemini-2.5-pro）
 - Gemini 2.5 Flash （モデル名：gemini-2.5-flash） 無料枠あり
 - Gemini 2.5 Flash Preview （モデル名：gemini-2.5-flash-preview-09-2025） 無料枠あり
 - Gemini 2.5 Flash Lite （モデル名：gemini-2.5-flash-lite） 無料枠あり
-- Gemini 2.0 Flash （モデル名：gemini-2.0-flash） 無料枠あり
-- Gemini 2.0 Flash Lite （モデル名：gemini-2.0-flash-lite） 無料枠あり
+- Gemini 2.0 Flash （モデル名：gemini-2.0-flash）
+- Gemini 2.0 Flash Lite （モデル名：gemini-2.0-flash-lite）
 
 </details>
 
@@ -211,7 +215,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.38.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.39.0
 
 #### 3. 実行
 
@@ -359,11 +363,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [72個中2個のアンチウィルスエンジンで検出 :2025/12/07 v1.38.1](https://www.virustotal.com/gui/file/cc0ddffdce82c419cb015dc7cb56fa669394cf9e3e6021455891bfcdf19593e6/detection)
-- Raspberry Pi版: [62個中0個のアンチウィルスエンジンで検出 :2025/12/07 v1.38.1](https://www.virustotal.com/gui/file/36a930fc05fb459f8c33bcbfaaa2e0cf1a241e3c6f0d7a06685100976e1ea2aa/detection)
-- Linux版: [62個中0個のアンチウィルスエンジンで検出 :2025/12/07 v1.38.1](https://www.virustotal.com/gui/file/633d3396b4f0b79587a1aa9aa609cb226afc73a47433f9f7f2ab9b38dbad7921/detection)
+- Windows版: [71個中2個のアンチウィルスエンジンで検出 :2026/02/11 v1.39.0](https://www.virustotal.com/gui/file/b34ce9f8f8c65931763266ee063ad878d4c5fad7930c7a290f20f1f90e7c6163/detection)
+- Raspberry Pi版: [60個のアンチウィルスエンジンで検出なし :2026/02/11 v1.39.0](https://www.virustotal.com/gui/file/6ef6690144c7b49457cdb7286811102eb7e230e577b20c45d4604dbcfc14975b/detection)
+- Linux版: [59個のアンチウィルスエンジンで検出なし :2026/02/11 v1.39.0](https://www.virustotal.com/gui/file/6e4f5e4f3459ef52b1001a2c53a9e6eefcbfa85e8c116a6092462146a0b552a4/detection)
 
-<img src="doc/images/virustotal_1.38.1.png" width="600">
+<img src="doc/images/virustotal_1.39.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -390,17 +394,17 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 2.8.1
+### 🔖 openai 2.17.0
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-genai 1.52.0
+### 🔖 google-genai 1.62.0
 
 ホームページ： https://github.com/googleapis/python-genai  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.75.0
+### 🔖 anthropic 0.79.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -480,7 +484,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ：https://github.com/DudeNr33/pyinstaller-versionfile  
 ライセンス：MIT license
 
-### 🔖 PyInstaller 6.14.2
+### 🔖 PyInstaller 6.18.0
 
 ホームページ： https://github.com/pyinstaller/pyinstaller  
 ライセンス： GPL 2.0 License / Apache License 2.0  
@@ -491,7 +495,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 ## 💎 ライセンス
 
-© 2024-2025 led-mirage
+© 2024-2026 led-mirage
 
 本アプリケーションは [MITライセンス](https://opensource.org/licenses/MIT) の下で公開されているのだ。詳細については、プロジェクトに含まれる LICENSE ファイルを参照して欲しいのだ。
 
@@ -501,7 +505,15 @@ VirusTotalでのチェック結果はこちらなのだ。
 
 バージョンアップの詳しい内容については [Zennの記事](https://zenn.dev/ledmirage/books/8ec854ef6b8e12) を見て欲しいのだ。
 
-### 1.38.1 (2025/12/xx)
+### 1.39.0 (2026/02/11)
+
+- チャット削除後のカレント位置を調整
+- 使用ライブラリの更新
+- 使用画像のリファイン
+- Chatクラスのテストの追加
+- ビルドバッチの変更
+
+### 1.38.1 (2025/12/07)
 
 - Fix: 印刷時、メッセージコピーボタンを非表示にするよう修正
 - Fix: ダークモード時、印刷時にキャラの背景画像が印刷されない問題を修正
