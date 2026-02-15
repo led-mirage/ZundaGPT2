@@ -215,7 +215,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.39.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.39.1
 
 #### 3. 実行
 
