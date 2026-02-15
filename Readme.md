@@ -363,11 +363,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [71個中2個のアンチウィルスエンジンで検出 :2026/02/11 v1.39.0](https://www.virustotal.com/gui/file/b34ce9f8f8c65931763266ee063ad878d4c5fad7930c7a290f20f1f90e7c6163/detection)
-- Raspberry Pi版: [60個のアンチウィルスエンジンで検出なし :2026/02/11 v1.39.0](https://www.virustotal.com/gui/file/6ef6690144c7b49457cdb7286811102eb7e230e577b20c45d4604dbcfc14975b/detection)
-- Linux版: [59個のアンチウィルスエンジンで検出なし :2026/02/11 v1.39.0](https://www.virustotal.com/gui/file/6e4f5e4f3459ef52b1001a2c53a9e6eefcbfa85e8c116a6092462146a0b552a4/detection)
+- Windows版: [71個中2個のアンチウィルスエンジンで検出 :2026/02/15 v1.39.1](https://www.virustotal.com/gui/file/746e49f4ab79317a1ddc73aabf6048c017dca1ab26ae633d9893808e219b5f34/detection)
+- Raspberry Pi版: [60個のアンチウィルスエンジンで検出なし :2026/02/15 v1.39.1](https://www.virustotal.com/gui/file/922a0c0a17fb0395f6079a40f746056d0866e4bf73f52d27a2741f3639f68831/detection)
+- Linux版: [63個のアンチウィルスエンジンで検出なし :2026/02/15 v1.39.1](https://www.virustotal.com/gui/file/6c39ac7f637db2a41f12c6cdd975e6696062c69bba0fa95260f7ff7731f24ce3/detection)
 
-<img src="doc/images/virustotal_1.39.0.png" width="600">
+<img src="doc/images/virustotal_1.39.1.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -449,7 +449,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ：https://github.com/mhammond/pywin32  
 ライセンス：Python Software Foundation License (PSF)
 
-### 🔖 Pillow 12.0.0
+### 🔖 Pillow 12.1.1
 
 ホームページ： https://github.com/python-pillow/Pillow  
 ライセンス： MIT-CMUライセンス
@@ -504,6 +504,10 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 バージョンアップの詳しい内容については [Zennの記事](https://zenn.dev/ledmirage/books/8ec854ef6b8e12) を見て欲しいのだ。
+
+### 1.39.1 (2026/02/15)
+
+- pillowのバージョンを12.1.1に更新（CVE-2026-25990対応）
 
 ### 1.39.0 (2026/02/11)
 
