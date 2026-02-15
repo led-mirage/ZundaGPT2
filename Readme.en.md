@@ -364,7 +364,7 @@ License：MIT License
 Homepage：https://github.com/mhammond/pywin32  
 License：Python Software Foundation License (PSF)
 
-### 🔖 Pillow 12.0.0
+### 🔖 Pillow 12.1.1
 
 Homepage： https://github.com/python-pillow/Pillow  
 License：MIT-CMU license
