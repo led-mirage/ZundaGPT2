@@ -2,7 +2,7 @@
 #
 # アプリケーション設定クラス
 #
-# Copyright (c) 2024-2025 led-mirage
+# Copyright (c) 2024-2026 led-mirage
 # このソースコードは MITライセンス の下でライセンスされています。
 # ライセンスの詳細については、このプロジェクトのLICENSEファイルを参照してください。
 
@@ -18,7 +18,7 @@ from character import CharacterVoicevox
 from character import CharacterAIVoice
 
 class AppConfig:
-    FILE_VER = 8
+    FILE_VER = 9
     FILE_CONFIG = "appConfig.json"
 
     def __init__(self, config_file_path=FILE_CONFIG):
@@ -39,6 +39,7 @@ class AppConfig:
             "font_family": "",
             "font_size": 16,
             "theme": "light",
+            "display_clock": True,
         }
         self.tts = {
             "voicevox_server": VoicevoxAPI.DEFAULT_SERVER,
