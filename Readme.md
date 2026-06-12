@@ -59,7 +59,7 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 - Windows 11 Pro 23H2、24H2、25H2
 - Raspberry Pi OS Bookworm 64bit
 - Linux Mint 22.1 Cinnamon Edition
-- Python 3.10-3.12（開発環境は 3.12.0）
+- Python 3.10-3.13（開発環境は 3.13）
 - VOICEVOX 0.25.0
 - A.I.VOICE Editor 1.4.10.0
 - COEIROINK v.2.3.4
@@ -215,7 +215,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.39.1
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.40.0
 
 #### 3. 実行
 
@@ -235,7 +235,7 @@ ZundaGPT2.exeをダブルクリックすればアプリが起動するのだ。
 
 #### 1. Pythonのインストール
 
-あらかじめ Python 3.12.0 が動く環境を作っておくのだ。他のバージョンでも動くかもしれないけど、確認はしていないのだよ。
+あらかじめ Python 3.13.x が動く環境を作っておくのだ。他のバージョンでも動くかもしれないけど、確認はしていないのだよ。
 
 ボクは pyenv-win + venv で仮想環境を作ってそこで開発しているから、そういった方法でも問題ないのだ。
 
@@ -504,6 +504,11 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 バージョンアップの詳しい内容については [Zennの記事](https://zenn.dev/ledmirage/books/8ec854ef6b8e12) を見て欲しいのだ。
+
+### 1.40.0 (2026/06/xx)
+
+- フルスクリーン時に右下隅に時刻を表示するオプションを追加
+- 使用している Python のバージョンを `3.12` から `3.13` に変更
 
 ### 1.39.1 (2026/02/15)
 
