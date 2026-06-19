@@ -1,5 +1,5 @@
 {
-    "file_ver": 8,
+    "file_ver": 9,
     "system": {
         "log_folder": "log",
         "log_level": "ERROR",
@@ -11,7 +11,8 @@
         "language": "en",
         "font_family": "",
         "font_size": 16,
-        "theme": "light"
+        "theme": "light",
+        "display_clock": true
     },
     "tts": {
         "voicevox_server": "http://127.0.0.1:50021",
