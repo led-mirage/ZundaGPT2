@@ -309,17 +309,17 @@ Please understand that the developer cannot be held responsible for any damages 
 Homepage： https://github.com/r0x0r/pywebview  
 License：BSD-3-Clause license
 
-### 🔖 openai 2.17.0
+### 🔖 openai 2.41.1
 
 Homepage： https://github.com/openai/openai-python  
 License：Apache License 2.0
 
-### 🔖 google-genai 1.62.0
+### 🔖 google-genai 2.8.0
 
 Homepage： https://github.com/googleapis/python-genai  
 License：Apache License 2.0
 
-### 🔖 anthropic 0.79.0
+### 🔖 anthropic 0.109.1
 
 Homepage： https://github.com/anthropics/anthropic-sdk-python  
 License：MIT license
@@ -329,7 +329,7 @@ License：MIT license
 Homepage： https://github.com/pndurette/gTTS  
 License：MIT License
 
-### 🔖 requests 2.32.3
+### 🔖 requests 2.34.2
 
 Homepage： https://requests.readthedocs.io/en/latest/  
 License：Apache License 2.0
@@ -364,7 +364,7 @@ License：MIT License
 Homepage：https://github.com/mhammond/pywin32  
 License：Python Software Foundation License (PSF)
 
-### 🔖 Pillow 12.1.1
+### 🔖 Pillow 12.2.0
 
 Homepage： https://github.com/python-pillow/Pillow  
 License：MIT-CMU license
