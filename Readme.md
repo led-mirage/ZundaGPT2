@@ -70,37 +70,34 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 動作確認済みのモデルは以下の通りなのだ。
 
-<details><summary>OpenAI（2026/06/10現在）</summary>
+<details><summary>OpenAI（2026/10/20現在）</summary>
 
+- GPT-6 Astra （モデル名：gpt-6-astra）
+- GPT-6.1 Sol （モデル名：gpt-6.1-sol）
+- GPT-6 Luna （モデル名：gpt-6-luna）
+- GPT-6 Sol （モデル名：gpt-6-sol）
+- GPT-5.6 Luna （モデル名：gpt-5.6-luna）
+- GPT-5.6 Terra （モデル名：gpt-5.6-terra）
+- GPT-5.6 Sol （モデル名：gpt-5.6-sol）
 - GPT-5.5 （モデル名：gpt-5.5）
 - GPT-5.5 Pro（モデル名：gpt-5.5-pro）
 - GPT-5.4 （モデル名：gpt-5.4）
 - GPT-5.4 mini （モデル名：gpt-5.4-mini）
 - GPT-5.4 nano （モデル名：gpt-5.4-nano）
 - GPT-5.4 Pro （モデル名：gpt-5.4-pro）
-- GPT-5.3 Chat （モデル名：gpt-5.3-chat-latest）
 - GPT-5.3 Codex （モデル名：gpt-5.3-codex）
 - GPT-5.2 （モデル名：gpt-5.2）
-- GPT-5.2 Chat （モデル名：gpt-5.2-chat-latest）
-- GPT-5.2 Codex （モデル名：gpt-5.2-codex）
 - GPT-5.2 Pro（モデル名：gpt-5.2-pro）
 - GPT-5.1 （モデル名：gpt-5.1）
-- GPT-5.1 Chat （モデル名：gpt-5.1-chat-latest）
-- GPT-5.1 Codex （モデル名：gpt-5.1-codex）
-- GPT-5.1 Codex mini（モデル名：gpt-5.1-codex-mini）
 - GPT-5 （モデル名：gpt-5）
 - GPT-5 pro （モデル名：gpt-5-pro）
 - GPT-5 mini （モデル名：gpt-5-mini）
 - GPT-5 nano （モデル名：gpt-5-nano）
-- GPT-5 Chat （モデル名：gpt-5-chat-latest）
-- GPT-5-Codex （モデル名：gpt-5-codex）
 - GPT-4.1 （モデル名：gpt-4.1）
 - GPT-4.1 mini （モデル名：gpt-4.1-mini）
 - GPT-4.1 nano （モデル名：gpt-4.1-nano）
 - GPT-4o （モデル名：gpt-4o）
 - GPT-4o mini （モデル名：gpt-4o-mini）
-- GPT-4o Search Preview （モデル名：gpt-4o-search-preview）
-- GPT-4o mini Search Preview （モデル名：gpt-4o-mini-search-preview）
 - GPT-3.5 Turbo （モデル名：gpt-3.5-turbo）
 - o4-mini （モデル名：o4-mini）
 - o3 （モデル名：o3）
@@ -109,28 +106,33 @@ Raspberry Pi、Linuxへの導入に関しても[Zennの記事](https://zenn.dev/
 
 </details>
 
-<details><summary>Anthropic Claude（2026/06/10現在）</summary>
+<details><summary>Anthropic Claude（2026/10/20現在）</summary>
 
+- Claude Fable 5.1 （モデル名：claude-fable-5-1）
+- Claude Fable 5 （モデル名：claude-fable-5）
+- Claude Opus 5.5 （モデル名：claude-opus-5-5）
 - Claude Opus 4.8 （モデル名：claude-opus-4-8）
 - Claude Opus 4.7 （モデル名：claude-opus-4-7）
 - Claude Opus 4.6 （モデル名：claude-opus-4-6）
 - Claude Opus 4.5 （モデル名：claude-opus-4-5）
-- Claude Opus 4.1 （モデル名：claude-opus-4-1）
-- Claude Opus 4 （モデル名：claude-opus-4-0）
+- Claude Sonnet 5.5 （モデル名：claude-sonnet-5-5）
 - Claude Sonnet 4.6 （モデル名：claude-sonnet-4-6）
 - Claude Sonnet 4.5 （モデル名：claude-sonnet-4-5）
-- Claude Sonnet 4 （モデル名：claude-sonnet-4-0）
+- Claude Haiku 5.5 （モデル名：claude-haiku-5-5）
 - Claude Haiku 4.5 （モデル名：claude-haiku-4-5）
 
 </details>
 
-<details><summary>Google Gemini（2026/06/10現在）</summary>
+<details><summary>Google Gemini（2026/10/21現在）</summary>
 
-- Gemini 3.5 Flash（モデル名：gemini-3.5-flash） 無料枠あり
-- Gemini 3.1 Pro Preview（モデル名：gemini-3.1-pro-preview）
-- Gemini 3.1 Flash Lite（モデル名：gemini-3.1-flash-lite） 無料枠あり
-- Gemini 3 Flash Preview（モデル名：gemini-3-flash-preview） 無料枠あり
-- Gemini 2.5 Pro （モデル名：gemini-2.5-pro）
+- Gemini 3.8 Flash （モデル名：gemini-3.8-flash） 無料枠あり
+- Gemini 3.6 Flash （モデル名：gemini-3.6-flash） 無料枠あり
+- Gemini 3.5 Flash （モデル名：gemini-3.5-flash） 無料枠あり
+- Gemini 3.5 Flash Lite （モデル名：gemini-3.5-flash-lite） 無料枠あり
+- Gemini 3.1 Pro Preview （モデル名：gemini-3.1-pro-preview） ※ 有料のため未検証
+- Gemini 3.1 Flash Lite （モデル名：gemini-3.1-flash-lite） 無料枠あり
+- Gemini 3 Flash Preview （モデル名：gemini-3-flash-preview） 無料枠あり
+- Gemini 2.5 Pro （モデル名：gemini-2.5-pro） ※ 有料のため未検証
 - Gemini 2.5 Flash （モデル名：gemini-2.5-flash） 無料枠あり
 - Gemini 2.5 Flash Lite （モデル名：gemini-2.5-flash-lite） 無料枠あり
 
@@ -221,7 +223,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.41.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.42.0
 
 #### 3. 実行
 
@@ -369,11 +371,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [67個中2個のアンチウィルスエンジンで検出 :2026/06/24 v1.41.0](https://www.virustotal.com/gui/file/3bec37a6b9b7897574734d85a4d2c83710f4bdde055bafae1699440481189011/detection)
-- Raspberry Pi版: [58個のアンチウィルスエンジンで検出なし :2026/06/24 v1.41.0](https://www.virustotal.com/gui/file/56ac35b4799c2569f1bd00721f5912b51684a1806c60025b763157c8b4f1f70c/detection)
-- Linux版: [59個のアンチウィルスエンジンで検出なし :2026/06/24 v1.41.0](https://www.virustotal.com/gui/file/e7ef1429a7d9103e6dc7df61a40c0bedc170bf0f4d308ff45dc025226a64f1f4/detection)
+- Windows版: [62個中2個のアンチウィルスエンジンで検出 :2026/10/24 v1.42.0](https://www.virustotal.com/gui/file/dd5618676b37f1e0475665db5b3f860df29b02d6e976271bb2e695e8eb4bcb75/detection)
+- Raspberry Pi版: [55個のアンチウィルスエンジンで検出なし :2026/10/24 v1.42.0](https://www.virustotal.com/gui/file/f37eaf3fc695773bb41cfedddeec6e3711a2d168c66c7b01b71e23a12e9bedd3/detection)
+- Linux版: [54個のアンチウィルスエンジンで検出なし :2026/10/24 v1.42.0](https://www.virustotal.com/gui/file/69b285f1dfc77f4d177d1560ebbecd77e57e6f914a93cd3052617c7354c85d1b/detection)
 
-<img src="doc/images/virustotal_1.41.0.png" width="600">
+<img src="doc/images/virustotal_1.42.0.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -400,17 +402,17 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ： https://github.com/r0x0r/pywebview  
 ライセンス：BSD-3-Clause license
 
-### 🔖 openai 2.41.1
+### 🔖 openai 3.35.1
 
 ホームページ： https://github.com/openai/openai-python  
 ライセンス：Apache License 2.0
 
-### 🔖 google-genai 2.8.0
+### 🔖 google-genai 2.32.0
 
 ホームページ： https://github.com/googleapis/python-genai  
 ライセンス：Apache License 2.0
 
-### 🔖 anthropic 0.109.1
+### 🔖 anthropic 1.15.0
 
 ホームページ： https://github.com/anthropics/anthropic-sdk-python  
 ライセンス：MIT license
@@ -455,7 +457,7 @@ VirusTotalでのチェック結果はこちらなのだ。
 ホームページ：https://github.com/mhammond/pywin32  
 ライセンス：Python Software Foundation License (PSF)
 
-### 🔖 Pillow 12.2.0
+### 🔖 Pillow 13.0.0
 
 ホームページ： https://github.com/python-pillow/Pillow  
 ライセンス： MIT-CMUライセンス
@@ -510,6 +512,13 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 バージョンアップの詳しい内容については [Zennの記事](https://zenn.dev/ledmirage/books/8ec854ef6b8e12) を見て欲しいのだ。
+
+### 1.42.0 (2026/10/25)
+
+- openai ライブラリを 3.35.1 に更新
+- google-genai ライブラリを 2.32.0 に更新
+- anthropic ライブラリを 1.15.0 に更新
+- Pillow ライブラリを 13.0.0 に更新
 
 ### 1.41.0 (2026/06/24)
 
