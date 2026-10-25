@@ -223,7 +223,7 @@ Windowsの場合は、Windowsの検索窓で「環境変数を編集」で検索
 
 以下のリンクから ZundaGPT2.ZIP をダウンロードして、作成したフォルダに展開するのだ。
 
-https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.42.0
+https://github.com/led-mirage/ZundaGPT2/releases/tag/v1.42.1
 
 #### 3. 実行
 
@@ -371,11 +371,11 @@ CSSを知らない人はなんのことかわからないかもしれないけ�
 
 VirusTotalでのチェック結果はこちらなのだ。
 
-- Windows版: [62個中2個のアンチウィルスエンジンで検出 :2026/10/24 v1.42.0](https://www.virustotal.com/gui/file/dd5618676b37f1e0475665db5b3f860df29b02d6e976271bb2e695e8eb4bcb75/detection)
-- Raspberry Pi版: [55個のアンチウィルスエンジンで検出なし :2026/10/24 v1.42.0](https://www.virustotal.com/gui/file/f37eaf3fc695773bb41cfedddeec6e3711a2d168c66c7b01b71e23a12e9bedd3/detection)
-- Linux版: [54個のアンチウィルスエンジンで検出なし :2026/10/24 v1.42.0](https://www.virustotal.com/gui/file/69b285f1dfc77f4d177d1560ebbecd77e57e6f914a93cd3052617c7354c85d1b/detection)
+- Windows版: [65個中2個のアンチウィルスエンジンで検出 :2026/10/25 v1.42.1](https://www.virustotal.com/gui/file/423b80973b2f01b79b68eace017d84cc8d5378021489228b8c08266b9bb3655d/detection)
+- Raspberry Pi版: [56個のアンチウィルスエンジンで検出なし :2026/10/25 v1.42.1](https://www.virustotal.com/gui/file/ac65a7451054f8ee96821d01b277e7bd398c1835ae14f6afaf07f7e73fc7ac1d/detection)
+- Linux版: [58個のアンチウィルスエンジンで検出なし :2026/10/25 v1.42.1](https://www.virustotal.com/gui/file/1992492438f313b5b599f74eefa8b3356c92dcb3051b42ada7c667e7b2da1f45/detection)
 
-<img src="doc/images/virustotal_1.42.0.png" width="600">
+<img src="doc/images/virustotal_1.42.1.png" width="600">
 
 ### ⚡ ご利用について
 
@@ -512,6 +512,10 @@ VirusTotalでのチェック結果はこちらなのだ。
 ## 💎 バージョン履歴
 
 バージョンアップの詳しい内容については [Zennの記事](https://zenn.dev/ledmirage/books/8ec854ef6b8e12) を見て欲しいのだ。
+
+### 1.42.1 (2026/10/25)
+
+- VOICEVOX v0.26.1で音声出力に失敗する問題を修正
 
 ### 1.42.0 (2026/10/25)
 
